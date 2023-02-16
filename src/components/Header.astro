@@ -3,10 +3,10 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header>
-	<h2>
+<header class="flex mt-6">
+	<div class="mr-auto">
 		{SITE_TITLE}
-	</h2>
+	</div>
 	<nav>
 		<HeaderLink href="/">Home</HeaderLink>
 		<HeaderLink href="/blog">Blog</HeaderLink>
