@@ -1,26 +1,26 @@
 name: SSH Server Deploy
 on: [push]
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v3
-      - name: Install, build, and upload your site output
-        uses: withastro/action@v0
-      - name: SSH Server Deploy
-        uses: kostya-ten/ssh-server-deploy@v4
-        with:
-          host: ${{ secrets.HOST }}
-          port: '65002'
-          username: ${{ secrets.USERNAME }}
-          private_key: ${{ secrets.PRIVATE_KEY }}
-          scp_source: ./dist
-          scp_target: ./public_html
-          before_script: |
-            df -h
-          after_script: |
-            ls
-            cd public_html
-            cp -r ./dist/* ./
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout your repository using git
+              uses: actions/checkout@v3
+            - name: Install, build, and upload your site output
+              uses: withastro/action@v0
+            - name: SSH Server Deploy
+              uses: kostya-ten/ssh-server-deploy@v4
+              with:
+                  host: ${{ secrets.HOST }}
+                  port: "65002"
+                  username: ${{ secrets.USERNAME }}
+                  private_key: ${{ secrets.PRIVATE_KEY }}
+                  scp_source: ./dist
+                  scp_target: ./public_html
+                  before_script: |
+                      df -h
+                  after_script: |
+                      ls
+                      cp -r public_html/dist/* public_html/
+
