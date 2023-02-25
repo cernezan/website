@@ -16,15 +16,15 @@ jobs:
             node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
             package-manager: npm # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
             resolve-dep-from-path: false # If the dependency file should be resolved from the root location of your Astro project. Defaults to `true`. (optional)
-    deploy:
-        name: Deploy
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v2
-        - name: Upload ftp
-        uses: sebastianpopp/ftp-action@releases/v2
-        with:
-            host: "ftp://141.136.33.81/public_html/"
-            user: ${{ secrets.FTP_USERNAME }}
-            password: ${{ secrets.FTP_PASSWORD }}
-            localDir: "dist"
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Upload ftp
+    uses: sebastianpopp/ftp-action@releases/v2
+    with:
+        host: "ftp://141.136.33.81/public_html/"
+        user: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        localDir: "dist"
