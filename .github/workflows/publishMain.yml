@@ -17,18 +17,17 @@ jobs:
             package-manager: npm # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
             resolve-dep-from-path: false # If the dependency file should be resolved from the root location of your Astro project. Defaults to `true`. (optional)
 
-  web-deploy:
-    name: 🎉 Deploy
+
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2.3.2
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+    - uses: actions/checkout@v3
       with:
-        server: 141.136.33.81
-        username: ${{ secrets.ftp_username }}
-        password: ${{ secrets.ftp_password }}
-        server-dir: /public_html/
-        port: 65002
+        fetch-depth: 0
+    - name: git-ftp push
+      uses: sebastianpopp/git-ftp-action@releases/v3
+      with:
+        url: "ftp://141.136.33.81/public_html/"
+        user: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
