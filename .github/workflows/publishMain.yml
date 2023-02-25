@@ -20,7 +20,7 @@ jobs:
           scp_target: ./public_html
           before_script: |
             df -h
-            cd public_html
-            cp -r ./dist/* ./
           after_script: |
             ls
+            cd public_html
+            cp -r ./dist/* ./
