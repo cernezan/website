@@ -31,5 +31,5 @@ jobs:
 
       - name: Upload dist folder to SSH server
         run: |
-          scp -r dist/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/path/to/destination/folder
+          scp -r dist/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:65002:/path/to/destination/folder
  
