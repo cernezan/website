@@ -1,35 +1,23 @@
-on:
-  push:
-    branches:
-      - main
-name: 🚀 Deploy website on push
+
+name: SSH Server Deploy
+on: [push]
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v3
-      - name: Install, build, and upload your site output
-        uses: withastro/action@v0
-        with:
-            path: . # The root location of your Astro project inside the repository. (optional)
-            node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
-            package-manager: npm # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-            resolve-dep-from-path: false # If the dependency file should be resolved from the root location of your Astro project. Defaults to `true`. (optional)
-
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.0
+      - name: SSH Server Deploy
+        uses: kostya-ten/ssh-server-deploy@v4
         with:
-          ssh-private-key: ${{ secrets.PRIVATE_KEY }}
-
-      - name: Upload dist folder to SSH server
-        run: |
-          scp -r dist/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:65002:/path/to/destination/folder
- 
+          host: ${{ secrets.HOST }}
+          port: '65002'
+          username: ${{ secrets.USERNAME }}
+          private_key: ${{ secrets.PRIVATE_KEY }}
+          scp_source: README.md
+          scp_target: ~/
+          before_script: |
+            df -h
+          after_script: |
+            whoami
