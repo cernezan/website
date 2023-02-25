@@ -17,18 +17,33 @@ jobs:
             package-manager: npm # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
             resolve-dep-from-path: false # If the dependency file should be resolved from the root location of your Astro project. Defaults to `true`. (optional)
 
-  web-deploy:
-    name: 🎉 Deploy
+  deployment_job:
     runs-on: ubuntu-latest
+    name: Deployment Job
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2.3.2
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
       with:
-        server: "ftp://141.136.33.81"
-        username: ${{ secrets.ftp_username }}
-        password: ${{ secrets.ftp_password }}
-        server-dir: /public_html/
-        port: 65002
+        node-version: 16
+
+    - name: npm install, build, and test
+      run: |
+        npm install
+        npm run build --if-present
+
+    - name: SSH
+      uses: ErenKrt/ssh-push@main
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        private_key: ${{ secrets.PRIVATE_KEY }}
+        source: "dist/"
+        #exclude: |
+        #  *.exe
+        #scripts: |
+        #  cd /home/eren/test && unzip myZipname.zip && rm -r *.zip
+        #  cat /home/eren/test/index.js
+        #zipname: "myZipname.zip"
+        #outdir: "/home/eren/test"
