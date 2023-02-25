@@ -20,10 +20,11 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Upload ftp
-    uses: sebastianpopp/ftp-action@releases/v2
-    with:
+    - name: Checkout your repository using git
+      uses: actions/checkout@v2
+    - name: FTP
+      uses: sebastianpopp/ftp-action@releases/v2
+      with:
         host: "ftp://141.136.33.81/public_html/"
         user: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
