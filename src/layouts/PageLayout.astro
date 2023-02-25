@@ -1,27 +1,28 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
-import MainLayout from './MainLayout.astro';
+import type {CollectionEntry} from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import MainLayout from "./MainLayout.astro";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 console.log(Astro.props);
 
-const { frontmatter } = Astro.props;
-const { title, heroImage, pubDate, updatedDate } = frontmatter;
+const {frontmatter} = Astro.props;
+const {title, headerImage, pubDate, updatedDate} = frontmatter;
 ---
+
 <MainLayout>
 	<main>
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-        <h1>{title}</h1>
-        {pubDate && (<FormattedDate date={pubDate} />)}
-        {
-            updatedDate && (
-                <div>
-                    Last updated on <FormattedDate date={updatedDate} />
-                </div>
-            )
-        }
-        <hr />
-        <slot />
+		{headerImage && <img width={720} height={360} src={headerImage} alt="" />}
+		<h1>{title}</h1>
+		{pubDate && <FormattedDate date={pubDate} />}
+		{
+			updatedDate && (
+				<div>
+					Last updated on <FormattedDate date={updatedDate} />
+				</div>
+			)
+		}
+		<hr />
+		<slot />
 	</main>
 </MainLayout>

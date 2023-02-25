@@ -1,19 +1,20 @@
 ---
-import { AstroComponentInstance } from 'astro/dist/runtime/server';
-import type { CollectionEntry } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
-import MainLayout from './MainLayout.astro';
+import {AstroComponentInstance} from "astro/dist/runtime/server";
+import type {CollectionEntry} from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import MainLayout from "./MainLayout.astro";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 
-const { title, heroImage, pubDate, updatedDate } = Astro.props;
+const {title, headerImage, pubDate, updatedDate} = Astro.props;
 ---
+
 <MainLayout>
 	<main>
 		<article>
-			{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+			{headerImage && <img width={720} height={360} src={headerImage} alt="" />}
 			<h1>{title}</h1>
-			{pubDate && (<FormattedDate date={pubDate} />)}
+			{pubDate && <FormattedDate date={pubDate} />}
 			{
 				updatedDate && (
 					<div>
