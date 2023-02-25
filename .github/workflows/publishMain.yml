@@ -2,6 +2,7 @@ name: SSH Server Deploy
 on: [push]
 jobs:
   build:
+    name: Build astro
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
@@ -14,7 +15,7 @@ jobs:
             # package-manager: yarn # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
             # resolve-dep-from-path: false # If the dependency file should be resolved from the root location of your Astro project. Defaults to `true`. (optional)
 
-  build:
+  workflow:
     name: Build
     runs-on: ubuntu-latest
     steps:
