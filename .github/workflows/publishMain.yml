@@ -1,4 +1,3 @@
-
 name: SSH Server Deploy
 on: [push]
 jobs:
@@ -16,8 +15,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           private_key: ${{ secrets.PRIVATE_KEY }}
           scp_source: README.md
-          scp_target: ~/
+          scp_target: ./public_html/
           before_script: |
             df -h
           after_script: |
-            whoami
+            ls
