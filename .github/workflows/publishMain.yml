@@ -40,6 +40,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         private_key: ${{ secrets.PRIVATE_KEY }}
         source: "dist/"
+        port: 65002
         #exclude: |
         #  *.exe
         #scripts: |
