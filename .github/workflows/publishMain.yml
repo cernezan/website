@@ -21,5 +21,6 @@ jobs:
           before_script: |
             df -h
             cd public_html
+            cp -r ./dist/* ./
           after_script: |
             ls
