@@ -17,34 +17,19 @@ jobs:
             package-manager: npm # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
             resolve-dep-from-path: false # If the dependency file should be resolved from the root location of your Astro project. Defaults to `true`. (optional)
 
-  deployment_job:
+  deploy:
     runs-on: ubuntu-latest
-    name: Deployment Job
+
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.0
+        with:
+          ssh-private-key: ${{ secrets.PRIVATE_KEY }}
 
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run build --if-present
-
-    - name: SSH
-      uses: ErenKrt/ssh-push@main
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        private_key: ${{ secrets.PRIVATE_KEY }}
-        source: "dist/"
-        port: 65002
-        #exclude: |
-        #  *.exe
-        #scripts: |
-        #  cd /home/eren/test && unzip myZipname.zip && rm -r *.zip
-        #  cat /home/eren/test/index.js
-        #zipname: "myZipname.zip"
-        #outdir: "/home/eren/test"
+      - name: Upload dist folder to SSH server
+        run: |
+          scp -r dist/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/path/to/destination/folder
+ 
