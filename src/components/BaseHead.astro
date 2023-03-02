@@ -9,7 +9,7 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
+const {title, description, image = "/placeholder-social.jpg"} = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -39,3 +39,5 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<a rel="me" href="https://toot.io/@zan"></a>
