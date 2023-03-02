@@ -10,12 +10,6 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
-
-      - name: Install, build, and upload your site output
-        env:
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
-          TINA_TOKEN: ${{ secrets.TOKEN_TINA }}
-        uses: withastro/action@v0
       - name: Client Id Replacement
         uses: jacobtomlinson/gha-find-replace@v3
         with:
@@ -28,6 +22,8 @@ jobs:
           find: "tokenTinaHIDDEN"
           replace: ${{ secrets.TOKEN_TINA }}
           regex: false
+      - name: Install, build, and upload your site output
+        uses: withastro/action@v0
       - name: SSH Server Deploy
         uses: kostya-ten/ssh-server-deploy@v4
         with:
