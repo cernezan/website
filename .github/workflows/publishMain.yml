@@ -13,13 +13,13 @@ jobs:
       - name: Client Id Replacement
         uses: jacobtomlinson/gha-find-replace@v3
         with:
-          find: "clientIdHIDDEN"
+          find: "'clientIdHIDDEN'"
           replace: ${{ secrets.CLIENT_ID }}
           regex: false
       - name: Token Tina Replacement
         uses: jacobtomlinson/gha-find-replace@v3
         with:
-          find: "tokenTinaHIDDEN"
+          find: "'tokenTinaHIDDEN'"
           replace: ${{ secrets.TOKEN_TINA }}
           regex: false
       - name: Install, build, and upload your site output
