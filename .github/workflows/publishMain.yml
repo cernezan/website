@@ -20,7 +20,8 @@ jobs:
           regex: false
       - name: Token Tina Replacement
         uses: jacobtomlinson/gha-find-replace@v3
-          find: 'tokenTinaHIDDEN'
+        with:
+          find: "tokenTinaHIDDEN"
           replace: ${{ secrets.TOKEN_TINA }}
           regex: false
       - name: SSH Server Deploy
