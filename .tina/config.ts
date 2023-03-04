@@ -13,7 +13,7 @@ export default defineConfig({
 	},
 	media: {
 		tina: {
-			mediaRoot: "",
+			mediaRoot: "media",
 			publicFolder: "public",
 		},
 	},
@@ -22,7 +22,7 @@ export default defineConfig({
 			{
 				name: "post",
 				label: "Posts",
-				path: "content/posts",
+				path: "src/content/blog/",
 				fields: [
 					{
 						type: "string",
@@ -33,7 +33,7 @@ export default defineConfig({
 					},
 					{
 						type: "datetime",
-						name: "posted",
+						name: "pubDate",
 						label: "Date Posted",
 						required: true,
 					},
