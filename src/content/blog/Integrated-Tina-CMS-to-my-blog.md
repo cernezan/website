@@ -7,7 +7,7 @@ I know how passionate people can get when talking about CMS - Content Management
 
 ### Tina CMS
 
-I've picked Tina CMS mostly due to being one of the recommended CMS in Astro documentation. It was quite simple to integrate this CMS into Astro however it took me some time to figure out the production build with GitHub Actions. I'm sure that if you're using something like Github Pages, Netlify or Vercel, the process is pretty straightforward.
+I've picked [Tina CMS](https://tina.io/) mostly due to being one of the recommended CMS in [Astro documentation](https://docs.astro.build/en/getting-started/). It was quite simple to integrate this CMS into Astro however it took me some time to figure out the production build with GitHub Actions. I'm sure that if you're using something like Github Pages, Netlify or Vercel, the process is pretty straightforward.
 
 While trying to figure things out I also found some small mistakes in Astro docs and opened a pull request with a fix. It's one of the most satisfying things to contribute to another project, even if it's something small like a broken link fix.
 
