@@ -1,0 +1,53 @@
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+article > ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+}
+
+article a {
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: #95C6A8;
+    text-decoration-thickness: 2px;
+
+}
+
+.link {
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: #95C6A8;
+    text-decoration-thickness: 2px;
+}
+

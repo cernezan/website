@@ -1,14 +1,19 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from "./HeaderLink.astro";
+import {SITE_TITLE} from "../consts";
+import {Picture} from "@astrojs/image/components";
 ---
 
-<header class="flex mt-6">
-	<div class="mr-auto">
-		{SITE_TITLE}
-	</div>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
+<header class="flex my-8">
+	<a href="/" class="mr-auto flex hover:brightness-75">
+		<Picture src="/images/profilePicture.jpeg" alt="Profile Picture" class="rounded-full" format={"jpeg"} widths={[400, 400]} width={50} height={50} aspectRatio={1} />
+		<div class="ml-3 my-auto">
+			<div class="text-lg font-extrabold my-auto">{SITE_TITLE}</div>
+			<div class="text-sm text-zinc-600 -mt-1">Hope you're doing ok.</div>
+		</div>
+	</a>
+	<nav class="flex flex-wrap justify-between gap-x-6 my-auto">
+		<HeaderLink class="justify-center" href="/">Home</HeaderLink>
 		<HeaderLink href="/blog">Blog</HeaderLink>
 		<HeaderLink href="/about">About</HeaderLink>
 	</nav>

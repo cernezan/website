@@ -18,6 +18,7 @@ const {Content} = await post.render();
 ---
 
 <BlogPost {...post.data}>
-	<h1>{post.data.title}</h1>
-	<Content />
+	<article>
+		<Content />
+	</article>
 </BlogPost>
