@@ -20,4 +20,7 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# content only gets added via TinaCMS
+src/content/blog/
+
 node_modules
