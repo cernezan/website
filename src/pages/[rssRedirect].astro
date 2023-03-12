@@ -1,0 +1,18 @@
+---
+const articleUrl = `${Astro.site.origin}${"/rss.xml"}`;
+
+export async function getStaticPaths() {
+	return [
+		{
+			params: {rssRedirect: "rss"},
+		},
+		{
+			params: {rssRedirect: "feed"},
+		},
+	];
+}
+---
+
+<head>
+	<meta http-equiv="refresh" content={`0; url=${articleUrl}`} />
+</head>
