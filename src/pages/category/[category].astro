@@ -1,0 +1,43 @@
+---
+import {getCollection} from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+	let posts = await getCollection("blog");
+
+	return [
+		{params: {category: "blog"}, props: {posts: posts}},
+		{params: {category: "successes"}, props: {posts: posts}},
+		{params: {category: "community"}, props: {posts: posts}},
+		{params: {category: "blogging"}, props: {posts: posts}},
+		{params: {category: "setbacks"}, props: {posts: posts}},
+		{params: {category: "learning in public"}, props: {posts: posts}},
+	];
+}
+
+const {category} = Astro.params;
+const {posts} = Astro.props;
+
+let filteredPosts = posts.filter((post: any) => post.data.category === category);
+filteredPosts = filteredPosts.sort((a: any, b: any) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+filteredPosts = filteredPosts.filter((post: any) => !post.data.draft);
+---
+
+<MainLayout>
+	<main>
+		<h1>{category}</h1>
+		<section>
+			<ul>
+				{
+					filteredPosts.map((post: any) => (
+						<li>
+							<FormattedDate date={post.data.pubDate} />
+							<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+	</main>
+</MainLayout>

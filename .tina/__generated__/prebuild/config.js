@@ -34,6 +34,12 @@ const t = "main", l = e({
             required: !0
           },
           {
+            type: "string",
+            name: "category",
+            label: "Category",
+            required: !0
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",

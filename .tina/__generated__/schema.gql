@@ -84,6 +84,7 @@ union DocumentNode = Post
 type Post implements Node & Document {
   title: String!
   pubDate: String!
+  category: String!
   body: JSON
   id: ID!
   _sys: SystemInfo!
@@ -114,6 +115,7 @@ input RichTextFilter {
 input PostFilter {
   title: StringFilter
   pubDate: DatetimeFilter
+  category: StringFilter
   body: RichTextFilter
 }
 
@@ -149,6 +151,7 @@ input DocumentMutation {
 input PostMutation {
   title: String
   pubDate: String
+  category: String
   body: JSON
 }
 

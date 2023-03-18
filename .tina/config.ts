@@ -38,6 +38,12 @@ export default defineConfig({
 						required: true,
 					},
 					{
+						type: "string",
+						name: "category",
+						label: "Category",
+						required: true,
+					},
+					{
 						type: "rich-text",
 						name: "body",
 						label: "Body",
