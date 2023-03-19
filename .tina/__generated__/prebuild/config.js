@@ -37,6 +37,7 @@ const t = "main", l = e({
             type: "string",
             name: "category",
             label: "Category",
+            options: ["sm", "med", "lg", "xl"],
             required: !0
           },
           {

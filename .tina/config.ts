@@ -41,6 +41,8 @@ export default defineConfig({
 						type: "string",
 						name: "category",
 						label: "Category",
+						// TODO: Change to real categories
+						options: ["sm", "med", "lg", "xl"],
 						required: true,
 					},
 					{

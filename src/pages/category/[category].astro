@@ -5,23 +5,19 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
 export async function getStaticPaths() {
 	let posts = await getCollection("blog");
+	const uniqueTags = [...new Set(posts.map((post: any) => post.data.category).flat())];
 
-	return [
-		{params: {category: "blog"}, props: {posts: posts}},
-		{params: {category: "successes"}, props: {posts: posts}},
-		{params: {category: "community"}, props: {posts: posts}},
-		{params: {category: "blogging"}, props: {posts: posts}},
-		{params: {category: "setbacks"}, props: {posts: posts}},
-		{params: {category: "learning in public"}, props: {posts: posts}},
-	];
+	return uniqueTags.map((currentCategory) => {
+		const filteredPosts = posts.filter((post: any) => post.data.category.includes(currentCategory));
+		return {
+			params: {category: currentCategory},
+			props: {posts: filteredPosts},
+		};
+	});
 }
-
 const {category} = Astro.params;
 const {posts} = Astro.props;
-
-let filteredPosts = posts.filter((post: any) => post.data.category === category);
-filteredPosts = filteredPosts.sort((a: any, b: any) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-filteredPosts = filteredPosts.filter((post: any) => !post.data.draft);
+console.log(category);
 ---
 
 <MainLayout>
@@ -30,7 +26,7 @@ filteredPosts = filteredPosts.filter((post: any) => !post.data.draft);
 		<section>
 			<ul>
 				{
-					filteredPosts.map((post: any) => (
+					posts.map((post: any) => (
 						<li>
 							<FormattedDate date={post.data.pubDate} />
 							<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
