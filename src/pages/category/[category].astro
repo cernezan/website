@@ -3,6 +3,8 @@ import {getCollection} from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 
+import {slugify} from "../../utils";
+
 export async function getStaticPaths() {
 	let posts = await getCollection("blog");
 	const uniqueTags = [...new Set(posts.map((post: any) => post.data.category).flat())];
@@ -10,19 +12,19 @@ export async function getStaticPaths() {
 	return uniqueTags.map((currentCategory) => {
 		const filteredPosts = posts.filter((post: any) => post.data.category.includes(currentCategory));
 		return {
-			params: {category: currentCategory},
+			params: {category: slugify(currentCategory), categoryName: currentCategory},
 			props: {posts: filteredPosts},
 		};
 	});
 }
-const {category} = Astro.params;
+const {category, categoryName} = Astro.params;
 const {posts} = Astro.props;
 console.log(category);
 ---
 
 <MainLayout>
 	<main>
-		<h1>{category}</h1>
+		<h1>{categoryName}</h1>
 		<section>
 			<ul>
 				{
