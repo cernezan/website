@@ -6,5 +6,7 @@ export function slugify(text: string) {
 		.replace(/[^\w-]+/g, "")
 		.replace(/--+/g, "-")
 		.replace(/^-+/, "")
-		.replace(/-+$/, "");
+		.replace(/-+$/, "")
+		.replace(/([\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF])/g, ""); // removes emojis
 }
+

@@ -1,25 +1,24 @@
 ---
 import {getCollection} from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
-import MainLayout from "../../layouts/MainLayout.astro";
+import {slugify} from "../../../utils";
 
-import {slugify} from "../../utils";
+import FormattedDate from "../../../components/FormattedDate.astro";
+import MainLayout from "../../../layouts/MainLayout.astro";
 
 export async function getStaticPaths() {
 	let posts = await getCollection("blog");
-	const uniqueTags = [...new Set(posts.map((post: any) => post.data.category).flat())];
+	const uniqueCategory = [...new Set(posts.map((post: any) => post.data.category).flat())];
 
-	return uniqueTags.map((currentCategory) => {
+	return uniqueCategory.map((currentCategory) => {
 		const filteredPosts = posts.filter((post: any) => post.data.category.includes(currentCategory));
 		return {
-			params: {category: slugify(currentCategory), categoryName: currentCategory},
-			props: {posts: filteredPosts},
+			params: {category: slugify(currentCategory)},
+			props: {posts: filteredPosts, categoryName: currentCategory},
 		};
 	});
 }
-const {category, categoryName} = Astro.params;
-const {posts} = Astro.props;
-console.log(category);
+
+const {posts, categoryName} = Astro.props;
 ---
 
 <MainLayout>
