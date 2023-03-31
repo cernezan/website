@@ -18,8 +18,10 @@ console.log(categoryUrl);
 		<!-- HEADER IMAGE -->
 		{headerImage && <img width={720} height={360} src={headerImage} alt="" />}
 
-		<!-- DATE -->
+		<!-- DATE AND CATEGORY -->
 		<div class="text-zinc-600 text-sm">
+			<a href={categoryUrl}>{category}</a>
+			<span>·</span>
 			{pubDate && <FormattedDate date={pubDate} />}
 			{
 				updatedDate && (
@@ -29,9 +31,6 @@ console.log(categoryUrl);
 				)
 			}
 		</div>
-
-		<!-- TODO: Add category -->
-		<a href={categoryUrl} class="text-zinc-600 text-sm">{category}</a>
 
 		<h1 class="mt-0">{title}</h1>
 
