@@ -44,6 +44,12 @@ article a {
 
 }
 
+article img {
+    display: block; 
+    margin: 0 auto; /* Centers image horizontally */
+    border-radius: 10px;
+}
+
 .link {
     font-weight: 600;
     text-decoration: underline;
