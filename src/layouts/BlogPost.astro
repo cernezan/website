@@ -1,12 +1,16 @@
 ---
-import {AstroComponentInstance} from "astro/dist/runtime/server";
 import type {CollectionEntry} from "astro:content";
+import {slugify} from "../utils";
+
 import FormattedDate from "../components/FormattedDate.astro";
 import MainLayout from "./MainLayout.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const {title, headerImage, pubDate, updatedDate} = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const {title, headerImage, pubDate, updatedDate, category} = Astro.props;
+const categoryUrl = canonicalURL.origin + "/blog/category/" + slugify(category);
+console.log(categoryUrl);
 ---
 
 <MainLayout>
@@ -14,8 +18,10 @@ const {title, headerImage, pubDate, updatedDate} = Astro.props;
 		<!-- HEADER IMAGE -->
 		{headerImage && <img width={720} height={360} src={headerImage} alt="" />}
 
-		<!-- DATE -->
+		<!-- DATE AND CATEGORY -->
 		<div class="text-zinc-600 text-sm">
+			<a href={categoryUrl}>{category}</a>
+			<span>·</span>
 			{pubDate && <FormattedDate date={pubDate} />}
 			{
 				updatedDate && (
@@ -25,8 +31,6 @@ const {title, headerImage, pubDate, updatedDate} = Astro.props;
 				)
 			}
 		</div>
-
-		<!-- TODO: Add category -->
 
 		<h1 class="mt-0">{title}</h1>
 

@@ -34,6 +34,13 @@ const t = "main", l = e({
             required: !0
           },
           {
+            type: "string",
+            name: "category",
+            label: "Category",
+            options: ["\u{1F4BB} Tech", "\u{1F604} Personal", "\u{1F4DD} Article", "\u{1F517} Links"],
+            required: !0
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",
