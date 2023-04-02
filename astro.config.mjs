@@ -14,5 +14,8 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind(), image()],
   markdown: {
     drafts: false
-  }
+  },
+  experimental: {
+    assets: true
+   }
 });

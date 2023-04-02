@@ -2,6 +2,7 @@
 title: "Welcome again"
 pubDate: "2023-02-25"
 draft: false
+category: "😄 Personal"
 ---
 
 Hello everyone. I've been developing and redesigning my own website since a few months ago, but I didn't like the final result. I never published it and now I want to start this project again, but with a slight difference - I want to build it in public.

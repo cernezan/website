@@ -37,7 +37,7 @@ const t = "main", l = e({
             type: "string",
             name: "category",
             label: "Category",
-            options: ["sm", "med", "lg", "xl"],
+            options: ["\u{1F4BB} Tech", "\u{1F604} Personal", "\u{1F4DD} Article", "\u{1F517} Links"],
             required: !0
           },
           {

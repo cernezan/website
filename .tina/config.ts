@@ -41,7 +41,7 @@ export default defineConfig({
 						type: "string",
 						name: "category",
 						label: "Category",
-						options: ["💻 Tech", "😄 Personal", "🔗 Links"],
+						options: ["💻 Tech", "😄 Personal", "📝 Article", "🔗 Links"],
 						required: true,
 					},
 					{

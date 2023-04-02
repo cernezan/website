@@ -2,6 +2,7 @@
 title: "Busy last few days"
 pubDate: "2023-03-01"
 draft: false
+category: "😄 Personal"
 ---
 
 Lately, I've been just super busy with work, team building, in-office meetups and more. It's very exciting and I'm grateful for all of it.
