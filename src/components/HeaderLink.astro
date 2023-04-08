@@ -5,6 +5,8 @@ const splitPathname = pathname.split("/");
 const isActive = href === pathname || href === "/" + splitPathname[1];
 ---
 
-<a href={href} class={isActive ? "font-semibold" : "text-zinc-700"}>
-	<slot />
-</a>
+<div class="m-2 md:m-0">
+	<a href={href} class={isActive ? "font-semibold" : "text-zinc-700"}>
+		<slot />
+	</a>
+</div>
