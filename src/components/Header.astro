@@ -33,18 +33,16 @@ import {Picture} from "@astrojs/image/components";
 
 <script is:inline>
 	function openNavbar() {
-		const x = document.getElementById("navbar");
+		const navbar = document.getElementById("navbar");
 		const menuIcon = document.getElementById("menu-icon");
 		const closeIcon = document.getElementById("close-icon");
 
-		if (x.style.display === "flex") {
-			console.log("Inside condition!");
-
-			x.style.display = "none";
+		if (navbar.style.display === "flex") {
+			navbar.style.display = "none";
 			menuIcon.style.display = "flex";
 			closeIcon.style.display = "none";
 		} else {
-			x.style.display = "flex";
+			navbar.style.display = "flex";
 			menuIcon.style.display = "none";
 			closeIcon.style.display = "flex";
 		}
