@@ -5,6 +5,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
 let posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 posts = posts.filter((post) => !post.data.draft);
+console.log(posts);
 ---
 
 <MainLayout>
@@ -14,8 +15,10 @@ posts = posts.filter((post) => !post.data.draft);
 				{
 					posts.map((post) => (
 						<li>
-							<FormattedDate date={post.data.pubDate} />
-							<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+							<a href={`/blog/${post.slug}/`}>
+								<FormattedDate date={post.data.pubDate} />
+								{post.data.title === "" ? post.body.slice(0, 40) : post.data.title}
+							</a>
 						</li>
 					))
 				}
