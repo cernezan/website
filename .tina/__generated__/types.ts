@@ -157,7 +157,7 @@ export type DocumentNode = Post;
 
 export type Post = Node & Document & {
   __typename?: 'Post';
-  title: Scalars['String'];
+  title?: Maybe<Scalars['String']>;
   pubDate: Scalars['String'];
   category: Scalars['String'];
   body?: Maybe<Scalars['JSON']>;
@@ -272,14 +272,14 @@ export type PostMutation = {
   body?: InputMaybe<Scalars['JSON']>;
 };
 
-export type PostPartsFragment = { __typename?: 'Post', title: string, pubDate: string, category: string, body?: any | null };
+export type PostPartsFragment = { __typename?: 'Post', title?: string | null, pubDate: string, category: string, body?: any | null };
 
 export type PostQueryVariables = Exact<{
   relativePath: Scalars['String'];
 }>;
 
 
-export type PostQuery = { __typename?: 'Query', post: { __typename?: 'Post', id: string, title: string, pubDate: string, category: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PostQuery = { __typename?: 'Query', post: { __typename?: 'Post', id: string, title?: string | null, pubDate: string, category: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type PostConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']>;
@@ -291,7 +291,7 @@ export type PostConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostConnectionEdges', cursor: string, node?: { __typename?: 'Post', id: string, title: string, pubDate: string, category: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostConnectionEdges', cursor: string, node?: { __typename?: 'Post', id: string, title?: string | null, pubDate: string, category: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export const PostPartsFragmentDoc = gql`
     fragment PostParts on Post {

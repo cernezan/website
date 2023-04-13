@@ -24,8 +24,7 @@ const t = "main", l = e({
             type: "string",
             name: "title",
             label: "Title",
-            isTitle: !0,
-            required: !0
+            required: !1
           },
           {
             type: "datetime",

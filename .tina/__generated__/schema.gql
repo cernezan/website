@@ -82,7 +82,7 @@ type Collection {
 union DocumentNode = Post
 
 type Post implements Node & Document {
-  title: String!
+  title: String
   pubDate: String!
   category: String!
   body: JSON

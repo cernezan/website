@@ -28,8 +28,7 @@ export default defineConfig({
 						type: "string",
 						name: "title",
 						label: "Title",
-						isTitle: true,
-						required: true,
+						required: false,
 					},
 					{
 						type: "datetime",
