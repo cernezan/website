@@ -1,11 +1,16 @@
 ---
 import {getCollection} from "astro:content";
+import {removeMarkdown} from "../../utils";
+
 import FormattedDate from "../../components/FormattedDate.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 
 let posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 posts = posts.filter((post) => !post.data.draft);
 console.log(posts);
+for (let a in posts) {
+	console.log(posts[a].data.title);
+}
 ---
 
 <MainLayout>
@@ -17,7 +22,7 @@ console.log(posts);
 						<li>
 							<a href={`/blog/${post.slug}/`}>
 								<FormattedDate date={post.data.pubDate} />
-								{post.data.title === "" ? post.body.slice(0, 40) : post.data.title}
+								{post.data.title === "" || post.data.title === undefined ? removeMarkdown(post.body.slice(0, 40)) : post.data.title}
 							</a>
 						</li>
 					))
