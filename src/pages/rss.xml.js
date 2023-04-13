@@ -13,7 +13,7 @@ export async function get(context) {
 		description: SITE_DESCRIPTION,
 		site: context.site,
 		items: blog.map((post) => ({
-			title: post.data.title,
+			title: post.data.title || '',
 			pubDate: post.data.pubDate,
 			description: post.data.description,
 			customData: post.data.customData,
