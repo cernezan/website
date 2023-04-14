@@ -9,8 +9,7 @@ type Props = CollectionEntry<"blog">["data"];
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const {title, headerImage, pubDate, updatedDate, category} = Astro.props;
-const categoryUrl = canonicalURL.origin + "/blog/category/" + slugify(category);
-console.log(categoryUrl);
+const categoryPath = "/blog/category/";
 ---
 
 <MainLayout>
@@ -20,7 +19,7 @@ console.log(categoryUrl);
 
 		<!-- DATE AND CATEGORY -->
 		<div class="text-zinc-600 text-sm">
-			<a href={categoryUrl}>{category}</a>
+			<a href={categoryPath + slugify(category)}>{category}</a>
 			<span>·</span>
 			{pubDate && <FormattedDate date={pubDate} />}
 			{

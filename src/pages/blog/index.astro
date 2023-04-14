@@ -1,20 +1,29 @@
 ---
 import {getCollection} from "astro:content";
-import {removeMarkdown} from "../../utils";
+import {removeMarkdown, slugify} from "../../utils";
 
 import FormattedDate from "../../components/FormattedDate.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
+import ChipButton from "../../components/ChipButton.astro";
 
 let posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 posts = posts.filter((post) => !post.data.draft);
-console.log(posts);
-for (let a in posts) {
-	console.log(posts[a].data.title);
-}
+
+const categories = [...new Set(posts.map((post: any) => post.data.category).flat())];
+const categoryPath = "/blog/category/";
 ---
 
 <MainLayout>
 	<main>
+		<section>
+			<div class="flex md:flex-row flex-col my-2">
+				{
+					categories.map((category) => {
+						return <ChipButton categoryName={category} categorySlug={categoryPath + slugify(category)} />;
+					})
+				}
+			</div>
+		</section>
 		<section>
 			<ul>
 				{
