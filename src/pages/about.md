@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/PageLayout.astro
 title: About
-description: "Lorem ipsum dolor sit amet"
+description: "My unupdated about page."
 ---
 
 Hey 👋,
