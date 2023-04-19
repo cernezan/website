@@ -18,7 +18,7 @@ const categoryPath = "/blog/category/";
 		<h1 class="mt-0">Blog</h1>
 
 		<section>
-			<div class="flex md:flex-row flex-col my-2">
+			<div class="my-2 overflow-x-auto whitespace-nowrap">
 				{
 					categories.map((category) => {
 						return <ChipButton categoryName={category} categorySlug={categoryPath + slugify(category)} />;

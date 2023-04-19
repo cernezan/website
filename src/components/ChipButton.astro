@@ -2,8 +2,8 @@
 const {categoryName, categorySlug} = Astro.props;
 ---
 
-<div class="border-2 border-solid border-zinc-200 hover:bg-zinc-200 text-zinc-900 md:mb-0 mb-4 font-semibold text-sm mr-3 py-1 px-3 rounded-lg transition-colors duration-300">
-	<a href={categorySlug}>
+<a href={categorySlug}>
+	<div class="border-2 inline-block border-solid border-zinc-200 hover:bg-zinc-200 text-zinc-900 md:mb-0 my-2 font-semibold text-sm mr-3 py-1 px-3 rounded-lg transition-colors duration-300">
 		{categoryName}
-	</a>
-</div>
+	</div>
+</a>
