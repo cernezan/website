@@ -1,9 +1,10 @@
 ---
-const {categoryName, categorySlug} = Astro.props;
+const { categoryName, categorySlug } = Astro.props;
 ---
 
-<a href={categorySlug}>
-	<div class="inline-block bg-zinc-900 hover:bg-zinc-700 text-zinc-100 md:mb-0 my-2 font-semibold text-sm mr-3 py-1 px-3 rounded-md transition-colors duration-300">
-		{categoryName}
-	</div>
+<a
+    class="mb-2 mr-3 inline-block rounded-md bg-zinc-900 py-2 px-3 text-sm font-semibold text-zinc-100 transition-colors duration-300 hover:bg-zinc-700"
+    href={categorySlug}
+>
+    {categoryName}
 </a>
