@@ -1,33 +1,56 @@
 ---
-import {getCollection} from "astro:content";
-import {removeMarkdown} from "../../utils";
+import { getCollection } from "astro:content";
+import { removeMarkdown, slugify } from "../../utils";
 
 import FormattedDate from "../../components/FormattedDate.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
+import ChipButton from "../../components/ChipButton.astro";
 
-let posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+let posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 posts = posts.filter((post) => !post.data.draft);
-console.log(posts);
-for (let a in posts) {
-	console.log(posts[a].data.title);
-}
+
+const categories = [
+    ...new Set(posts.map((post: any) => post.data.category).flat()),
+];
+const categoryPath = "/blog/category/";
 ---
 
 <MainLayout>
-	<main>
-		<section>
-			<ul>
-				{
-					posts.map((post) => (
-						<li>
-							<a href={`/blog/${post.slug}/`}>
-								<FormattedDate date={post.data.pubDate} />
-								{post.data.title === "" || post.data.title === undefined ? removeMarkdown(post.body.slice(0, 40)) : post.data.title}
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</section>
-	</main>
+    <main>
+        <h1 class="mt-0">Blog</h1>
+
+        <section>
+            <div class="my-2 overflow-x-auto whitespace-nowrap">
+                {
+                    categories.map((category) => {
+                        return (
+                            <ChipButton
+                                categoryName={category}
+                                categorySlug={categoryPath + slugify(category)}
+                            />
+                        );
+                    })
+                }
+            </div>
+        </section>
+        <section>
+            <ul>
+                {
+                    posts.map((post) => (
+                        <li>
+                            <a href={`/blog/${post.slug}/`}>
+                                <FormattedDate date={post.data.pubDate} />
+                                {post.data.title === "" ||
+                                post.data.title === undefined
+                                    ? removeMarkdown(post.body.slice(0, 40))
+                                    : post.data.title}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </section>
+    </main>
 </MainLayout>
