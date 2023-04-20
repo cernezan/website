@@ -1,12 +1,12 @@
 ---
-const {href} = Astro.props;
-const {pathname} = Astro.url;
+const { href } = Astro.props;
+const { pathname } = Astro.url;
 const splitPathname = pathname.split("/");
 const isActive = href === pathname || href === "/" + splitPathname[1];
 ---
 
 <div class="m-2 md:m-0">
-	<a href={href} class={isActive ? "font-semibold" : "text-zinc-700"}>
-		<slot />
-	</a>
+    <a href={href} class={isActive ? "font-semibold" : "text-zinc-700"}>
+        <slot />
+    </a>
 </div>

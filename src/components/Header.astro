@@ -4,27 +4,27 @@ import {SITE_TITLE} from "../consts";
 import {Picture} from "@astrojs/image/components";
 ---
 
-<header class="md:flex md:my-8 my-6">
+<header class="my-6 md:my-8 md:flex">
 	<div class="flex">
 		<!-- PROFILE - NAME - SUBTITLE -->
 		<a href="/" class="mr-auto flex hover:brightness-75">
-			<Picture src="/images/profilePicture.jpeg" alt="Profile Picture" class="rounded-full" format={"jpeg"} widths={[400, 400]} width={50} height={50} aspectRatio={1} />
-			<div class="ml-3 my-auto">
-				<div class="text-lg font-extrabold my-auto">{SITE_TITLE}</div>
-				<div class="text-sm text-zinc-600 -mt-1">Hope you're doing ok.</div>
+			<Picture src="/images/profilePicture.jpeg" alt="Profile Picture" class="rounded-full" sizes="400" format={"jpeg"} widths={[400, 400]} width={50} height={50} aspectRatio={1} />
+			<div class="my-auto ml-3">
+				<div class="my-auto text-lg font-extrabold">{SITE_TITLE}</div>
+				<div class="-mt-1 text-sm text-zinc-600">Hope you're doing ok.</div>
 			</div>
 		</a>
 
-		<button id="nav-button" onclick="openNavbar()" type="button" class="px-3 md:hidden text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center">
+		<button id="nav-button" onclick="openNavbar()" type="button" class="inline-flex items-center justify-center rounded-lg px-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 md:hidden">
 			<span class="sr-only">Open main menu</span>
 			<!-- MENU ICON -->
-			<svg id="menu-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+			<svg id="menu-icon" class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
 			<!-- CLOSE ICON -->
-			<svg id="close-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+			<svg id="close-icon" class="hidden h-6 w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
 		</button>
 	</div>
 
-	<nav id="navbar" class="hidden flex-col mt-4 text-center bg-zinc-100 py-2 md:py-0 rounded-lg md:bg-transparent md:my-auto md:flex md:ml-auto md:flex-row flex-wrap justify-between gap-x-6 my-auto md:w-auto md:order-1">
+	<nav id="navbar" class="my-auto mt-4 hidden flex-col flex-wrap justify-between gap-x-6 rounded-lg bg-zinc-100 py-2 text-center md:order-1 md:my-auto md:ml-auto md:flex md:w-auto md:flex-row md:bg-transparent md:py-0">
 		<HeaderLink class="justify-center" href="/">Home</HeaderLink>
 		<HeaderLink href="/blog">Blog</HeaderLink>
 		<HeaderLink href="/about">About</HeaderLink>
@@ -48,3 +48,4 @@ import {Picture} from "@astrojs/image/components";
 		}
 	}
 </script>
+

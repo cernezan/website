@@ -57,3 +57,14 @@ article img {
     text-decoration-thickness: 2px;
 }
 
+blockquote {
+    padding: 1rem;
+    background-color: #fafafa;
+    border-color: rgb(212 212 216);
+    border-left-width: 4px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+
+}
