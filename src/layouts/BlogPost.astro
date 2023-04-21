@@ -1,39 +1,54 @@
 ---
-import type {CollectionEntry} from "astro:content";
-import {slugify} from "../utils";
+import type { CollectionEntry } from "astro:content";
+import { slugify } from "../utils";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 import FormattedDate from "../components/FormattedDate.astro";
-import MainLayout from "./MainLayout.astro";
+import BlogPostHead from "../components/BlogPostHead.astro";
+import Header from "../components/Header.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const {title, headerImage, pubDate, updatedDate, category} = Astro.props;
+const { title, headerImage, pubDate, updatedDate, category } = Astro.props;
 const categoryPath = "/blog/category/";
 ---
 
-<MainLayout>
-	<main>
-		<!-- HEADER IMAGE -->
-		{headerImage && <img width={720} height={360} src={headerImage} alt="" />}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <BlogPostHead title={title || ""} description={category} />
+        <!-- <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} /> -->
+    </head>
+    <body class="flex h-screen w-full max-w-4xl flex-col px-6 md:mx-auto">
+        <Header title={SITE_TITLE} />
 
-		<!-- DATE AND CATEGORY -->
-		<div class="text-zinc-600 text-sm">
-			<a href={categoryPath + slugify(category)}>{category}</a>
-			<span>·</span>
-			{pubDate && <FormattedDate date={pubDate} />}
-			{
-				updatedDate && (
-					<div>
-						Last updated on <FormattedDate date={updatedDate} />
-					</div>
-				)
-			}
-		</div>
+        <main>
+            <!-- HEADER IMAGE -->
+            {
+                headerImage && (
+                    <img width={720} height={360} src={headerImage} alt="" />
+                )
+            }
 
-		<h1 class="mt-0">{title}</h1>
+            <!-- DATE AND CATEGORY -->
+            <div class="text-sm text-zinc-600">
+                <a href={categoryPath + slugify(category)}>{category}</a>
+                <span>·</span>
+                {pubDate && <FormattedDate date={pubDate} />}
+                {
+                    updatedDate && (
+                        <div>
+                            Last updated on <FormattedDate date={updatedDate} />
+                        </div>
+                    )
+                }
+            </div>
 
-		<!-- CONTENT -->
-		<slot />
-	</main>
-</MainLayout>
+            <h1 class="mt-0">{title}</h1>
+
+            <!-- CONTENT -->
+            <slot />
+        </main>
+    </body>
+</html>
