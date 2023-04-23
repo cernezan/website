@@ -37,9 +37,8 @@ const { posts, categoryName } = Astro.props;
                                 <FormattedDate date={post.data.pubDate} />
                                 {post.data.title === "" ||
                                 post.data.title === undefined
-                                    ? removeMarkdown(
-                                          post.body.slice(0, 40) + "..."
-                                      )
+                                    ? removeMarkdown(post.body).slice(0, 40) +
+                                      "..."
                                     : post.data.title}
                             </a>
                         </li>
