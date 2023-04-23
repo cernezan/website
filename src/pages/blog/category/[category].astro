@@ -1,40 +1,51 @@
 ---
-import {getCollection} from "astro:content";
-import {slugify} from "../../../utils";
+import { getCollection } from "astro:content";
+import { removeMarkdown, slugify } from "../../../utils";
 
 import FormattedDate from "../../../components/FormattedDate.astro";
 import MainLayout from "../../../layouts/MainLayout.astro";
 
 export async function getStaticPaths() {
-	let posts = await getCollection("blog");
-	const uniqueCategory = [...new Set(posts.map((post: any) => post.data.category).flat())];
+    let posts = await getCollection("blog");
+    const uniqueCategory = [
+        ...new Set(posts.map((post: any) => post.data.category).flat()),
+    ];
 
-	return uniqueCategory.map((currentCategory) => {
-		const filteredPosts = posts.filter((post: any) => post.data.category.includes(currentCategory));
-		return {
-			params: {category: slugify(currentCategory)},
-			props: {posts: filteredPosts, categoryName: currentCategory},
-		};
-	});
+    return uniqueCategory.map((currentCategory) => {
+        const filteredPosts = posts.filter((post: any) =>
+            post.data.category.includes(currentCategory)
+        );
+        return {
+            params: { category: slugify(currentCategory) },
+            props: { posts: filteredPosts, categoryName: currentCategory },
+        };
+    });
 }
 
-const {posts, categoryName} = Astro.props;
+const { posts, categoryName } = Astro.props;
 ---
 
 <MainLayout>
-	<main>
-		<h1>{categoryName}</h1>
-		<section>
-			<ul>
-				{
-					posts.map((post: any) => (
-						<li>
-							<FormattedDate date={post.data.pubDate} />
-							<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-						</li>
-					))
-				}
-			</ul>
-		</section>
-	</main>
+    <main>
+        <h1>{categoryName}</h1>
+        <section>
+            <ul>
+                {
+                    posts.map((post: any) => (
+                        <li>
+                            <a href={`/blog/${post.slug}/`}>
+                                <FormattedDate date={post.data.pubDate} />
+                                {post.data.title === "" ||
+                                post.data.title === undefined
+                                    ? removeMarkdown(
+                                          post.body.slice(0, 40) + "..."
+                                      )
+                                    : post.data.title}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </section>
+    </main>
 </MainLayout>

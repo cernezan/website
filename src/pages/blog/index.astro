@@ -38,13 +38,15 @@ const categoryPath = "/blog/category/";
         <section>
             <ul>
                 {
-                    posts.map((post) => (
+                    posts.map((post: any) => (
                         <li>
                             <a href={`/blog/${post.slug}/`}>
                                 <FormattedDate date={post.data.pubDate} />
                                 {post.data.title === "" ||
                                 post.data.title === undefined
-                                    ? removeMarkdown(post.body.slice(0, 40))
+                                    ? removeMarkdown(
+                                          post.body.slice(0, 40) + "..."
+                                      )
                                     : post.data.title}
                             </a>
                         </li>
