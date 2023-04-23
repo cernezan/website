@@ -1,23 +1,28 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { slugify } from "../utils";
+import { getEntryBySlug } from "astro:content";
+
+import { slugify, createMetaDescription } from "../utils";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 import FormattedDate from "../components/FormattedDate.astro";
-import BlogPostHead from "../components/BlogPostHead.astro";
 import Header from "../components/Header.astro";
+import BaseHead from "../components/BaseHead.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, headerImage, pubDate, updatedDate, category } = Astro.props;
 const categoryPath = "/blog/category/";
+const postUrlPath = Astro.url.pathname;
+
+let slugString: string = title ? slugify(title) : postUrlPath.split("/")[2];
+let postBody = (await getEntryBySlug("blog", slugString))?.body || "";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <BlogPostHead title={title || ""} description={category} />
+        <BaseHead title={title || ""} description={createMetaDescription(postBody)} image={headerImage} />
         <!-- <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} /> -->
     </head>
     <body class="flex h-screen w-full max-w-4xl flex-col px-6 md:mx-auto">
@@ -25,11 +30,7 @@ const categoryPath = "/blog/category/";
 
         <main>
             <!-- HEADER IMAGE -->
-            {
-                headerImage && (
-                    <img width={720} height={360} src={headerImage} alt="" />
-                )
-            }
+            {headerImage && <img width={720} height={360} src={headerImage} alt="" />}
 
             <!-- DATE AND CATEGORY -->
             <div class="text-sm text-zinc-600">
