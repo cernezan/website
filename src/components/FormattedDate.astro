@@ -1,5 +1,8 @@
 ---
-const { date } = Astro.props;
+let { date } = Astro.props;
+if (typeof date === "string") {
+    date = new Date(date);
+}
 date.setTime(date.getTime() + 600 * 10000);
 ---
 

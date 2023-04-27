@@ -1,0 +1,5 @@
+---
+const { image, title, category } = Astro.props;
+---
+
+{image && <img width={720} height={360} src={image} alt={title || category} />}

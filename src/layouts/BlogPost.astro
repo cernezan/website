@@ -1,39 +1,29 @@
 ---
-import type {CollectionEntry} from "astro:content";
-import {slugify} from "../utils";
-
-import FormattedDate from "../components/FormattedDate.astro";
 import MainLayout from "./MainLayout.astro";
+import PageImage from "../components/PageImage.astro";
+import PageTitle from "../components/PageTitle.astro";
+import CategoryDate from "../components/CategoryDate.astro";
+
+import type { CollectionEntry } from "astro:content";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const {title, headerImage, pubDate, updatedDate, category} = Astro.props;
+const { title, headerImage, pubDate, updatedDate, category } = Astro.props;
 const categoryPath = "/blog/category/";
 ---
 
 <MainLayout>
-	<main>
-		<!-- HEADER IMAGE -->
-		{headerImage && <img width={720} height={360} src={headerImage} alt="" />}
-
-		<!-- DATE AND CATEGORY -->
-		<div class="text-zinc-600 text-sm">
-			<a href={categoryPath + slugify(category)}>{category}</a>
-			<span>·</span>
-			{pubDate && <FormattedDate date={pubDate} />}
-			{
-				updatedDate && (
-					<div>
-						Last updated on <FormattedDate date={updatedDate} />
-					</div>
-				)
-			}
-		</div>
-
-		<h1 class="mt-0">{title}</h1>
-
-		<!-- CONTENT -->
-		<slot />
-	</main>
+    <!-- HEADER IMAGE -->
+    <PageImage image={headerImage} title={title} category={category} />
+    <!-- DATE AND CATEGORY -->
+    <CategoryDate
+        category={category}
+        categoryPath={categoryPath}
+        pubDate={pubDate}
+        updatedDate={updatedDate}
+    />
+    <!-- TITLE -->
+    <PageTitle>{title}</PageTitle>
+    <!-- CONTENT -->
+    <slot />
 </MainLayout>

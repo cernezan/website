@@ -1,0 +1,28 @@
+---
+import FormattedDate from "../components/FormattedDate.astro";
+
+import { slugify } from "../utils";
+
+const { category, categoryPath, pubDate, updatedDate } = Astro.props;
+---
+
+<div class="text-sm text-zinc-600">
+    <!-- Category -->
+    {
+        category && (
+            <>
+                <a href={categoryPath + slugify(category)}>{category}</a>
+                <span> ·</span>
+            </>
+        )
+    }
+    <!-- Date -->
+    {pubDate && <FormattedDate date={pubDate} />}
+    {
+        updatedDate && (
+            <div>
+                Last updated on <FormattedDate date={updatedDate} />
+            </div>
+        )
+    }
+</div>

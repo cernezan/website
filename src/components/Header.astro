@@ -1,32 +1,20 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
-import { Picture } from "@astrojs/image/components";
+import ProfileBadge from "./ProfileBadge.astro";
+
+const { title } = Astro.props;
 ---
 
 <header class="my-6 md:my-8 md:flex">
     <div class="flex">
         <!-- PROFILE - NAME - SUBTITLE -->
-        <a href="/" class="mr-auto flex hover:brightness-75">
-            <Picture
-                src="/images/profilePicture.jpeg"
-                alt="Profile Picture"
-                class="rounded-full"
-                sizes="400"
-                format={"jpeg"}
-                widths={[400, 400]}
-                width={50}
-                height={50}
-                aspectRatio={1}
-            />
-            <div class="my-auto ml-3">
-                <div class="my-auto text-lg font-extrabold">{SITE_TITLE}</div>
-                <div class="-mt-1 text-sm text-zinc-600">
-                    Hope you're doing ok.
-                </div>
-            </div>
-        </a>
-
+        <ProfileBadge
+            title={title}
+            link="/"
+            profilePicture="/images/profilePicture.jpeg"
+            subText="Hope you're doing ok."
+        />
+        <!-- MOBILE NAVIGATION -->
         <button
             id="nav-button"
             onclick="triggerNavbar()"
@@ -67,13 +55,11 @@ import { Picture } from "@astrojs/image/components";
         const closeIcon = document.getElementById("close-icon");
 
         if (navbar.style.display === "flex") {
-            navbar.style.display = "none";
+            navbar.style.display = closeIcon.style.display = "none";
             menuIcon.style.display = "flex";
-            closeIcon.style.display = "none";
         } else {
-            navbar.style.display = "flex";
+            navbar.style.display = closeIcon.style.display = "flex";
             menuIcon.style.display = "none";
-            closeIcon.style.display = "flex";
         }
     }
 </script>
