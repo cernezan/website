@@ -1,15 +1,17 @@
 ---
-const {date} = Astro.props;
+let { date } = Astro.props;
+if (typeof date === "string") {
+    date = new Date(date);
+}
 date.setTime(date.getTime() + 600 * 10000);
 ---
 
 <time datetime={date}>
-	{
-		date.toLocaleDateString("en-us", {
-			year: "numeric",
-			month: "short",
-			day: "numeric",
-		})
-	}
+    {
+        date.toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+        })
+    }
 </time>
-
