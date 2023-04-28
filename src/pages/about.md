@@ -31,4 +31,3 @@ I had many different projects ranging from hobby startups to running a design bl
 ## Let's Connects
 
 I would love to hear from you. If you have any questions, comments, or suggestions, please feel free to contact me. You can contact me via [email](https://cernezan.com/contact/).
-

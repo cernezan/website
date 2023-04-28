@@ -1,9 +1,9 @@
 ---
-import { getCollection } from "astro:content";
-import { removeMarkdown, slugify } from "../../../utils";
-
 import FormattedDate from "../../../components/FormattedDate.astro";
 import MainLayout from "../../../layouts/MainLayout.astro";
+
+import { getCollection } from "astro:content";
+import { removeMarkdown, slugify } from "../../../utils";
 
 export async function getStaticPaths() {
     let posts = await getCollection("blog");

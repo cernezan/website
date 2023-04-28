@@ -1,27 +1,20 @@
 ---
-import type {CollectionEntry} from "astro:content";
-import FormattedDate from "../components/FormattedDate.astro";
+import PageImage from "../components/PageImage.astro";
 import MainLayout from "./MainLayout.astro";
+import PageTitle from "../components/PageTitle.astro";
+import CategoryDate from "../components/CategoryDate.astro";
+
+import type { CollectionEntry } from "astro:content";
 
 type Props = CollectionEntry<"blog">["data"];
-console.log(Astro.props);
 
-const {frontmatter} = Astro.props;
-const {title, headerImage, pubDate, updatedDate} = frontmatter;
+const { title, headerImage, pubDate, updatedDate } = Astro.props.frontmatter;
 ---
 
 <MainLayout>
-	<main>
-		{headerImage && <img width={720} height={360} src={headerImage} alt="" />}
-		<h1 class="mt-0">{title}</h1>
-		{pubDate && <FormattedDate date={pubDate} />}
-		{
-			updatedDate && (
-				<div>
-					Last updated on <FormattedDate date={updatedDate} />
-				</div>
-			)
-		}
-		<slot />
-	</main>
+    <PageImage image={headerImage} title={title} />
+    <CategoryDate pubDate={pubDate} updatedDate={updatedDate} />
+    <PageTitle>{title}</PageTitle>
+
+    <slot />
 </MainLayout>

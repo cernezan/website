@@ -1,18 +1,23 @@
 ---
+if (Astro.site === undefined) {
+    throw new Error(
+        "Astro.site is undefined. Please set the site property in your astro.config.js file."
+    );
+}
 const articleUrl = `${Astro.site.origin}${"/rss.xml"}`;
 
 export async function getStaticPaths() {
-	return [
-		{
-			params: {rssRedirect: "rss"},
-		},
-		{
-			params: {rssRedirect: "feed"},
-		},
-	];
+    return [
+        {
+            params: { rssRedirect: "rss" },
+        },
+        {
+            params: { rssRedirect: "feed" },
+        },
+    ];
 }
 ---
 
 <head>
-	<meta http-equiv="refresh" content={`0; url=${articleUrl}`} />
+    <meta http-equiv="refresh" content={`0; url=${articleUrl}`} />
 </head>
