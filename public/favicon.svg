@@ -1,13 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36">
-  <path fill="#000" d="M22.25 4h-8.5a1 1 0 0 0-.96.73l-5.54 19.4a.5.5 0 0 0 .62.62l5.05-1.44a2 2 0 0 0 1.38-1.4l3.22-11.66a.5.5 0 0 1 .96 0l3.22 11.67a2 2 0 0 0 1.38 1.39l5.05 1.44a.5.5 0 0 0 .62-.62l-5.54-19.4a1 1 0 0 0-.96-.73Z"/>
-  <path fill="url(#gradient)" d="M18 28a7.63 7.63 0 0 1-5-2c-1.4 2.1-.35 4.35.6 5.55.14.17.41.07.47-.15.44-1.8 2.93-1.22 2.93.6 0 2.28.87 3.4 1.72 3.81.34.16.59-.2.49-.56-.31-1.05-.29-2.46 1.29-3.25 3-1.5 3.17-4.83 2.5-6-.67.67-2.6 2-5 2Z"/>
-  <defs>
-    <linearGradient id="gradient" x1="16" x2="16" y1="32" y2="24" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#000"/>
-      <stop offset="1" stop-color="#000" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-	<style>
-    @media (prefers-color-scheme:dark){:root{filter:invert(100%)}}
-  </style>
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_13_304)">
+<circle cx="96" cy="96" r="96" fill="#060606"/>
+<path d="M88.4557 132.301H56.1055L111.388 59.699H144.072L88.4557 132.301Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M131.676 98.5894C138.343 108.568 141.902 120.3 141.902 132.301H117.933C117.04 112.798 100.946 97.261 81.2229 97.261C71.5097 97.261 62.6766 101.029 56.1059 107.184L38.3164 89.3943C46.8025 80.9082 57.6145 75.1291 69.3851 72.7878C81.1557 70.4465 93.3562 71.6481 104.444 76.2408C115.532 80.8334 125.008 88.6108 131.676 98.5894Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_13_304">
+<rect width="192" height="192" fill="white"/>
+</clipPath>
+</defs>
 </svg>
