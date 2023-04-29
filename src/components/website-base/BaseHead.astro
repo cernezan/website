@@ -22,7 +22,7 @@ const {
 } = Astro.props;
 
 function prepareTitle(title: string | undefined): string {
-    if (title === undefined && isPost) {
+    if (title === "" && isPost) {
         return description.slice(0, 45) + "..." + " | " + SITE_TITLE;
     } else if (title === undefined) {
         return SITE_TITLE;
