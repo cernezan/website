@@ -4,15 +4,28 @@ import PageImage from "../components/PageImage.astro";
 import PageTitle from "../components/PageTitle.astro";
 import CategoryDate from "../components/CategoryDate.astro";
 
-import type { CollectionEntry } from "astro:content";
+import { removeMarkdown } from "../utils";
+
+import { CollectionEntry, getCollection } from "astro:content";
 
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, headerImage, pubDate, updatedDate, category } = Astro.props;
 const categoryPath = "/blog/category/";
+
+let posts = await getCollection("blog");
+// postData is used for meta (social media) description
+const postData = posts.filter(
+    (post: any) => post.slug === Astro.params.slug
+)[0];
 ---
 
-<MainLayout>
+<MainLayout
+    title={title}
+    image={headerImage}
+    description={removeMarkdown(postData.body).slice(0, 150) + "..."}
+    isPost={true}
+>
     <!-- HEADER IMAGE -->
     <PageImage image={headerImage} title={title} category={category} />
     <!-- DATE AND CATEGORY -->

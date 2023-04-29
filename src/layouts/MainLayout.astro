@@ -3,13 +3,20 @@ import BaseHead from "../components/website-base/BaseHead.astro";
 import Footer from "../components/website-base/Footer.astro";
 import Header from "../components/Header.astro";
 
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE } from "../consts";
+
+const { title, image, description, isPost } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <BaseHead
+            title={title}
+            description={description}
+            image={image}
+            isPost={isPost || false}
+        />
     </head>
     <body class="flex h-screen w-full max-w-4xl flex-col px-6 md:mx-auto">
         <Header title={SITE_TITLE} />

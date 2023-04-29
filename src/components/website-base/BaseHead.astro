@@ -2,20 +2,37 @@
 // Import the global.css file here so that it is included on
 import "../../styles/global.css";
 
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+
 // all pages through the use of the <BaseHead /> component.
 export interface Props {
     title: string;
     description: string;
     image?: string;
+    isPost?: boolean;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const {
     title,
-    description,
+    description = SITE_DESCRIPTION,
+    isPost,
     image = "/assets/cernezan-social.jpg",
 } = Astro.props;
+
+function prepareTitle(title: string | undefined): string {
+    if (title === undefined && isPost) {
+        return description.slice(0, 45) + "..." + " | " + SITE_TITLE;
+    } else if (title === undefined) {
+        return SITE_TITLE;
+    }
+
+    return `${title} | ${SITE_TITLE}`;
+}
+
+const finalizedTitle = prepareTitle(title);
+const finalizedDescription = description.slice(0, 140) + "...";
 ---
 
 <!-- Global Metadata -->
@@ -28,22 +45,22 @@ const {
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+<title>{finalizedTitle}</title>
+<meta name="title" content={finalizedTitle} />
+<meta name="description" content={finalizedDescription} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
+<meta property="og:title" content={finalizedTitle} />
+<meta property="og:description" content={finalizedDescription} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
+<meta property="twitter:title" content={finalizedTitle} />
+<meta property="twitter:description" content={finalizedDescription} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <a rel="me" href="https://toot.io/@zan"></a>
