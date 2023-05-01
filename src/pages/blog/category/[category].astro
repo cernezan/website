@@ -4,6 +4,7 @@ import MainLayout from "../../../layouts/MainLayout.astro";
 
 import { getCollection } from "astro:content";
 import { removeMarkdown, slugify } from "../../../utils";
+import PostPreview from "../../../components/PostPreview.astro";
 
 export async function getStaticPaths() {
     let posts = await getCollection("blog");
@@ -29,22 +30,17 @@ const { posts, categoryName } = Astro.props;
     <main>
         <h1>{categoryName}</h1>
         <section>
-            <ul>
-                {
-                    posts.map((post: any) => (
-                        <li>
-                            <a href={`/blog/${post.slug}/`}>
-                                <FormattedDate date={post.data.pubDate} />
-                                {post.data.title === "" ||
-                                post.data.title === undefined
-                                    ? removeMarkdown(post.body).slice(0, 40) +
-                                      "..."
-                                    : post.data.title}
-                            </a>
-                        </li>
-                    ))
-                }
-            </ul>
+            {
+                posts.map((post: any) => (
+                    <PostPreview
+                        title={post.data.title}
+                        description={post.body.split(/\n\n/)[0]}
+                        postSlug={`/blog/${post.slug}/`}
+                        pubDate={post.data.pubDate}
+                        shortText={post.body.split(/\n\n/).length <= 1}
+                    />
+                ))
+            }
         </section>
     </main>
 </MainLayout>

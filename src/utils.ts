@@ -15,6 +15,7 @@ export function slugify(text: string) {
 
 export function removeMarkdown(str: string) {
     return str
+        .replace(/!\[(.*?)\]\(<(.*?)>\s"(.*?)"\)/, "") // Image with title
         .replace(/(\*\*|__)(.*?)\1/g, "$2") // Bold
         .replace(/(\*|_)(.*?)\1/g, "$2") // Italic
         .replace(/\[(.*?)\]\((.*?)\)/g, "$1") // Links

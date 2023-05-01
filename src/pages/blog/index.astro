@@ -1,11 +1,11 @@
 ---
-import FormattedDate from "../../components/FormattedDate.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import ChipButton from "../../components/ChipButton.astro";
 import PageTitle from "../../components/PageTitle.astro";
 
 import { getCollection } from "astro:content";
-import { removeMarkdown, slugify } from "../../utils";
+import { slugify } from "../../utils";
+import PostPreview from "../../components/PostPreview.astro";
 
 let posts = (await getCollection("blog")).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -36,22 +36,19 @@ const categoryPath = "/blog/category/";
             </div>
         </section>
         <section>
-            <ul>
-                {
-                    posts.map((post: any) => (
-                        <li>
-                            <a href={`/blog/${post.slug}/`}>
-                                <FormattedDate date={post.data.pubDate} />
-                                {post.data.title === "" ||
-                                post.data.title === undefined
-                                    ? removeMarkdown(post.body).slice(0, 40) +
-                                      "..."
-                                    : post.data.title}
-                            </a>
-                        </li>
-                    ))
-                }
-            </ul>
+            {
+                posts.map((post: any) => (
+                    <PostPreview
+                        title={post.data.title}
+                        description={post.body.split(/\n\n/)[0]}
+                        postSlug={`/blog/${post.slug}/`}
+                        category={post.data.category}
+                        categoryPath={categoryPath}
+                        pubDate={post.data.pubDate}
+                        shortText={post.body.split(/\n\n/).length <= 1}
+                    />
+                ))
+            }
         </section>
     </main>
 </MainLayout>
