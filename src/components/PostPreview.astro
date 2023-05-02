@@ -27,7 +27,7 @@ const {
 ---
 
 <div
-    class="border-astro-gray-500 bg-astro-gray-600 outline-astro-pink-light my-6 border p-4 transition-transform duration-300 ease-out focus-within:outline hover:scale-[1.03]"
+    class="my-6 rounded-md border border-zinc-300 p-4 transition-transform duration-300 ease-out focus-within:outline hover:scale-[1.03] hover:border-zinc-400"
 >
     <a class="block" href={postSlug}>
         <PageImage image={image} category={category} />
@@ -40,7 +40,7 @@ const {
     />
     <a class="block" href={postSlug}>
         {title && <h3 class="mb-1 mt-0">{title}</h3>}
-        <p class="text-zinc-800">
+        <p class="mt-1 mb-0 text-zinc-800">
             {removeMarkdown(description || "")}
         </p>
         {!shortText && <div class="mt-1 font-medium">Continue Reading</div>}
