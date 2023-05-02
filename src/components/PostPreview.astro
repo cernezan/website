@@ -1,0 +1,48 @@
+---
+import CategoryDate from "../components/CategoryDate.astro";
+import { removeMarkdown } from "../utils";
+import PageImage from "./PageImage.astro";
+
+export interface Props {
+    title?: string;
+    postSlug: string;
+    description?: string;
+    category?: string;
+    categoryPath?: string;
+    pubDate?: string;
+    image?: string;
+    shortText?: boolean;
+}
+
+const {
+    title,
+    postSlug,
+    description,
+    category,
+    categoryPath,
+    pubDate,
+    image,
+    shortText,
+} = Astro.props;
+---
+
+<div
+    class="my-6 rounded-md border border-zinc-300 p-4 transition-transform duration-300 ease-out focus-within:outline hover:scale-[1.03] hover:border-zinc-400"
+>
+    <a class="block" href={postSlug}>
+        <PageImage image={image} category={category} />
+    </a>
+
+    <CategoryDate
+        category={category}
+        categoryPath={categoryPath}
+        pubDate={pubDate}
+    />
+    <a class="block" href={postSlug}>
+        {title && <h3 class="mb-1 mt-0">{title}</h3>}
+        <p class="mt-1 mb-0 text-zinc-800">
+            {removeMarkdown(description || "")}
+        </p>
+        {!shortText && <div class="mt-1 font-medium">Continue Reading</div>}
+    </a>
+</div>

@@ -1,6 +1,6 @@
 import { defineConfig as i } from "tinacms";
-const o = "main", a = i({
-  branch: o,
+const l = "main", a = i({
+  branch: l,
   clientId: "'clientIdHIDDEN'",
   token: "'tokenTinaHIDDEN'",
   build: {
@@ -49,7 +49,8 @@ const o = "main", a = i({
               "\u{1F4BB} Tech",
               "\u{1F604} Personal",
               "\u{1F4DD} Article",
-              "\u{1F517} Links"
+              "\u{1F517} Links",
+              "\u{1F951} Health"
             ],
             required: !0
           },

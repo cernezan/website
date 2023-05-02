@@ -60,6 +60,7 @@ export default defineConfig({
                             "😄 Personal",
                             "📝 Article",
                             "🔗 Links",
+                            "🥑 Health",
                         ],
                         required: true,
                     },
