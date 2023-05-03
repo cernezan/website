@@ -7,6 +7,7 @@ import CategoryDate from "../components/CategoryDate.astro";
 import { removeMarkdown } from "../utils";
 
 import { CollectionEntry, getCollection } from "astro:content";
+import BackToBlog from "../components/BackToBlog.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -39,4 +40,6 @@ const postData = posts.filter(
     <PageTitle>{title}</PageTitle>
     <!-- CONTENT -->
     <slot />
+
+    <BackToBlog />
 </MainLayout>
