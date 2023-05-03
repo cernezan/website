@@ -1,9 +1,6 @@
 ---
 let { date } = Astro.props;
-if (typeof date === "string") {
-    date = new Date(date);
-}
-date.setTime(date.getTime() + 600 * 10000);
+date.setHours(0);
 ---
 
 <time datetime={date}>
