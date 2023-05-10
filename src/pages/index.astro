@@ -1,7 +1,81 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import BaseHead from "../components/website-base/BaseHead.astro";
+import Footer from "../components/website-base/Footer.astro";
+import Header from "../components/Header.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
-<MainLayout>
-	<div>Welcome to my website. I'm bloging about building this website and other stuff. Everything is still under construction. 🚧</div>
-</MainLayout>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <BaseHead
+            title={SITE_TITLE}
+            description={SITE_DESCRIPTION}
+            isPost={false}
+        />
+    </head>
+    <body class="flex w-full max-w-4xl flex-col px-6 md:mx-auto">
+        <Header class="sticky" title={SITE_TITLE} />
+
+        <div class="h-screen">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <!-- Your centered content here -->
+                <div
+                    class="absolute h-72 w-72 animate-blob items-center justify-center rounded-full bg-purple-300 opacity-70 mix-blend-multiply blur-xl filter"
+                    style="top: 33%; left: 41%;"
+                >
+                </div>
+                <div
+                    class="animation-delay-2000 absolute h-72 w-72 animate-blob items-center justify-center rounded-full bg-yellow-300 opacity-70 mix-blend-multiply blur-xl filter"
+                    style="top: 40%; left: 40%;"
+                >
+                </div>
+                <div
+                    class="animation-delay-4000 absolute h-72 w-72 animate-blob items-center justify-center rounded-full bg-pink-300 opacity-70 mix-blend-multiply blur-xl filter"
+                    style="top: 35%; left: 40%;"
+                >
+                </div>
+
+                <svg
+                    class="relative m-8 space-y-4"
+                    width="192"
+                    height="192"
+                    viewBox="0 0 192 192"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <g clip-path="url(#clip0_55_12)">
+                        <circle cx="96" cy="96" r="96" fill="#171717"></circle>
+                        <path
+                            d="M88.4557 132.301H56.1055L111.388 59.699H144.072L88.4557 132.301Z"
+                            fill="#FEFEFE"></path>
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M131.676 98.5894C138.343 108.568 141.902 120.3 141.902 132.301H117.933C117.04 112.798 100.946 97.261 81.2229 97.261C71.5097 97.261 62.6766 101.029 56.1059 107.184L38.3164 89.3943C46.8025 80.9082 57.6145 75.1291 69.3851 72.7878C81.1557 70.4465 93.3562 71.6481 104.444 76.2408C115.532 80.8334 125.008 88.6108 131.676 98.5894Z"
+                            fill="#FEFEFE"></path>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_55_12">
+                            <rect width="192" height="192" fill="white"></rect>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+
+        <!-- BANNER IMAGE  -->
+        <!-- HELLO SECTION -->
+
+        <!-- FEATURED PROJECTS -->
+
+        <!-- MY INTERESTS -->
+
+        <div>
+            Welcome to my website. I'm bloging about building this website and
+            other stuff. Everything is still under construction. 🚧
+        </div>
+        <Footer />
+    </body>
+</html>
