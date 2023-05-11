@@ -3,6 +3,12 @@
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+		colors: {
+			specialIndigo: '#567EEF',
+			specialBlue: '#71C7FE',
+			specialGreen: '#D9E6D4',
+
+		  },
 		extend: {
 			animation: {
 			  blob: "blob 7s infinite",

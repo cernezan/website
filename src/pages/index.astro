@@ -15,25 +15,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             isPost={false}
         />
     </head>
-    <body class="flex w-full max-w-4xl flex-col px-6 md:mx-auto">
+    <body
+        class="flex w-full max-w-4xl flex-col overflow-x-hidden px-6 md:mx-auto"
+    >
         <Header class="sticky" title={SITE_TITLE} />
 
-        <div class="h-screen">
-            <div class="absolute inset-0 flex items-center justify-center">
+        <div class="flex h-screen">
+            <div
+                class="relative inset-0 m-auto flex items-center justify-center"
+            >
                 <!-- Your centered content here -->
                 <div
-                    class="absolute h-72 w-72 animate-blob items-center justify-center rounded-full bg-purple-300 opacity-70 mix-blend-multiply blur-xl filter"
-                    style="top: 33%; left: 41%;"
+                    class="absolute top-0 left-0 m-6 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialIndigo p-4 pl-7 opacity-70 mix-blend-multiply blur-xl filter"
                 >
                 </div>
                 <div
-                    class="animation-delay-2000 absolute h-72 w-72 animate-blob items-center justify-center rounded-full bg-yellow-300 opacity-70 mix-blend-multiply blur-xl filter"
-                    style="top: 40%; left: 40%;"
+                    class="animation-delay-4000 absolute h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialGreen opacity-70 mix-blend-multiply blur-xl filter"
                 >
                 </div>
                 <div
-                    class="animation-delay-4000 absolute h-72 w-72 animate-blob items-center justify-center rounded-full bg-pink-300 opacity-70 mix-blend-multiply blur-xl filter"
-                    style="top: 35%; left: 40%;"
+                    class="animation-delay-2000 absolute top-0 left-0 -m-10 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialBlue opacity-70 mix-blend-multiply blur-xl filter"
                 >
                 </div>
 
