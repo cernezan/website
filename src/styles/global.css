@@ -6,6 +6,12 @@
     --border-radius: 10px;
 }
 
+html {
+    font-size: 20px;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+}
+
 h1, h2, h3, h4 {
     font-weight: var(--base-font-weight);
     margin-bottom: var(--base-margin);
@@ -29,8 +35,8 @@ h4 {
 }
 
 p {
-    margin-bottom: 0.75rem;
-    margin-top: 0.75rem;
+    margin-bottom: .75rem;
+    margin-top: .75rem;
 }
 
 article > ul {
