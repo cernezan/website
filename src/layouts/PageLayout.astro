@@ -8,8 +8,7 @@ import type { CollectionEntry } from "astro:content";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, headerImage, pubDate, updatedDate, description } =
-    Astro.props.frontmatter;
+const { title, headerImage, pubDate, updatedDate, description } = Astro.props;
 ---
 
 <MainLayout title={title} image={headerImage} description={description}>

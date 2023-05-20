@@ -2,6 +2,9 @@
 import BaseHead from "../components/website-base/BaseHead.astro";
 import Footer from "../components/website-base/Footer.astro";
 import Header from "../components/Header.astro";
+import GithubIcon from "../components/icons/GithubIcon.astro";
+import ChipCloud from "../components/ChipCloud.astro";
+import SimpleMailIcon from "../components/icons/SimpleMailIcon.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
@@ -19,12 +22,38 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         class="flex w-full max-w-4xl flex-col overflow-x-hidden px-6 md:mx-auto"
     >
         <Header class="sticky" title={SITE_TITLE} />
-
-        <div class="flex h-screen">
+        <!-- WELCOME TEXT AND LOGO AND BLOBS -->
+        <section class="flex h-full flex-col-reverse md:flex-row">
+            <div class="my-6 md:my-auto">
+                <h1 class="mb-0">Hey 👋, my name is Žan!</h1>
+                <h4 class="mt-0 text-zinc-600">
+                    Welcome to my personal website.
+                </h4>
+                <div
+                    class="flex space-x-5 py-1"
+                    role="contentinfo"
+                    aria-label="Social media links"
+                >
+                    <a
+                        href="mailto:cv14ht16@duck.com"
+                        class="text-current hover:text-zinc-600"
+                    >
+                        <SimpleMailIcon />
+                    </a>
+                    <a
+                        href="https://github.com/cernezan"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-current hover:text-zinc-600"
+                    >
+                        <GithubIcon />
+                    </a>
+                </div>
+            </div>
+            <!-- LOGO WITH BLOBS -->
             <div
-                class="relative inset-0 m-auto flex items-center justify-center"
+                class="relative inset-0 m-auto my-12 flex items-center justify-center"
             >
-                <!-- Your centered content here -->
                 <div
                     class="animation-delay-2500 absolute top-0 left-0 m-6 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialIndigo p-4 pl-7 opacity-70 mix-blend-multiply blur-xl filter"
                 >
@@ -64,19 +93,73 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     </defs>
                 </svg>
             </div>
-        </div>
+        </section>
 
-        <!-- BANNER IMAGE  -->
-        <!-- HELLO SECTION -->
+        <!-- MY INTERESTS -->
+        <section>
+            <h1 class="mb-0">My Interests</h1>
+            <h4 class="mt-0 text-zinc-600">
+                Diverse interests that spark my curiosity.
+            </h4>
+
+            <ChipCloud
+                listOfItems={[
+                    "👨‍💻 Technology",
+                    "👨‍🎨 Design",
+                    "🧪 Science",
+                    "🥑 Health and fitness",
+                    "📖 Reading",
+                    "🧘‍♂️ Meditation",
+                    "🍿 Movies",
+                    "📚 Learning",
+                    "🎸 Playing guitar",
+                ]}
+            />
+        </section>
+
+        <!-- BLOG POSTS -->
+        <section>
+            <h1 class="mb-0">Blog Posts</h1>
+            <h4 class="mt-0 text-zinc-600">Welcome to my personal website.</h4>
+        </section>
+
+        <!-- MORE ABOUT ME AND CONTACT -->
+        <section>
+            <h1 class="mb-0">What is this website?</h1>
+            <h4 class="mt-0 text-zinc-600">Welcome to my personal website.</h4>
+
+            <p>
+                I've always been fascinated by the intersection of technology,
+                design, and personal well-being. I enjoy diving deep into
+                various topics such as computer science, design, health, fitness
+                and more.
+            </p>
+            <p>
+                Thank you for stopping by! This is my personal website, a
+                project I've dedicated a lot of hard work to, and I'm quite
+                proud of what I've build. I believe everyone should have their
+                own place on the internet where you can express and share their
+                ideas. On my blog I discuss topics that I am passionate about,
+                such as computer science, design, health, fitness and more.
+                Recently, I heard a thought-provoking idea: 'If information
+                could help even one person, you're morally obliged to share it.'
+                This sentiment perfectly captures what I hope this website will
+                be — an inspiring, helpful, and potentially even life-changing
+                resource for its visitors.
+            </p>
+            <p>
+                If you've come this far, you might want to check out
+                <a href=" blog">my blog</a> or reach out to me directly. I would
+                absolutely love to connect 🤝.
+            </p>
+            <p class="text-xs text-zinc-400">
+                I would love to hop on a call, even if you're just looking for
+                an interesting conversation and nothing else.
+            </p>
+        </section>
 
         <!-- FEATURED PROJECTS -->
 
-        <!-- MY INTERESTS -->
-
-        <div>
-            Welcome to my website. I'm bloging about building this website and
-            other stuff. Everything is still under construction. 🚧
-        </div>
         <Footer />
     </body>
 </html>
