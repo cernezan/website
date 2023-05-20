@@ -1,21 +1,35 @@
 ---
 import { Picture } from "@astrojs/image/components";
 
-const { title, link, profilePicture, subText } = Astro.props;
+const { title, link, profilePicture, websiteLogo, subText } = Astro.props;
 ---
 
-<a href={link} class="mr-auto flex hover:brightness-75">
-    <Picture
-        src={profilePicture}
-        alt="Profile Picture"
-        class="rounded-full"
-        sizes="400"
-        format={"jpeg"}
-        widths={[400, 400]}
-        width={50}
-        height={50}
-        aspectRatio={1}
-    />
+<a href={link} class="mr-auto flex">
+    <div class="relative">
+        <Picture
+            src={profilePicture}
+            alt="Profile Picture"
+            class="rounded-full object-cover transition-opacity duration-500 ease-in-out hover:opacity-0"
+            sizes="400"
+            format={"jpeg"}
+            widths={[400, 400]}
+            width={50}
+            height={50}
+            aspectRatio={1}
+        />
+        <Picture
+            src={websiteLogo}
+            alt="Profile Picture"
+            class="absolute top-0 left-0 rounded-full object-cover opacity-0 transition-opacity duration-500 ease-in-out hover:opacity-100"
+            sizes="400"
+            format={"jpeg"}
+            widths={[400, 400]}
+            width={50}
+            height={50}
+            aspectRatio={1}
+        />
+    </div>
+
     <div class="my-auto ml-3">
         <div class="my-auto text-lg font-extrabold">{title}</div>
         <div class="-mt-1 text-sm text-zinc-600">{subText}</div>
