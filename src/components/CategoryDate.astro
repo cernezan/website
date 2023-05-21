@@ -11,7 +11,11 @@ const { category, categoryPath, pubDate, updatedDate } = Astro.props;
     {
         category && (
             <>
-                <a href={categoryPath + slugify(category)}>{category}</a>
+                {categoryPath && (
+                    <a href={categoryPath + slugify(category)}>{category}</a>
+                )}
+                {!categoryPath && <span>{category}</span>}
+
                 <span> ·</span>
             </>
         )

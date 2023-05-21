@@ -11,10 +11,10 @@ listOfItems = shuffleArray(listOfItems);
 <div>
     {
         listOfItems.map((item) => (
-            <div class="mb-2 mr-3 inline-flex rounded-full border border-zinc-300 px-3 py-2 text-sm font-semibold">
+            <div class="mb-3 mr-3 inline-flex rounded-full border border-zinc-300 px-3 py-2 text-sm font-semibold">
                 {item.split(" ")[0]}
                 <div class="mx-2 border-l" />
-                {item.split(" ")[1]}
+                {item.split(/ (.*)/s)[1]}
             </div>
         ))
     }

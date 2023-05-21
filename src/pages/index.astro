@@ -5,8 +5,20 @@ import Header from "../components/Header.astro";
 import GithubIcon from "../components/icons/GithubIcon.astro";
 import ChipCloud from "../components/ChipCloud.astro";
 import SimpleMailIcon from "../components/icons/SimpleMailIcon.astro";
+import PostsPreview from "../components/PostsPreview.astro";
+import TitleSection from "../components/TitleSection.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { CollectionEntry, getCollection } from "astro:content";
+
+let blogEntries: CollectionEntry<"blog">[] = await getCollection("blog");
+blogEntries = blogEntries.filter((post) => !post.data.draft && post.data.title);
+
+const latestPosts: CollectionEntry<"blog">[] = blogEntries
+    .sort((a: { data: { pubDate: Date } }, b: { data: { pubDate: Date } }) => {
+        return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+    })
+    .slice(0, 4);
 ---
 
 <!DOCTYPE html>
@@ -25,10 +37,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <!-- WELCOME TEXT AND LOGO AND BLOBS -->
         <section class="flex h-full flex-col-reverse md:flex-row">
             <div class="my-6 md:my-auto">
-                <h1 class="mb-0">Hey 👋, my name is Žan!</h1>
-                <h4 class="mt-0 text-zinc-600">
-                    Welcome to my personal website.
-                </h4>
+                <TitleSection
+                    title="Hey 👋, my name is Žan!"
+                    description="Welcome to my personal website."
+                />
                 <div
                     class="flex space-x-5 py-1"
                     role="contentinfo"
@@ -96,38 +108,40 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         </section>
 
         <!-- MY INTERESTS -->
-        <section>
-            <h1 class="mb-0">My Interests</h1>
-            <h4 class="mt-0 text-zinc-600">
-                Diverse interests that spark my curiosity.
-            </h4>
+        <section class="my-4">
+            <TitleSection
+                title="My Interests"
+                description="Diverse interests that spark my curiosity."
+            />
 
             <ChipCloud
                 listOfItems={[
                     "👨‍💻 Technology",
                     "👨‍🎨 Design",
-                    "🧪 Science",
                     "🥑 Health and fitness",
                     "📖 Reading",
                     "🧘‍♂️ Meditation",
                     "🍿 Movies",
                     "📚 Learning",
                     "🎸 Playing guitar",
+                    "💻 Programming",
+                    "🌎 Traveling",
                 ]}
             />
         </section>
 
         <!-- BLOG POSTS -->
-        <section>
-            <h1 class="mb-0">Blog Posts</h1>
-            <h4 class="mt-0 text-zinc-600">Welcome to my personal website.</h4>
+        <section class="my-4">
+            <TitleSection
+                title="Recent Blog Posts"
+                description="Explore the latest posts from my blog."
+            />
+            <PostsPreview posts={latestPosts} />
         </section>
 
         <!-- MORE ABOUT ME AND CONTACT -->
-        <section>
-            <h1 class="mb-0">What is this website?</h1>
-            <h4 class="mt-0 text-zinc-600">Welcome to my personal website.</h4>
-
+        <section class="my-4">
+            <TitleSection title="What is this website?" description="Welc" />
             <p>
                 I've always been fascinated by the intersection of technology,
                 design, and personal well-being. I enjoy diving deep into

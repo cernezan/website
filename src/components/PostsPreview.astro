@@ -1,0 +1,28 @@
+---
+import CategoryDate from "./CategoryDate.astro";
+import PostPreview from "./PostPreview.astro";
+
+export interface Props {
+    posts: any;
+}
+
+let { posts } = Astro.props;
+---
+
+<div class="flex flex-col gap-4 md:grid md:grid-cols-2">
+    {
+        posts.map((post: any) => (
+            <div class="w-full">
+                <a href={`/blog/${post.slug}/`}>
+                    <div class="rounded-2xl border border-zinc-300 p-4 transition-transform duration-200 ease-out focus-within:outline hover:scale-[1.02] hover:border-zinc-400">
+                        <h3 class="mb-1 mt-0">{post.data.title}</h3>
+                        <CategoryDate
+                            category={post.data.category}
+                            pubDate={post.data.pubDate}
+                        />
+                    </div>
+                </a>
+            </div>
+        ))
+    }
+</div>
