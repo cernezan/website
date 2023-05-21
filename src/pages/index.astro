@@ -7,14 +7,16 @@ import ChipCloud from "../components/ChipCloud.astro";
 import SimpleMailIcon from "../components/icons/SimpleMailIcon.astro";
 import PostsPreview from "../components/PostsPreview.astro";
 import TitleSection from "../components/TitleSection.astro";
+import PrimaryButton from "../components/buttons/PrimaryButton.astro";
+import SecondaryButton from "../components/buttons/SecondaryButton.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { CollectionEntry, getCollection } from "astro:content";
 
-let blogEntries: CollectionEntry<"blog">[] = await getCollection("blog");
-blogEntries = blogEntries.filter((post) => !post.data.draft && post.data.title);
+const blogEntries: CollectionEntry<"blog">[] = await getCollection("blog");
 
 const latestPosts: CollectionEntry<"blog">[] = blogEntries
+    .filter((post) => !post.data.draft && post.data.title)
     .sort((a: { data: { pubDate: Date } }, b: { data: { pubDate: Date } }) => {
         return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
     })
@@ -141,35 +143,44 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
 
         <!-- MORE ABOUT ME AND CONTACT -->
         <section class="my-4">
-            <TitleSection title="What is this website?" description="Welc" />
+            <TitleSection
+                title="What is This?"
+                description="This is my personal website."
+            />
             <p>
-                I've always been fascinated by the intersection of technology,
-                design, and personal well-being. I enjoy diving deep into
-                various topics such as computer science, design, health, fitness
-                and more.
+                This is an ongoing project to which I've dedicated considerable
+                effort. Additionally, I've decided to make the code publicly
+                available for anyone interested in learning from it.
             </p>
             <p>
-                Thank you for stopping by! This is my personal website, a
-                project I've dedicated a lot of hard work to, and I'm quite
-                proud of what I've build. I believe everyone should have their
-                own place on the internet where you can express and share their
-                ideas. On my blog I discuss topics that I am passionate about,
-                such as computer science, design, health, fitness and more.
-                Recently, I heard a thought-provoking idea: 'If information
-                could help even one person, you're morally obliged to share it.'
-                This sentiment perfectly captures what I hope this website will
-                be — an inspiring, helpful, and potentially even life-changing
-                resource for its visitors.
+                I love learning about new things, so I've built this website and
+                its accompanying blog. Here, I write about my learnings,
+                day-to-day challenges and share articles I've found interesting
+                and insightful. I believe that everyone should have their own
+                space on the internet where they can express and share their
+                insights.
             </p>
             <p>
-                If you've come this far, you might want to check out
-                <a href=" blog">my blog</a> or reach out to me directly. I would
-                absolutely love to connect 🤝.
+                If you've come this far, you might want to reach out to me
+                directly. I would be absolutely delighted to hear from you and
+                connect 🤝.
             </p>
             <p class="text-xs text-zinc-400">
                 I would love to hop on a call, even if you're just looking for
                 an interesting conversation and nothing else.
             </p>
+
+            <div class="my-6 flex space-x-4">
+                <PrimaryButton text="About me" href="/about" />
+                <SecondaryButton text="Let's connect" href="/contact" />
+            </div>
+
+            <p>With Gratitude,</p>
+            <img
+                class="mb-10 h-20"
+                src="/assets/icons/signature.svg"
+                alt="personal signature"
+            />
         </section>
 
         <!-- FEATURED PROJECTS -->

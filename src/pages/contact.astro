@@ -1,0 +1,26 @@
+---
+import PrimaryButton from "../components/buttons/PrimaryButton.astro";
+import SecondaryButton from "../components/buttons/SecondaryButton.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+---
+
+<PageLayout title="Contact Me" description="Let's connect">
+    <p>
+        I appreciate your interest and am looking forward to connecting with
+        you. Here's how you can get in touch.
+    </p>
+    <p>
+        Scheduling a video call a preferred way of contacting me and I would be
+        happy to meet you. Feel free to drop me a line for any general
+        inquiries, comments or just to say hello. I usually respond within 24
+        hours.
+    </p>
+    <div class="my-3 flex space-x-4">
+        <PrimaryButton
+            text="Schedule a call"
+            href="https://calendly.com/cernezan/connect"
+        />
+        <SecondaryButton text="Email me" href="mailto:cv14ht16@duck.com" />
+    </div>
+    <p>I'm looking forward to hearing from you!</p>
+</PageLayout>
