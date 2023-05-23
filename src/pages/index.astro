@@ -39,10 +39,11 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
         <!-- WELCOME TEXT AND LOGO AND BLOBS -->
         <section class="flex h-full flex-col-reverse md:flex-row">
             <div class="my-6 md:my-auto">
-                <TitleSection
-                    title="Hey 👋, my name is Žan!"
-                    description="Welcome to my personal website."
-                />
+                <h1 class="mb-0">Hey 👋, my name is Žan!</h1>
+                <h4 class="mt-0 mb-6 text-zinc-600">
+                    Welcome to my personal website.
+                </h4>
+
                 <div
                     class="flex space-x-5 py-1"
                     role="contentinfo"
@@ -51,6 +52,7 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
                     <a
                         href="mailto:cv14ht16@duck.com"
                         class="text-current hover:text-zinc-600"
+                        aria-label="Send me an email"
                     >
                         <SimpleMailIcon />
                     </a>
@@ -59,6 +61,7 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
                         target="_blank"
                         rel="noopener noreferrer"
                         class="text-current hover:text-zinc-600"
+                        aria-label="My Github profile"
                     >
                         <GithubIcon />
                     </a>
@@ -165,7 +168,7 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
                 directly. I would be absolutely delighted to hear from you and
                 connect 🤝.
             </p>
-            <p class="text-xs text-zinc-400">
+            <p class="text-xs font-light text-zinc-500">
                 I would love to hop on a call, even if you're just looking for
                 an interesting conversation and nothing else.
             </p>
@@ -177,7 +180,7 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
 
             <p>With Gratitude,</p>
             <img
-                class="mb-10 h-20"
+                class="mb-10 h-20 w-auto"
                 src="/assets/icons/signature.svg"
                 alt="personal signature"
             />
