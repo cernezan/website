@@ -6,16 +6,18 @@ import CategoryDate from "../components/CategoryDate.astro";
 
 import type { CollectionEntry } from "astro:content";
 
-type Props = CollectionEntry<"blog">["data"];
-
-const { title, headerImage, pubDate, updatedDate, description } =
-    Astro.props.frontmatter;
+const { title, headerImage, pubDate, updatedDate, description, frontmatter } =
+    Astro.props;
 ---
 
-<MainLayout title={title} image={headerImage} description={description}>
+<MainLayout
+    title={title || frontmatter.title}
+    image={headerImage}
+    description={description || frontmatter.description}
+>
     <PageImage image={headerImage} title={title} />
     <CategoryDate pubDate={pubDate} updatedDate={updatedDate} />
-    <PageTitle>{title}</PageTitle>
+    <PageTitle>{title || frontmatter.title}</PageTitle>
 
     <slot />
 </MainLayout>

@@ -1,0 +1,17 @@
+---
+import PrimaryButton from "../components/buttons/PrimaryButton.astro";
+import SecondaryButton from "../components/buttons/SecondaryButton.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+---
+
+<PageLayout title="Meeting Confirmed" description="Let's connect">
+    <p>
+        A calendar invitation has been <b>sent to your email address</b>. I'm
+        genuinely excited about our upcoming meeting. Until then you can check
+        out what's new on my blog.
+    </p>
+
+    <div class="my-3 flex">
+        <PrimaryButton text="Visit my blog" href="/blog" />
+    </div>
+</PageLayout>

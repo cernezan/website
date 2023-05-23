@@ -1,7 +1,188 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import BaseHead from "../components/website-base/BaseHead.astro";
+import Footer from "../components/website-base/Footer.astro";
+import Header from "../components/Header.astro";
+import GithubIcon from "../components/icons/GithubIcon.astro";
+import ChipCloud from "../components/ChipCloud.astro";
+import SimpleMailIcon from "../components/icons/SimpleMailIcon.astro";
+import PostsPreview from "../components/PostsPreview.astro";
+import TitleSection from "../components/TitleSection.astro";
+import PrimaryButton from "../components/buttons/PrimaryButton.astro";
+import SecondaryButton from "../components/buttons/SecondaryButton.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { CollectionEntry, getCollection } from "astro:content";
+
+const blogEntries: CollectionEntry<"blog">[] = await getCollection("blog");
+
+const latestPosts: CollectionEntry<"blog">[] = blogEntries
+    .filter((post) => !post.data.draft && post.data.title)
+    .sort((a: { data: { pubDate: Date } }, b: { data: { pubDate: Date } }) => {
+        return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+    })
+    .slice(0, 4);
 ---
 
-<MainLayout>
-	<div>Welcome to my website. I'm bloging about building this website and other stuff. Everything is still under construction. 🚧</div>
-</MainLayout>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <BaseHead
+            title={SITE_TITLE}
+            description={SITE_DESCRIPTION}
+            isPost={false}
+        />
+    </head>
+    <body
+        class="flex w-full max-w-4xl flex-col overflow-x-hidden px-6 md:mx-auto"
+    >
+        <Header class="sticky" title={SITE_TITLE} />
+        <!-- WELCOME TEXT AND LOGO AND BLOBS -->
+        <section class="flex h-full flex-col-reverse md:flex-row">
+            <div class="my-6 md:my-auto">
+                <TitleSection
+                    title="Hey 👋, my name is Žan!"
+                    description="Welcome to my personal website."
+                />
+                <div
+                    class="flex space-x-5 py-1"
+                    role="contentinfo"
+                    aria-label="Social media links"
+                >
+                    <a
+                        href="mailto:cv14ht16@duck.com"
+                        class="text-current hover:text-zinc-600"
+                    >
+                        <SimpleMailIcon />
+                    </a>
+                    <a
+                        href="https://github.com/cernezan"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-current hover:text-zinc-600"
+                    >
+                        <GithubIcon />
+                    </a>
+                </div>
+            </div>
+            <!-- LOGO WITH BLOBS -->
+            <div
+                class="relative inset-0 m-auto my-12 flex items-center justify-center"
+            >
+                <div
+                    class="animation-delay-2500 absolute top-0 left-0 m-6 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialIndigo p-4 pl-7 opacity-70 mix-blend-multiply blur-xl filter"
+                >
+                </div>
+                <div
+                    class="animation-delay-4000 absolute top-0 left-0 -m-2 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialGreen mix-blend-multiply blur-xl filter"
+                >
+                </div>
+                <div
+                    class="animation-delay-2000 absolute top-0 left-0 -m-10 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialBlue opacity-70 mix-blend-multiply blur-xl filter"
+                >
+                </div>
+
+                <svg
+                    class="relative m-8 space-y-4"
+                    width="192"
+                    height="192"
+                    viewBox="0 0 192 192"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <g clip-path="url(#clip0_55_12)">
+                        <circle cx="96" cy="96" r="96" fill="#171717"></circle>
+                        <path
+                            d="M88.4557 132.301H56.1055L111.388 59.699H144.072L88.4557 132.301Z"
+                            fill="#FEFEFE"></path>
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M131.676 98.5894C138.343 108.568 141.902 120.3 141.902 132.301H117.933C117.04 112.798 100.946 97.261 81.2229 97.261C71.5097 97.261 62.6766 101.029 56.1059 107.184L38.3164 89.3943C46.8025 80.9082 57.6145 75.1291 69.3851 72.7878C81.1557 70.4465 93.3562 71.6481 104.444 76.2408C115.532 80.8334 125.008 88.6108 131.676 98.5894Z"
+                            fill="#FEFEFE"></path>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_55_12">
+                            <rect width="192" height="192" fill="white"></rect>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+        </section>
+
+        <!-- MY INTERESTS -->
+        <section class="my-4">
+            <TitleSection
+                title="My Interests"
+                description="Diverse interests that spark my curiosity."
+            />
+
+            <ChipCloud
+                listOfItems={[
+                    "👨‍💻 Technology",
+                    "👨‍🎨 Design",
+                    "🥑 Health and fitness",
+                    "📖 Reading",
+                    "🧘‍♂️ Meditation",
+                    "🍿 Movies",
+                    "📚 Learning",
+                    "🎸 Playing guitar",
+                    "💻 Programming",
+                    "🌎 Traveling",
+                ]}
+            />
+        </section>
+
+        <!-- BLOG POSTS -->
+        <section class="my-4">
+            <TitleSection
+                title="Recent Blog Posts"
+                description="Explore the latest posts from my blog."
+            />
+            <PostsPreview posts={latestPosts} />
+        </section>
+
+        <!-- MORE ABOUT ME AND CONTACT -->
+        <section class="my-4">
+            <TitleSection
+                title="What is This?"
+                description="This is my personal website."
+            />
+            <p>
+                This is an ongoing project to which I've dedicated considerable
+                effort. Additionally, I've decided to make the code publicly
+                available for anyone interested in learning from it.
+            </p>
+            <p>
+                I love learning about new things, so I've built this website and
+                its accompanying blog. Here, I write about my learnings,
+                day-to-day challenges and share articles I've found interesting
+                and insightful. I believe that everyone should have their own
+                space on the internet where they can express and share their
+                insights.
+            </p>
+            <p>
+                If you've come this far, you might want to reach out to me
+                directly. I would be absolutely delighted to hear from you and
+                connect 🤝.
+            </p>
+            <p class="text-xs text-zinc-400">
+                I would love to hop on a call, even if you're just looking for
+                an interesting conversation and nothing else.
+            </p>
+
+            <div class="my-6 flex space-x-4">
+                <PrimaryButton text="Let's connect" href="/contact" />
+                <SecondaryButton text="About me" href="/about" />
+            </div>
+
+            <p>With Gratitude,</p>
+            <img
+                class="mb-10 h-20"
+                src="/assets/icons/signature.svg"
+                alt="personal signature"
+            />
+        </section>
+
+        <Footer />
+    </body>
+</html>

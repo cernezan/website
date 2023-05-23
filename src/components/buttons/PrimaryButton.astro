@@ -1,0 +1,16 @@
+---
+export interface Props {
+    text: string;
+    href: string;
+}
+
+let { text, href } = Astro.props;
+---
+
+<a href={href}>
+    <button
+        class="rounded-lg bg-zinc-900 px-5 py-3 font-semibold text-white hover:bg-zinc-700"
+    >
+        {text}
+    </button>
+</a>

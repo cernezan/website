@@ -1,3 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+      animation-delay: 8s;
+    }
+
+    .animation-delay-2500 {
+        animation-delay: 4s;
+      }
+  }
+
 :root {
     --primary-color: #95C6A8;
     --base-font-weight: 600;
