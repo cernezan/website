@@ -32,88 +32,89 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
             isPost={false}
         />
     </head>
-    <body
-        class="flex w-full max-w-4xl flex-col overflow-x-hidden px-6 md:mx-auto"
-    >
-        <Header class="sticky" title={SITE_TITLE} />
-        <!-- WELCOME TEXT AND LOGO AND BLOBS -->
-        <section class="flex h-full flex-col-reverse md:flex-row">
-            <div class="my-6 md:my-auto">
-                <h1 class="mb-0">Hey 👋, my name is Žan!</h1>
-                <h4 class="mt-0 mb-6 text-zinc-600">
-                    Welcome to my personal website.
-                </h4>
+    <body class="flex w-full max-w-4xl flex-col md:mx-auto">
+        <div class="mb-6 overflow-hidden px-6 md:flex-row md:overflow-visible">
+            <Header title={SITE_TITLE} />
+            <div class="flex h-full flex-col-reverse md:flex-row">
+                <!-- HELLO WITH SOCIALS -->
+                <div class="md:my-auto">
+                    <h1 class="mb-0">Hey 👋, my name is Žan!</h1>
+                    <h4 class="mt-0 mb-6 text-zinc-600">
+                        Welcome to my personal website.
+                    </h4>
 
+                    <div
+                        class="flex space-x-5 py-1"
+                        role="contentinfo"
+                        aria-label="Social media links"
+                    >
+                        <a
+                            href="mailto:cv14ht16@duck.com"
+                            class="text-current hover:text-zinc-600"
+                            aria-label="Send me an email"
+                        >
+                            <SimpleMailIcon />
+                        </a>
+                        <a
+                            href="https://github.com/cernezan"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-current hover:text-zinc-600"
+                            aria-label="Github profile"
+                        >
+                            <GithubIcon />
+                        </a>
+                    </div>
+                </div>
+                <!-- LOGO WITH BLOBS -->
                 <div
-                    class="flex space-x-5 py-1"
-                    role="contentinfo"
-                    aria-label="Social media links"
+                    class="relative inset-0 m-auto my-12 flex items-center justify-center"
                 >
-                    <a
-                        href="mailto:cv14ht16@duck.com"
-                        class="text-current hover:text-zinc-600"
-                        aria-label="Send me an email"
+                    <div
+                        class="animation-delay-2500 absolute top-0 left-0 m-6 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialIndigo p-4 pl-7 opacity-70 mix-blend-multiply blur-xl filter md:top-0 md:left-0"
                     >
-                        <SimpleMailIcon />
-                    </a>
-                    <a
-                        href="https://github.com/cernezan"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-current hover:text-zinc-600"
-                        aria-label="My Github profile"
+                    </div>
+                    <div
+                        class="animation-delay-4000 absolute top-0 left-0 -m-2 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialGreen mix-blend-multiply blur-xl filter md:top-0 md:left-0"
                     >
-                        <GithubIcon />
-                    </a>
+                    </div>
+                    <div
+                        class="animation-delay-2000 absolute top-0 left-0 -m-10 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialBlue opacity-70 mix-blend-multiply blur-xl filter md:top-0 md:left-0"
+                    >
+                    </div>
+                    <svg
+                        class="relative m-8 space-y-4"
+                        width="192"
+                        height="192"
+                        viewBox="0 0 192 192"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g clip-path="url(#clip0_55_12)">
+                            <circle cx="96" cy="96" r="96" fill="#171717"
+                            ></circle>
+                            <path
+                                d="M88.4557 132.301H56.1055L111.388 59.699H144.072L88.4557 132.301Z"
+                                fill="#FEFEFE"></path>
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M131.676 98.5894C138.343 108.568 141.902 120.3 141.902 132.301H117.933C117.04 112.798 100.946 97.261 81.2229 97.261C71.5097 97.261 62.6766 101.029 56.1059 107.184L38.3164 89.3943C46.8025 80.9082 57.6145 75.1291 69.3851 72.7878C81.1557 70.4465 93.3562 71.6481 104.444 76.2408C115.532 80.8334 125.008 88.6108 131.676 98.5894Z"
+                                fill="#FEFEFE"></path>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_55_12">
+                                <rect width="192" height="192" fill="white"
+                                ></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
                 </div>
             </div>
-            <!-- LOGO WITH BLOBS -->
-            <div
-                class="relative inset-0 m-auto my-12 flex items-center justify-center"
-            >
-                <div
-                    class="animation-delay-2500 absolute top-0 left-0 m-6 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialIndigo p-4 pl-7 opacity-70 mix-blend-multiply blur-xl filter"
-                >
-                </div>
-                <div
-                    class="animation-delay-4000 absolute top-0 left-0 -m-2 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialGreen mix-blend-multiply blur-xl filter"
-                >
-                </div>
-                <div
-                    class="animation-delay-2000 absolute top-0 left-0 -m-10 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialBlue opacity-70 mix-blend-multiply blur-xl filter"
-                >
-                </div>
-
-                <svg
-                    class="relative m-8 space-y-4"
-                    width="192"
-                    height="192"
-                    viewBox="0 0 192 192"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <g clip-path="url(#clip0_55_12)">
-                        <circle cx="96" cy="96" r="96" fill="#171717"></circle>
-                        <path
-                            d="M88.4557 132.301H56.1055L111.388 59.699H144.072L88.4557 132.301Z"
-                            fill="#FEFEFE"></path>
-                        <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M131.676 98.5894C138.343 108.568 141.902 120.3 141.902 132.301H117.933C117.04 112.798 100.946 97.261 81.2229 97.261C71.5097 97.261 62.6766 101.029 56.1059 107.184L38.3164 89.3943C46.8025 80.9082 57.6145 75.1291 69.3851 72.7878C81.1557 70.4465 93.3562 71.6481 104.444 76.2408C115.532 80.8334 125.008 88.6108 131.676 98.5894Z"
-                            fill="#FEFEFE"></path>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_55_12">
-                            <rect width="192" height="192" fill="white"></rect>
-                        </clipPath>
-                    </defs>
-                </svg>
-            </div>
-        </section>
+        </div>
 
         <!-- MY INTERESTS -->
-        <section class="my-4">
+        <section class="my-4 px-6">
             <TitleSection
                 title="My Interests"
                 description="Diverse interests that spark my curiosity."
@@ -136,7 +137,7 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
         </section>
 
         <!-- BLOG POSTS -->
-        <section class="my-4">
+        <section class="my-4 px-6">
             <TitleSection
                 title="Recent Blog Posts"
                 description="Explore the latest posts from my blog."
@@ -145,7 +146,7 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
         </section>
 
         <!-- MORE ABOUT ME AND CONTACT -->
-        <section class="my-4">
+        <section class="my-4 px-6">
             <TitleSection
                 title="What is This?"
                 description="This is my personal website."
@@ -173,7 +174,9 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
                 an interesting conversation and nothing else.
             </p>
 
-            <div class="my-6 flex space-x-4">
+            <div
+                class="my-6 flex flex-col space-y-4 text-center md:flex-row md:space-y-0 md:space-x-4"
+            >
                 <PrimaryButton text="Let's connect" href="/contact" />
                 <SecondaryButton text="About me" href="/about" />
             </div>
@@ -182,9 +185,11 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
             <img
                 class="mb-10 h-20 w-auto"
                 src="/assets/icons/signature.svg"
-                alt="personal signature"
+                alt="Personal signature"
             />
         </section>
+
+        <!-- WELCOME TEXT AND LOGO AND BLOBS -->
 
         <Footer />
     </body>
