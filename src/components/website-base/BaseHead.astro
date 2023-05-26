@@ -1,6 +1,7 @@
 ---
 // Import the global.css file here so that it is included on
 import "../../styles/global.css";
+import { SEO } from "astro-seo";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 
@@ -31,10 +32,43 @@ function prepareTitle(title: string | undefined): string {
     return `${title} | ${SITE_TITLE}`;
 }
 
+function prepareType(isPost: boolean | undefined) {
+    if (isPost) {
+        return "article";
+    } else {
+        return "website";
+    }
+}
+
 const finalizedTitle = prepareTitle(title);
 const finalizedDescription = description.slice(0, 140) + "...";
+const finalizedType = prepareType(isPost);
 ---
 
+<SEO
+    title={finalizedTitle}
+    description={finalizedDescription}
+    openGraph={{
+        basic: {
+            title: finalizedTitle,
+            type: finalizedType,
+            image: image,
+        },
+    }}
+    extend={{
+        // extending the default link tags
+        link: [{ rel: "icon", href: "assets/favicon.svg" }],
+        // extending the default meta tags
+        meta: [
+            {
+                name: "twitter:image",
+                content: image,
+            },
+            { name: "twitter:title", content: finalizedTitle },
+            { name: "twitter:description", content: finalizedDescription },
+        ],
+    }}
+/>
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
