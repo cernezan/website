@@ -4,7 +4,7 @@ import FormattedDate from "../components/FormattedDate.astro";
 import { slugify } from "../utils";
 
 export interface Props {
-    category: string;
+    category?: string;
     categoryPath?: string;
     pubDate?: string;
     updatedDate?: string;
