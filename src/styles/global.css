@@ -24,9 +24,12 @@
     --border-radius: 10px;
 }
 
-* {
+html {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    scrollbar-gutter: stable;
+    overflow-y: scroll;
+
   }
 
 h1, h2, h3, h4 {

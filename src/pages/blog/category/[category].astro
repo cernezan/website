@@ -1,29 +1,37 @@
 ---
-import FormattedDate from "../../../components/FormattedDate.astro";
 import MainLayout from "../../../layouts/MainLayout.astro";
 
 import { getCollection } from "astro:content";
-import { removeMarkdown, slugify } from "../../../utils";
+import { slugify } from "../../../utils";
 import PostPreview from "../../../components/PostPreview.astro";
+
+const { posts, categoryName, category } = Astro.props;
+console.log(categoryName, "T");
 
 export async function getStaticPaths() {
     let posts = await getCollection("blog");
-    const uniqueCategory = [
-        ...new Set(posts.map((post: any) => post.data.category).flat()),
+
+    const categoriesList: string[] = [
+        ...(new Set(
+            posts.map((post: any) => post.data.category).flat()
+        ) as any),
     ];
 
-    return uniqueCategory.map((currentCategory) => {
-        const filteredPosts = posts.filter((post: any) =>
-            post.data.category.includes(currentCategory)
-        );
+    return categoriesList.map((currentCategory: string) => {
         return {
             params: { category: slugify(currentCategory) },
-            props: { posts: filteredPosts, categoryName: currentCategory },
+            props: { posts: posts, categoryName: currentCategory },
         };
     });
 }
 
-const { posts, categoryName } = Astro.props;
+let categoryPosts = await getCollection("blog", ({ data }) => {
+    return data.category === categoryName;
+});
+categoryPosts = categoryPosts.sort((a: any, b: any) => {
+    return b.data.pubDate - a.data.pubDate;
+});
+console.log(categoryPosts, "T");
 ---
 
 <MainLayout title={categoryName}>
@@ -31,7 +39,7 @@ const { posts, categoryName } = Astro.props;
         <h1>{categoryName}</h1>
         <section>
             {
-                posts.map((post: any) => (
+                categoryPosts.map((post: any) => (
                     <PostPreview
                         title={post.data.title}
                         description={post.body.split(/\n\n/)[0]}
