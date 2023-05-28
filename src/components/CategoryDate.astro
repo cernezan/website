@@ -6,8 +6,8 @@ import { slugify } from "../utils";
 export interface Props {
     category?: string;
     categoryPath?: string;
-    pubDate?: string;
-    updatedDate?: string;
+    pubDate?: Date;
+    updatedDate?: Date;
 }
 
 const { category, categoryPath, pubDate, updatedDate } = Astro.props;

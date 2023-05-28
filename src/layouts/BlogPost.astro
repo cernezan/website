@@ -6,10 +6,16 @@ import CategoryDate from "../components/CategoryDate.astro";
 
 import { removeMarkdown } from "../utils";
 
-import { CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import BackToBlog from "../components/BackToBlog.astro";
 
-type Props = CollectionEntry<"blog">["data"];
+export interface Props {
+    title: string;
+    headerImage: string;
+    pubDate: Date;
+    updatedDate?: Date;
+    category: string;
+}
 
 const { title, headerImage, pubDate, updatedDate, category } = Astro.props;
 const categoryPath = "/blog/category/";
