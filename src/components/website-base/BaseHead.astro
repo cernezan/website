@@ -1,11 +1,8 @@
 ---
-// Import the global.css file here so that it is included on
 import "../../styles/global.css";
 import { SEO } from "astro-seo";
-
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 
-// all pages through the use of the <BaseHead /> component.
 export interface Props {
     title: string;
     description: string;
@@ -19,7 +16,7 @@ const {
     title,
     description = SITE_DESCRIPTION,
     isPost,
-    image = "/assets/cernezan-social.jpg",
+    image = "/assets/socialBannerCerneZan.jpg",
 } = Astro.props;
 
 function prepareTitle(title: string | undefined): string {

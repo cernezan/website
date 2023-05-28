@@ -5,6 +5,13 @@ import Header from "../components/Header.astro";
 
 import { SITE_TITLE } from "../consts";
 
+export interface Props {
+    title: string;
+    image?: string;
+    description: string;
+    isPost?: boolean;
+}
+
 const { title, image, description, isPost } = Astro.props;
 ---
 
