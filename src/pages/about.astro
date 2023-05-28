@@ -1,0 +1,51 @@
+---
+import TitleSection from "../components/TitleSection.astro";
+import PrimaryButton from "../components/buttons/PrimaryButton.astro";
+import SecondaryButton from "../components/buttons/SecondaryButton.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout
+    title="About"
+    description="I'm a software tinkerer interested in design and building software."
+    isPost={false}
+>
+    <section>
+        <TitleSection
+            title="Hey 👋, my name is Žan."
+            description="I'm a software tinkerer interested in design and building software."
+        />
+
+        <p>
+            The best way to describe myself would be as a tech enthusiast with
+            varying interests in other spheres. I've always been fascinated by
+            everything at the intersection of technology, design and personal
+            well-being. I enjoy learning about various topics, from computers to
+            fitness and I feel fulfilled when I can use my knowledge to help the
+            people around me.
+        </p>
+        <p>
+            I'm currently working at <a
+                href="https://celtra.com/"
+                target="_blank">Celtra</a
+            > as a Junior QA Engineer. Before joining Celtra, I worked as a Full-stack
+            Engineer at a small Slovenian company during my college years.
+        </p>
+        <p>
+            I enjoy building applications, extensions, websites, and more. I'm
+            interested in design and in creating software that can improve and
+            enrich people's lives.
+        </p>
+        <p>
+            I also write on <a href="/blog">my personal blog</a>, where I share
+            interesting links, design prototypes, project updates, and various
+            other things.
+        </p>
+
+        <p>I would love to hear from you.</p>
+        <div class="my-6 flex space-x-4">
+            <PrimaryButton text="Contact page" href="contact" />
+            <SecondaryButton text="Email me" href="mailto:cv14ht16@duck.com" />
+        </div>
+    </section>
+</MainLayout>
