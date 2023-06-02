@@ -46,6 +46,15 @@ export default defineConfig({
                         required: false,
                     },
                     {
+                        type: "boolean",
+                        name: "draft",
+                        label: "Draft",
+                        required: false,
+                        ui: {
+                            defaultValue: true,
+                        },
+                    },
+                    {
                         type: "datetime",
                         name: "pubDate",
                         label: "Date Posted",
