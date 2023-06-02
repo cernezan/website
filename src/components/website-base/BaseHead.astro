@@ -14,7 +14,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const {
     title,
-    description = SITE_DESCRIPTION,
+    description = "text",
     isPost,
     image = "/assets/socialBannerCerneZan.jpg",
 } = Astro.props;
@@ -54,7 +54,7 @@ const finalizedType = prepareType(isPost);
     }}
     extend={{
         // extending the default link tags
-        link: [{ rel: "icon", href: "assets/favicon.svg" }],
+        link: [{ rel: "icon", href: "/assets/favicon.svg" }],
         // extending the default meta tags
         meta: [
             {

@@ -1,6 +1,6 @@
-import { defineConfig as i } from "tinacms";
-const l = "main", a = i({
-  branch: l,
+import { defineConfig as a } from "tinacms";
+const i = "main", o = a({
+  branch: i,
   clientId: "'clientIdHIDDEN'",
   token: "'tokenTinaHIDDEN'",
   build: {
@@ -36,6 +36,15 @@ const l = "main", a = i({
             required: !1
           },
           {
+            type: "boolean",
+            name: "draft",
+            label: "Draft",
+            required: !1,
+            ui: {
+              defaultValue: !0
+            }
+          },
+          {
             type: "datetime",
             name: "pubDate",
             label: "Date Posted",
@@ -66,5 +75,5 @@ const l = "main", a = i({
   }
 });
 export {
-  a as default
+  o as default
 };

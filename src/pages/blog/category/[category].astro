@@ -6,7 +6,6 @@ import { slugify } from "../../../utils";
 import PostPreview from "../../../components/PostPreview.astro";
 
 const { posts, categoryName, category } = Astro.props;
-console.log(categoryName, "T");
 
 export async function getStaticPaths() {
     let posts = await getCollection("blog");
@@ -31,10 +30,12 @@ let categoryPosts = await getCollection("blog", ({ data }) => {
 categoryPosts = categoryPosts.sort((a: any, b: any) => {
     return b.data.pubDate - a.data.pubDate;
 });
-console.log(categoryPosts, "T");
 ---
 
-<MainLayout title={categoryName}>
+<MainLayout
+    title={categoryName}
+    description={categoryName + "is one of blog's categories!"}
+>
     <main>
         <h1>{categoryName}</h1>
         <section>

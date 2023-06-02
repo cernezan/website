@@ -11,7 +11,7 @@ import BackToBlog from "../components/BackToBlog.astro";
 
 export interface Props {
     title: string;
-    headerImage: string;
+    headerImage?: string;
     pubDate: Date;
     updatedDate?: Date;
     category: string;
@@ -30,7 +30,7 @@ const postData = posts.filter(
 <MainLayout
     title={title}
     image={headerImage}
-    description={removeMarkdown(postData.body).slice(0, 150) + "..."}
+    description={removeMarkdown(postData.body).slice(0, 400) + "..."}
     isPost={true}
 >
     <!-- HEADER IMAGE -->

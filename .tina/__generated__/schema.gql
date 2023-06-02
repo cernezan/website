@@ -83,6 +83,7 @@ union DocumentNode = Post
 
 type Post implements Node & Document {
   title: String
+  draft: Boolean
   pubDate: String!
   category: String!
   body: JSON
@@ -96,6 +97,11 @@ input StringFilter {
   eq: String
   exists: Boolean
   in: [String]
+}
+
+input BooleanFilter {
+  eq: Boolean
+  exists: Boolean
 }
 
 input DatetimeFilter {
@@ -114,6 +120,7 @@ input RichTextFilter {
 
 input PostFilter {
   title: StringFilter
+  draft: BooleanFilter
   pubDate: DatetimeFilter
   category: StringFilter
   body: RichTextFilter
@@ -150,6 +157,7 @@ input DocumentMutation {
 
 input PostMutation {
   title: String
+  draft: Boolean
   pubDate: String
   category: String
   body: JSON
