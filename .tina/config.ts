@@ -38,21 +38,15 @@ export default defineConfig({
                         },
                     },
                 },
+                defaultItem: () => ({
+                    draft: true,
+                }),
                 fields: [
                     {
                         type: "string",
                         name: "title",
                         label: "Title",
                         required: false,
-                    },
-                    {
-                        type: "boolean",
-                        name: "draft",
-                        label: "Draft",
-                        required: false,
-                        ui: {
-                            defaultValue: true,
-                        },
                     },
                     {
                         type: "datetime",
@@ -78,6 +72,12 @@ export default defineConfig({
                         name: "body",
                         label: "Body",
                         isBody: true,
+                    },
+                    {
+                        type: "boolean",
+                        name: "draft",
+                        label: "Draft",
+                        required: false,
                     },
                 ],
             },

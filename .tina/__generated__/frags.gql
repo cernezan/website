@@ -1,7 +1,7 @@
 fragment PostParts on Post {
   title
-  draft
   pubDate
   category
   body
+  draft
 }

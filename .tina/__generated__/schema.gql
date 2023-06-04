@@ -17,6 +17,11 @@ type SystemInfo {
   collection: Collection!
 }
 
+type Folder {
+  name: String!
+  path: String!
+}
+
 type PageInfo {
   hasPreviousPage: Boolean!
   hasNextPage: Boolean!
@@ -76,17 +81,17 @@ type Collection {
   matches: String
   templates: [JSON]
   fields: [JSON]
-  documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter): DocumentConnection!
+  documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Post
+union DocumentNode = Post | Folder
 
 type Post implements Node & Document {
   title: String
-  draft: Boolean
   pubDate: String!
   category: String!
   body: JSON
+  draft: Boolean
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -97,11 +102,6 @@ input StringFilter {
   eq: String
   exists: Boolean
   in: [String]
-}
-
-input BooleanFilter {
-  eq: Boolean
-  exists: Boolean
 }
 
 input DatetimeFilter {
@@ -118,12 +118,17 @@ input RichTextFilter {
   exists: Boolean
 }
 
+input BooleanFilter {
+  eq: Boolean
+  exists: Boolean
+}
+
 input PostFilter {
   title: StringFilter
-  draft: BooleanFilter
   pubDate: DatetimeFilter
   category: StringFilter
   body: RichTextFilter
+  draft: BooleanFilter
 }
 
 type PostConnectionEdges {
@@ -157,14 +162,13 @@ input DocumentMutation {
 
 input PostMutation {
   title: String
-  draft: Boolean
   pubDate: String
   category: String
   body: JSON
+  draft: Boolean
 }
 
 schema {
   query: Query
   mutation: Mutation
 }
-  

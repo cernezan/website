@@ -40,6 +40,11 @@ function prepareType(isPost: boolean | undefined) {
 const finalizedTitle = prepareTitle(title);
 const finalizedDescription = description.slice(0, 140) + "...";
 const finalizedType = prepareType(isPost);
+
+console.log(finalizedTitle, "title");
+console.log(finalizedDescription, "description");
+console.log(finalizedType, "type");
+console.log(image, "image");
 ---
 
 <SEO
