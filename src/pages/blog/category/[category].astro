@@ -27,9 +27,11 @@ export async function getStaticPaths() {
 let categoryPosts = await getCollection("blog", ({ data }) => {
     return data.category === categoryName;
 });
-categoryPosts = categoryPosts.sort((a: any, b: any) => {
-    return b.data.pubDate - a.data.pubDate;
-});
+categoryPosts = categoryPosts
+    .sort((a: any, b: any) => {
+        return b.data.pubDate - a.data.pubDate;
+    })
+    .filter((post) => !post.data.draft);
 ---
 
 <MainLayout
