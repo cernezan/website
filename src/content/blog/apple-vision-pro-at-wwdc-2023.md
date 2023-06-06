@@ -2,7 +2,7 @@
 title: Apple Vision Pro at WWDC 2023
 pubDate: 2023-06-05T22:00:00.000Z
 category: "\U0001F4BB Tech"
-draft: true
+draft: false
 ---
 
 I took some time to reflect on the Apple Vision Pro announcement at this year's WWDC. I'm sure I will ruminate some more in the upcoming days about other announcements as well. This post is all over the place, but I like it that way. I just want to share some interesting photos, takes, designs, and more from the event, enjoy.
