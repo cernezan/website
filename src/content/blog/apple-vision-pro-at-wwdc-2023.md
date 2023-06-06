@@ -21,7 +21,7 @@ A few observations about the Apple Vision Pro:
 * FaceTime/Conferencing seems worse for people who don't have the headset. Eventually, when everyone is going to use the headset no one will see the real faces?
 * We're already facing a lot of social and relationship issues - this seems to deepen the problem of spending even more time alone.
 
-![](/media/around_you__bfdlxkwczahe_large_2x.jpg "Guffy")
+![](/media/around_you__bfdlxkwczahe_large_2x.jpg "Goofy")![](/media/around_you__bfdlxkwczahe_large_2x.jpg "G")
 
 The software's design seems appealing but nothing revolutionary. For now, the overall OS experience feels quite bland. I wanted to see something more out of visionOS, but having backward-compatible apps (thanks to the M2 chip) is going to add some additional value to the product. The VR part seems especially bland, the only demonstration we got about it was screen-styled entertainment which was fine, but nothing special.
 
