@@ -68,6 +68,12 @@ export default defineConfig({
                         required: true,
                     },
                     {
+                        type: "image",
+                        name: "image",
+                        label: "Cover Image",
+                        required: false,
+                    },
+                    {
                         type: "rich-text",
                         name: "body",
                         label: "Body",

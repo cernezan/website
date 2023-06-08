@@ -3,11 +3,10 @@ import MainLayout from "./MainLayout.astro";
 import PageImage from "../components/PageImage.astro";
 import PageTitle from "../components/PageTitle.astro";
 import CategoryDate from "../components/CategoryDate.astro";
+import BackToBlog from "../components/BackToBlog.astro";
 
 import { removeMarkdown } from "../utils";
-
-import { getCollection } from "astro:content";
-import BackToBlog from "../components/BackToBlog.astro";
+import { CollectionEntry, getCollection } from "astro:content";
 
 export interface Props {
     title: string;
@@ -20,11 +19,10 @@ export interface Props {
 const { title, headerImage, pubDate, updatedDate, category } = Astro.props;
 const categoryPath = "/blog/category/";
 
-let posts = await getCollection("blog");
+let posts: CollectionEntry<"blog">[] = await getCollection("blog");
 // postData is used for meta (social media) description
-const postData = posts.filter(
-    (post: any) => post.slug === Astro.params.slug
-)[0];
+const postData = posts.filter((post) => post.slug === Astro.params.slug)[0];
+console.log(headerImage, "IMAGE");
 ---
 
 <MainLayout

@@ -4,18 +4,30 @@ import MainLayout from "./MainLayout.astro";
 import PageTitle from "../components/PageTitle.astro";
 import CategoryDate from "../components/CategoryDate.astro";
 
+export interface Props {
+    title: string;
+    headerImage?: string;
+    pubDate?: Date;
+    updatedDate?: Date;
+    description?: string;
+    frontmatter?: {
+        title: string;
+        description: string;
+    };
+}
+
 const { title, headerImage, pubDate, updatedDate, description, frontmatter } =
     Astro.props;
 ---
 
 <MainLayout
-    title={title || frontmatter.title}
+    title={title || frontmatter?.title || "Untitled"}
     image={headerImage}
-    description={description || frontmatter.description}
+    description={description || frontmatter?.description || ""}
 >
     <PageImage image={headerImage} title={title} />
     <CategoryDate pubDate={pubDate} updatedDate={updatedDate} />
-    <PageTitle>{title || frontmatter.title}</PageTitle>
+    <PageTitle>{title || frontmatter?.title || "Untitled"}</PageTitle>
 
     <slot />
 </MainLayout>

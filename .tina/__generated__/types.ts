@@ -167,6 +167,7 @@ export type Post = Node & Document & {
   title?: Maybe<Scalars['String']>;
   pubDate: Scalars['String'];
   category: Scalars['String'];
+  image?: Maybe<Scalars['String']>;
   body?: Maybe<Scalars['JSON']>;
   draft?: Maybe<Scalars['Boolean']>;
   id: Scalars['ID'];
@@ -189,6 +190,13 @@ export type DatetimeFilter = {
   in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
+export type ImageFilter = {
+  startsWith?: InputMaybe<Scalars['String']>;
+  eq?: InputMaybe<Scalars['String']>;
+  exists?: InputMaybe<Scalars['Boolean']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
 export type RichTextFilter = {
   startsWith?: InputMaybe<Scalars['String']>;
   eq?: InputMaybe<Scalars['String']>;
@@ -204,6 +212,7 @@ export type PostFilter = {
   title?: InputMaybe<StringFilter>;
   pubDate?: InputMaybe<DatetimeFilter>;
   category?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
   body?: InputMaybe<RichTextFilter>;
   draft?: InputMaybe<BooleanFilter>;
 };
@@ -283,18 +292,19 @@ export type PostMutation = {
   title?: InputMaybe<Scalars['String']>;
   pubDate?: InputMaybe<Scalars['String']>;
   category?: InputMaybe<Scalars['String']>;
+  image?: InputMaybe<Scalars['String']>;
   body?: InputMaybe<Scalars['JSON']>;
   draft?: InputMaybe<Scalars['Boolean']>;
 };
 
-export type PostPartsFragment = { __typename?: 'Post', title?: string | null, pubDate: string, category: string, body?: any | null, draft?: boolean | null };
+export type PostPartsFragment = { __typename?: 'Post', title?: string | null, pubDate: string, category: string, image?: string | null, body?: any | null, draft?: boolean | null };
 
 export type PostQueryVariables = Exact<{
   relativePath: Scalars['String'];
 }>;
 
 
-export type PostQuery = { __typename?: 'Query', post: { __typename?: 'Post', id: string, title?: string | null, pubDate: string, category: string, body?: any | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PostQuery = { __typename?: 'Query', post: { __typename?: 'Post', id: string, title?: string | null, pubDate: string, category: string, image?: string | null, body?: any | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type PostConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']>;
@@ -306,13 +316,14 @@ export type PostConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostConnectionEdges', cursor: string, node?: { __typename?: 'Post', id: string, title?: string | null, pubDate: string, category: string, body?: any | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostConnectionEdges', cursor: string, node?: { __typename?: 'Post', id: string, title?: string | null, pubDate: string, category: string, image?: string | null, body?: any | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export const PostPartsFragmentDoc = gql`
     fragment PostParts on Post {
   title
   pubDate
   category
+  image
   body
   draft
 }

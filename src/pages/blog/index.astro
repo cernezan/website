@@ -3,18 +3,16 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import ChipButton from "../../components/ChipButton.astro";
 import PageTitle from "../../components/PageTitle.astro";
 
-import { getCollection } from "astro:content";
+import { CollectionEntry, getCollection } from "astro:content";
 import { slugify } from "../../utils";
 import PostPreview from "../../components/PostPreview.astro";
 
-let posts = (await getCollection("blog")).sort(
+let posts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 posts = posts.filter((post) => !post.data.draft);
 
-const categories = [
-    ...new Set(posts.map((post: any) => post.data.category).flat()),
-];
+const categories = [...new Set(posts.map((post) => post.data.category).flat())];
 const categoryPath = "/blog/category/";
 ---
 
@@ -40,7 +38,7 @@ const categoryPath = "/blog/category/";
         </section>
         <section>
             {
-                posts.map((post: any) => (
+                posts.map((post) => (
                     <PostPreview
                         title={post.data.title}
                         description={post.body.split(/\n\n/)[0]}

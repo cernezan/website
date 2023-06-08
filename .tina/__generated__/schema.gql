@@ -90,6 +90,7 @@ type Post implements Node & Document {
   title: String
   pubDate: String!
   category: String!
+  image: String
   body: JSON
   draft: Boolean
   id: ID!
@@ -112,6 +113,13 @@ input DatetimeFilter {
   in: [String]
 }
 
+input ImageFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+  in: [String]
+}
+
 input RichTextFilter {
   startsWith: String
   eq: String
@@ -127,6 +135,7 @@ input PostFilter {
   title: StringFilter
   pubDate: DatetimeFilter
   category: StringFilter
+  image: ImageFilter
   body: RichTextFilter
   draft: BooleanFilter
 }
@@ -164,6 +173,7 @@ input PostMutation {
   title: String
   pubDate: String
   category: String
+  image: String
   body: JSON
   draft: Boolean
 }

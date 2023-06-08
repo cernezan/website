@@ -64,7 +64,11 @@ article > ul {
     padding-left: 1.1rem;
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
-    line-height: 2;
+}
+
+ul > li {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 
 article a, .link {
