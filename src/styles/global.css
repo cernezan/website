@@ -5,16 +5,22 @@
 
 @layer utilities {
     .animation-delay-2000 {
-      animation-delay: 2s;
+        animation-delay: 2s;
     }
     .animation-delay-4000 {
-      animation-delay: 8s;
+        animation-delay: 8s;
     }
-
     .animation-delay-2500 {
         animation-delay: 4s;
-      }
-  }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reduce-motion {
+        animation: none !important;
+        transition: none !important;
+    }
+}
 
 :root {
     --primary-color: #71C7FE;
@@ -71,7 +77,7 @@ ul > li {
     margin-bottom: 0.75rem;
 }
 
-article a, .link {
+.full-view a, .link {
     font-weight: var(--base-font-weight);
     text-decoration: underline;
     text-decoration-color: var(--primary-color);

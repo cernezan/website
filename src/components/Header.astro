@@ -5,7 +5,7 @@ import ProfileBadge from "./ProfileBadge.astro";
 const { title } = Astro.props;
 ---
 
-<header class="my-6 md:my-8 md:flex">
+<header class="my-6 md:my-8 md:flex" aria-label="Header navigation">
     <div class="flex">
         <!-- PROFILE - NAME - SUBTITLE -->
         <ProfileBadge
@@ -14,6 +14,7 @@ const { title } = Astro.props;
             profilePicture="/assets/profilePictures/profilePictureBW.jpeg"
             websiteLogo="/assets/logoZanCerne.png"
             subText="Hope you're doing ok."
+            aria-label="Profile badge"
         />
 
         <!-- MOBILE NAVIGATION -->
@@ -42,6 +43,7 @@ const { title } = Astro.props;
 
     <nav
         id="navbar"
+        aria-label="Main navigation"
         class="my-auto mt-4 hidden flex-col flex-wrap justify-between gap-x-6 rounded-lg bg-zinc-100 py-2 text-center md:order-1 md:my-auto md:ml-auto md:flex md:w-auto md:flex-row md:bg-transparent md:py-0"
     >
         <HeaderLink class="justify-center" href="/">Home</HeaderLink>

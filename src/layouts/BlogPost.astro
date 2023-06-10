@@ -39,10 +39,12 @@ const postData = posts.filter((post) => post.slug === Astro.params.slug)[0];
         pubDate={pubDate}
         updatedDate={updatedDate}
     />
-    <!-- TITLE -->
-    <PageTitle>{title}</PageTitle>
-    <!-- CONTENT -->
-    <slot />
+    <section aria-label="Blog post" class="full-view">
+        <!-- TITLE -->
+        <PageTitle>{title}</PageTitle>
+        <!-- CONTENT -->
+        <slot />
+    </section>
 
     <BackToBlog />
 </MainLayout>

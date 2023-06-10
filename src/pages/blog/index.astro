@@ -22,7 +22,7 @@ const categoryPath = "/blog/category/";
 >
     <main>
         <PageTitle>Blog</PageTitle>
-        <section>
+        <section aria-label="Categories">
             <div class="my-2 overflow-x-auto whitespace-nowrap">
                 {
                     categories.map((category) => {
@@ -36,7 +36,7 @@ const categoryPath = "/blog/category/";
                 }
             </div>
         </section>
-        <section>
+        <section aria-label="Blog posts">
             {
                 posts.map((post) => (
                     <PostPreview

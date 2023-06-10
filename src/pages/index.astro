@@ -33,15 +33,18 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
         />
     </head>
     <body class="flex w-full max-w-4xl flex-col md:mx-auto">
-        <div class="mb-6 overflow-hidden px-6 md:flex-row md:overflow-visible">
+        <section
+            aria-label="Žan Černe - Personal website"
+            class="mb-6 overflow-hidden px-6 md:flex-row md:overflow-visible"
+        >
             <Header title={SITE_TITLE} />
             <div class="flex h-full flex-col-reverse md:flex-row">
                 <!-- HELLO WITH SOCIALS -->
                 <div class="md:my-auto">
                     <h1 class="mb-0">Hey 👋, my name is Žan!</h1>
-                    <h4 class="mt-0 mb-6 text-zinc-600">
+                    <div class="mb-6 mt-0 text-lg font-semibold text-zinc-600">
                         Welcome to my personal website.
-                    </h4>
+                    </div>
 
                     <div
                         class="flex space-x-5 py-1"
@@ -68,18 +71,18 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
                 </div>
                 <!-- LOGO WITH BLOBS -->
                 <div
-                    class="relative inset-0 m-auto my-12 flex items-center justify-center"
+                    class="reduce-motion relative inset-0 m-auto my-12 flex items-center justify-center"
                 >
                     <div
-                        class="animation-delay-2500 absolute top-0 left-0 m-6 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialIndigo p-4 pl-7 opacity-70 mix-blend-multiply blur-xl filter md:top-0 md:left-0"
+                        class="reduce-motion animation-delay-2500 absolute left-0 top-0 m-6 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialIndigo p-4 pl-7 opacity-70 mix-blend-multiply blur-xl filter md:left-0 md:top-0"
                     >
                     </div>
                     <div
-                        class="animation-delay-4000 absolute top-0 left-0 -m-2 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialGreen mix-blend-multiply blur-xl filter md:top-0 md:left-0"
+                        class="reduce-motion animation-delay-4000 absolute left-0 top-0 -m-2 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialGreen mix-blend-multiply blur-xl filter md:left-0 md:top-0"
                     >
                     </div>
                     <div
-                        class="animation-delay-2000 absolute top-0 left-0 -m-10 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialBlue opacity-70 mix-blend-multiply blur-xl filter md:top-0 md:left-0"
+                        class="reduce-motion animation-delay-2000 absolute left-0 top-0 -m-10 h-72 w-72 animate-blob items-center justify-center rounded-full bg-specialBlue opacity-70 mix-blend-multiply blur-xl filter md:left-0 md:top-0"
                     >
                     </div>
                     <svg
@@ -89,6 +92,7 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
                         viewBox="0 0 192 192"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        aria-label="Žan Černe logo"
                     >
                         <g clip-path="url(#clip0_55_12)">
                             <circle cx="96" cy="96" r="96" fill="#171717"
@@ -111,10 +115,10 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
                     </svg>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- MY INTERESTS -->
-        <section class="my-4 px-6">
+        <section class="my-4 px-6" aria-label="My interests">
             <TitleSection
                 title="My Interests"
                 description="Diverse interests that spark my curiosity."
@@ -137,7 +141,7 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
         </section>
 
         <!-- BLOG POSTS -->
-        <section class="my-4 px-6">
+        <section class="my-4 px-6" aria-label="Recent blog posts">
             <TitleSection
                 title="Recent Blog Posts"
                 description="Explore the latest posts from my blog."
@@ -146,7 +150,10 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
         </section>
 
         <!-- MORE ABOUT ME AND CONTACT -->
-        <section class="my-4 px-6">
+        <section
+            class="my-4 px-6"
+            aria-label="What is this website and contact."
+        >
             <TitleSection
                 title="What is This?"
                 description="This is my personal website."
@@ -175,7 +182,7 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
             </p>
 
             <div
-                class="my-6 flex flex-col space-y-4 text-center md:flex-row md:space-y-0 md:space-x-4"
+                class="my-6 flex flex-col space-y-4 text-center md:flex-row md:space-x-4 md:space-y-0"
             >
                 <PrimaryButton text="Let's connect" href="/contact" />
                 <SecondaryButton text="About me" href="/about" />
@@ -183,9 +190,10 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
 
             <p>With Gratitude,</p>
             <img
-                class="mb-10 h-20 w-auto"
+                class="mb-10 h-20 w-24"
                 src="/assets/icons/signature.svg"
                 alt="Personal signature"
+                aria-label="Personal signature"
             />
         </section>
 
