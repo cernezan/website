@@ -18,13 +18,13 @@ Open the terminal of your choice to run the script below.
 
 ### 2. Run preferred script
 
-Small spacer
+Small spacer:
 
 ```shell
 defaults write com.apple.dock persistent - apps - array - add '{"tile-type"="small-spacer-tile";}'; killall Dock
 ```
 
-Regular spacer: 
+Regular spacer:
 
 ```shell
 defaults write com.apple.dock persistent - apps - array - add '{"tile-type"="spacer-tile";}'; killall Dock
