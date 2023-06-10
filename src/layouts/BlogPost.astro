@@ -22,7 +22,6 @@ const categoryPath = "/blog/category/";
 let posts: CollectionEntry<"blog">[] = await getCollection("blog");
 // postData is used for meta (social media) description
 const postData = posts.filter((post) => post.slug === Astro.params.slug)[0];
-console.log(headerImage, "IMAGE");
 ---
 
 <MainLayout

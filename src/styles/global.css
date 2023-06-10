@@ -94,3 +94,9 @@ blockquote {
     border-bottom-right-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
 }
+
+.astro-code {
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+}
