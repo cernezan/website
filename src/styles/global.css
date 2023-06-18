@@ -39,30 +39,30 @@ html {
   }
 
 h1, h2, h3, h4 {
-    font-weight: var(--base-font-weight);
+    font-weight: var(--base-font-weight) !important;
     margin-bottom: var(--base-margin);
-    margin-top: var(--base-margin);
+    margin-top: var(--base-margin) ;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2rem !important;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-size: 1.25rem !important;
 }
 
 h4 {
-    font-size: 1.125rem;
+    font-size: 1.125rem !important;
 }
 
 p {
-    margin-bottom: 0.75rem;
-    margin-top: 0.75rem;
+    margin-bottom: 0.75rem !important;
+    margin-top: 0.75rem !important;
 }
 
 article > ul {
