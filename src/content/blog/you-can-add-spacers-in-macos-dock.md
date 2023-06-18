@@ -2,13 +2,13 @@
 title: You Can Add Spacers in macOS Dock
 pubDate: 2023-06-09T22:00:00.000Z
 category: "\U0001F4BB Tech"
-image: ''
+image: ""
 draft: false
 ---
 
 Today, I've learned that you can add spacers to the macOS Dock, thanks to [Chris Pennington's 2021 blog post](https://chrispennington.blog/blog/add-spacer-in-macos-dock/). There are small and medium-sized spacers; I preferred the small ones as they look a bit nicer for my setup.
 
-![](</media/Screenshot 2023-06-10 at 11.53.19.png> "macOS Dock with Spacers")
+![](</assets/media/Screenshot 2023-06-10 at 11.53.19.png> "macOS Dock with Spacers")
 
 Here's how you do it:
 
