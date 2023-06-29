@@ -1,5 +1,5 @@
 ---
-title: How I Meditate?
+title: How I Meditate
 pubDate: 2023-06-27T22:00:00.000Z
 category: "\U0001F951 Health"
 draft: false
