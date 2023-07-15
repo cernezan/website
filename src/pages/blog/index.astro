@@ -12,6 +12,15 @@ let posts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
 );
 posts = posts.filter((post) => !post.data.draft);
 
+function getNumberOfUniquePostsFromDate(date: Date) {
+    return posts.filter((post) => {
+        return post.data.pubDate.getTime() > date.getTime();
+    }).length;
+}
+
+const numberOfDaysCompletedChallenge = getNumberOfUniquePostsFromDate(
+    new Date("2023-07-10")
+);
 const categories = [...new Set(posts.map((post) => post.data.category).flat())];
 const categoryPath = "/blog/category/";
 ---
@@ -20,10 +29,26 @@ const categoryPath = "/blog/category/";
     title={"Blog"}
     description="This is my personal blog, where I share thoughts on tech, personal growth, and health. Find insights into the latest tech trends, learn from my health journey, and join me on my personal journey!"
 >
-    <main>
+    <main class="flex flex-col">
         <PageTitle>Blog</PageTitle>
-        <section aria-label="Categories">
-            <div class="my-2 overflow-x-auto whitespace-nowrap">
+
+        <section
+            class="my-4 rounded-md border border-violet-200 bg-gradient-to-r from-violet-50 p-4 backdrop-blur-md"
+            aria-label="100 Days of Blogging"
+        >
+            <a class="flex flex-col" href="/blog/100-days-of-blogging/">
+                <span class="font-medium text-violet-400"
+                    >100 Days of Blogging Challenge</span
+                >
+                <span class="my-2 text-xl font-bold"
+                    >{numberOfDaysCompletedChallenge}/100 Days Completed</span
+                >
+                <span class="mt-1 font-medium">Learn more</span>
+            </a>
+        </section>
+
+        <section class="mb-2 mt-4" aria-label="Categories">
+            <div class="overflow-x-auto whitespace-nowrap">
                 {
                     categories.map((category) => {
                         return (
@@ -36,6 +61,7 @@ const categoryPath = "/blog/category/";
                 }
             </div>
         </section>
+
         <section aria-label="Blog posts">
             {
                 posts.map((post) => (
