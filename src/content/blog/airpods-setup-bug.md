@@ -7,4 +7,4 @@ For two weeks in a row, I have been getting this weird bug with my AirPods Pro. 
 
 It's just annoying. I have tried everything to combat this, including completely resetting them to factory settings, but nothing seems to help so far.
 
-![AirPods Setup Incomplete](/assets/media/IMG_4598.jpg "AirPods Setup Incomplete")
+![AirPods Setup Incomplete](/media/IMG_4598.jpg "AirPods Setup Incomplete")

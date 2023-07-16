@@ -15,4 +15,4 @@ Currently, I have a few ideas for sections on the homepage:
 
 Here's a quick sneak peek at the blobs I was talking about.
 
-![Simple animated blobs preview](</assets/media/Screenshot 2023-05-11 at 20.47.21.png> "Simple animated blobs preview")
+![Simple animated blobs preview](</media/Screenshot 2023-05-11 at 20.47.21.png> "Simple animated blobs preview")

@@ -10,7 +10,7 @@ I believe in climate change, and like many others, I believe it is one of the bi
 
 It makes very little sense to recycle, drive an electric car, or use other means of transportation, eat less meat, and then see more than [200 private jets fly away within hours of the Super Bowl ending](https://www.reddit.com/r/interestingasfuck/comments/ssebrx/flight_map_showing_over_the_140_private_jets_that/). It's discouraging. You recycled for a year, only for a jet engine to undo all your hard work in minutes.
 
-![Private jets after the Super Bowl](/assets/media/privatejets.jpg "Private jets after the Super Bowl")
+![Private jets after the Super Bowl](/media/privatejets.jpg "Private jets after the Super Bowl")
 
 We, individuals, should feel shamed by our actions while every institution known to man is maximizing for the shareholder value, not reversing the effects of climate change. It makes people angry and I understand.
 

@@ -106,3 +106,8 @@ blockquote {
     border-radius: 4px;
     overflow-x: auto;
 }
+
+.no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
