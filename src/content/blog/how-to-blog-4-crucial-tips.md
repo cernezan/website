@@ -23,13 +23,10 @@ After a while, I realized that designing different things was great, but I wante
 
 Your 'why' can be very different as you can see, my example was quite specific. Your 'why' can be to:
 
-\-	Share your knowledge or personal growth journey
-
-\-	Document your life experience
-
-\-	Express your creativity or interest
-
-\-	Find and build a community of like-minded people
+* share your knowledge or personal growth journey
+* document your life experience
+* express your creativity or interest
+* find and build a community of like-minded people.
 
 Once you know why you want to start (or continue) blogging, you might want to niche down.
 
@@ -43,13 +40,10 @@ Now instead of writing for every single cycling discipline, you can pick just yo
 
 You should niche down and write about a specific topic you're most interested in. I think this can help with a couple of things:
 
-\-	improve reader-writer connection
-
-\-	keep you motivated
-
-\-	help you find a specific community easier
-
-\-	help you attract passionate readers (due to a very specific niche)
+* improve reader-writer connection
+* keep you motivated
+* help you find a specific community easier
+* help you attract passionate readers (due to a very specific niche).
 
 Find something you want to blog about, niche down, but also keep an open mind about what else you might want to write about. Expanding your niche can be challenging but essential to keep your motivation going.
 
@@ -59,11 +53,9 @@ When I started my previous blog, I did so using Google's Blogger platform. It wa
 
 So, one of my pieces of advice must be, just start publishing. I know that selecting a platform might be a hassle, so here are a few of my favorites:
 
-\-	WordPress (self-hosted)
-
-\-	Ghost (a bit pricey for my taste, but well designed and can be self-hosted)
-
-\-	Jekyll and Hugo (if you enjoy Markdown)
+* WordPress (self-hosted)
+* Ghost (a bit pricey for my taste, but well designed and can be self-hosted)
+* Jekyll and Hugo (if you enjoy Markdown)
 
 I have to mention my friend Jan-Lucas, who created his own blogging platform in Go called [GoBlog](https://goblog.app/).
 
