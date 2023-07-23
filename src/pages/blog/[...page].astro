@@ -1,17 +1,34 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import ChipButton from "../../components/ChipButton.astro";
+import SmallButton from "../../components/buttons/SmallButton.astro";
 import PageTitle from "../../components/PageTitle.astro";
+import Pagination from "../../components/Pagination.astro";
 
 import { CollectionEntry, getCollection } from "astro:content";
 import { slugify } from "../../utils";
 import PostPreview from "../../components/PostPreview.astro";
 
-let posts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
-posts = posts.filter((post) => !post.data.draft);
+// Getting all posts
+async function fetchPosts() {
+    let posts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
+        (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    );
+    return posts.filter((post) => !post.data.draft);
+}
 
+// === PAGINATION ===
+const { page } = Astro.props;
+
+export async function getStaticPaths({ paginate }) {
+    let posts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
+        (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    );
+    posts = posts.filter((post) => !post.data.draft);
+    return paginate(posts, { pageSize: 8 });
+}
+
+const posts = await fetchPosts();
+// === 100 DAYS OF BLOGGING ===
 function getNumberOfUniquePostsFromDate(date: Date) {
     return posts.filter((post) => {
         return post.data.pubDate.getTime() > date.getTime();
@@ -21,6 +38,8 @@ function getNumberOfUniquePostsFromDate(date: Date) {
 const numberOfDaysCompletedChallenge = getNumberOfUniquePostsFromDate(
     new Date("2023-07-10")
 );
+
+// === CATEGORIES ===
 const categories = [...new Set(posts.map((post) => post.data.category).flat())];
 const categoryPath = "/blog/category/";
 ---
@@ -33,7 +52,7 @@ const categoryPath = "/blog/category/";
         <PageTitle>Blog</PageTitle>
 
         <section
-            class="my-4 rounded-md border border-violet-200 bg-gradient-to-r from-violet-50 p-4 backdrop-blur-md"
+            class="my-4 rounded-md border border-violet-200 bg-gradient-to-r from-violet-50 to-violet-100 p-4 backdrop-blur-md"
             aria-label="100 Days of Blogging"
         >
             <a class="flex flex-col" href="/blog/100-days-of-blogging/">
@@ -47,14 +66,16 @@ const categoryPath = "/blog/category/";
             </a>
         </section>
 
-        <section class="mb-2 mt-4" aria-label="Categories">
-            <div class="no-scrollbar overflow-x-scroll whitespace-nowrap">
+        <section class="my-4" aria-label="Categories">
+            <div
+                class="no-scrollbar flex gap-x-2 overflow-x-scroll whitespace-nowrap"
+            >
                 {
                     categories.map((category) => {
                         return (
-                            <ChipButton
-                                categoryName={category}
-                                categorySlug={categoryPath + slugify(category)}
+                            <SmallButton
+                                text={category}
+                                href={categoryPath + slugify(category)}
                             />
                         );
                     })
@@ -64,7 +85,7 @@ const categoryPath = "/blog/category/";
 
         <section aria-label="Blog posts">
             {
-                posts.map((post) => (
+                page.data.map((post: any) => (
                     <PostPreview
                         title={post.data.title}
                         description={post.body.split(/\n\n/)[0]}
@@ -77,5 +98,11 @@ const categoryPath = "/blog/category/";
                 ))
             }
         </section>
+        <Pagination
+            prevUrl={page.url.prev}
+            nextUrl={page.url.next}
+            currentPage={page.currentPage}
+            lastPage={page.lastPage}
+        />
     </main>
 </MainLayout>

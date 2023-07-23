@@ -1,132 +1,27 @@
 ---
-const { section, currentPage, totalPages } = Astro.props;
+import SmallButton from "./buttons/SmallButton.astro";
 
-const indexPageLink = currentPage === 2;
-const hasPrevPage = currentPage > 1;
-const hasNextPage = totalPages > currentPage;
-
-let pageList = [];
-for (let i = 1; i <= totalPages; i++) {
-    pageList.push(i);
+export interface Props {
+    prevUrl: string;
+    nextUrl: string;
+    currentPage?: number;
+    lastPage?: number;
 }
+
+const { prevUrl, nextUrl, currentPage = 0, lastPage } = Astro.props;
 ---
 
-{
-    totalPages > 1 && (
-        <nav class="mb-4 flex justify-center space-x-2" aria-label="Pagination">
-            {/* previous */}
-            {hasPrevPage ? (
-                <a
-                    href={
-                        indexPageLink
-                            ? `${section ? "/" + section : "/"}`
-                            : `${section ? "/" + section : ""}/page/${
-                                  currentPage - 1
-                              }`
-                    }
-                    class="bg-theme-light text-dark inline-flex h-[42px] w-[42px] items-center justify-center rounded px-2 py-2 text-center"
-                >
-                    <span class="sr-only">Previous</span>
-                    <svg
-                        class="h-5 w-5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                            clip-rule="evenodd"
-                        />
-                    </svg>
-                </a>
-            ) : (
-                <span class="bg-theme-light text-dark inline-flex h-[42px] w-[42px] items-center justify-center rounded px-2 py-2 text-center">
-                    <span class="sr-only">Previous</span>
-                    <svg
-                        class="h-5 w-5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                            clip-rule="evenodd"
-                        />
-                    </svg>
-                </span>
-            )}
+<nav aria-label="Blog pages" class="my-4 flex justify-center gap-x-4">
+    {prevUrl && <SmallButton href={prevUrl} icon="tabler:chevron-left" />}
 
-            {/* page index */}
-            {pageList.map((pagination, i) =>
-                pagination === currentPage ? (
-                    <span
-                        aria-current="page"
-                        class={`bg-primary rounded px-4 py-2 text-white`}
-                    >
-                        {pagination}
-                    </span>
-                ) : (
-                    <a
-                        href={
-                            i === 0
-                                ? `${section ? "/" + section : "/"}`
-                                : `${
-                                      section ? "/" + section : ""
-                                  }/page/${pagination}`
-                        }
-                        aria-current="page"
-                        class={`bg-theme-light text-dark h-[42px] w-[42px] rounded px-4 py-2 text-center`}
-                    >
-                        {pagination}
-                    </a>
-                )
-            )}
-
-            {/* next page */}
-            {hasNextPage ? (
-                <a
-                    href={`${section ? "/" + section : ""}/page/${
-                        currentPage + 1
-                    }`}
-                    class="bg-theme-light text-dark inline-flex h-[42px] w-[42px] items-center justify-center rounded px-2 py-2 text-center"
-                >
-                    <span class="sr-only">Next</span>
-                    <svg
-                        class="h-5 w-5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                            clip-rule="evenodd"
-                        />
-                    </svg>
-                </a>
-            ) : (
-                <span class="bg-theme-light text-dark inline-flex h-[42px] w-[42px] items-center justify-center rounded px-2 py-2 text-center">
-                    <span class="sr-only">Next</span>
-                    <svg
-                        class="h-5 w-5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                            clip-rule="evenodd"
-                        />
-                    </svg>
-                </span>
-            )}
-        </nav>
-    )
-}
+    {
+        currentPage > 1 && (
+            <span class="my-auto px-3 font-medium">{currentPage}</span>
+        )
+    }
+    {
+        currentPage !== lastPage && nextUrl && (
+            <SmallButton href={nextUrl} icon="tabler:chevron-right" />
+        )
+    }
+</nav>

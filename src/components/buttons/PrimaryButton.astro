@@ -1,16 +1,22 @@
 ---
+import { Icon } from "astro-icon";
+
 export interface Props {
     text: string;
     href: string;
+    leftIcon?: string;
+    rightIcon?: string;
 }
 
-let { text, href } = Astro.props;
+let { text, href, leftIcon, rightIcon } = Astro.props;
 ---
 
 <a href={href}>
     <div
-        class="rounded-lg bg-zinc-900 px-5 py-3 font-semibold text-white hover:bg-zinc-700"
+        class="flex justify-center rounded-2xl bg-zinc-900 px-5 py-3 text-center font-semibold text-white hover:bg-zinc-700"
     >
-        {text}
+        {leftIcon && <Icon name={leftIcon} />}
+        <span>{text}</span>
+        {rightIcon && <Icon name={rightIcon} />}
     </div>
 </a>

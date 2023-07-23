@@ -40,6 +40,7 @@ export default defineConfig({
                 },
                 defaultItem: () => ({
                     draft: true,
+                    pubDate: new Date(),
                 }),
                 fields: [
                     {

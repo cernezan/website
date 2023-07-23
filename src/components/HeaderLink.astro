@@ -8,7 +8,7 @@ const isActive = href === pathname || href === "/" + splitPathname[1];
 <div class="m-2 md:m-0">
     <a
         href={href}
-        class={isActive ? "font-semibold" : "text-zinc-700 hover:text-black"}
+        class={isActive ? "font-semibold" : "opacity-70 hover:text-black"}
     >
         <slot />
     </a>

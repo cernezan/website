@@ -1,6 +1,7 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import ProfileBadge from "./ProfileBadge.astro";
+import { Icon } from "astro-icon";
 
 const { title } = Astro.props;
 ---
@@ -26,17 +27,11 @@ const { title } = Astro.props;
         >
             <span class="sr-only">Open main menu</span>
             <!-- MENU ICONS -->
-            <img
-                id="menu-icon"
-                class="h-6 w-6"
-                src="/assets/icons/menu.svg"
-                alt="hamburger menu icon"
-            />
-            <img
+            <Icon name="tabler:menu-2" id="menu-icon" class="h-6 w-6" />
+            <Icon
+                name="tabler:chevrons-up"
                 id="close-icon"
                 class="hidden h-6 w-6"
-                src="/assets/icons/close.svg"
-                alt="close menu icon"
             />
         </button>
     </div>

@@ -14,7 +14,7 @@ let { posts } = Astro.props;
         posts.map((post) => (
             <div class="w-full">
                 <a href={`/blog/${post.slug}/`}>
-                    <div class="rounded-2xl border border-zinc-300 p-4 transition-transform duration-200 ease-out focus-within:outline hover:scale-[1.02] hover:border-zinc-400">
+                    <div class="rounded-2xl border border-zinc-300 p-4 hover:bg-zinc-100">
                         <h3 class="mb-1 mt-0 overflow-hidden overflow-ellipsis whitespace-nowrap">
                             {post.data.title}
                         </h3>

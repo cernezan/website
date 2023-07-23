@@ -2,14 +2,12 @@
 import BaseHead from "../components/website-base/BaseHead.astro";
 import Footer from "../components/website-base/Footer.astro";
 import Header from "../components/Header.astro";
-import GithubIcon from "../components/icons/GithubIcon.astro";
 import ChipCloud from "../components/ChipCloud.astro";
-import SimpleMailIcon from "../components/icons/SimpleMailIcon.astro";
 import PostsPreview from "../components/PostsPreview.astro";
 import TitleSection from "../components/TitleSection.astro";
 import PrimaryButton from "../components/buttons/PrimaryButton.astro";
 import SecondaryButton from "../components/buttons/SecondaryButton.astro";
-import { Image } from "astro:assets";
+import { Icon } from "astro-icon";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { CollectionEntry, getCollection } from "astro:content";
 
@@ -41,31 +39,45 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
             <div class="flex h-full flex-col-reverse md:flex-row">
                 <!-- HELLO WITH SOCIALS -->
                 <div class="md:my-auto">
-                    <h1 class="mb-0">Hey 👋, my name is Žan!</h1>
-                    <div class="mb-6 mt-0 text-lg font-semibold text-zinc-600">
+                    <h1 class="mb-0">Hej, my name is Žan!</h1>
+
+                    <div class="mb-6 mt-0 text-lg font-semibold opacity-60">
                         Welcome to my personal website.
                     </div>
 
                     <div
-                        class="flex space-x-5 py-1"
+                        class="flex gap-x-5 py-1"
                         role="contentinfo"
                         aria-label="Social media links"
                     >
                         <a
                             href="mailto:cv14ht16@duck.com"
-                            class="text-current hover:text-zinc-600"
+                            class="text-current hover:opacity-60"
                             aria-label="Send me an email"
                         >
-                            <SimpleMailIcon />
+                            <Icon class="h-8 w-8" name="tabler:mail" />
                         </a>
                         <a
                             href="https://github.com/cernezan"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="text-current hover:text-zinc-600"
+                            class="text-current hover:opacity-60"
                             aria-label="Github profile"
                         >
-                            <GithubIcon />
+                            <Icon class="h-8 w-8" name="tabler:brand-github" />
+                        </a>
+
+                        <a
+                            href="https://linkedin.com/in/cernezan/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-current hover:opacity-60"
+                            aria-label="Github profile"
+                        >
+                            <Icon
+                                class="h-8 w-8"
+                                name="tabler:brand-linkedin"
+                            />
                         </a>
                     </div>
                 </div>
@@ -147,6 +159,15 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
                 description="Explore the latest posts from my blog."
             />
             <PostsPreview posts={latestPosts} />
+
+            <div class="my-4 flex flex-col gap-4 text-center md:flex-row">
+                <PrimaryButton text="Visit Blog" href="/blog" />
+                <SecondaryButton
+                    text="Subscribe to RSS"
+                    leftIcon="tabler:rss"
+                    href="/rss.xml"
+                />
+            </div>
         </section>
 
         <!-- MORE ABOUT ME AND CONTACT -->
@@ -176,14 +197,12 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
                 directly. I would be absolutely delighted to hear from you and
                 connect 🤝.
             </p>
-            <p class="text-xs font-light text-zinc-500">
+            <p class="text-xs font-light opacity-60">
                 I would love to hop on a call, even if you're just looking for
                 an interesting conversation and nothing else.
             </p>
 
-            <div
-                class="my-6 flex flex-col space-y-4 text-center md:flex-row md:space-x-4 md:space-y-0"
-            >
+            <div class="my-4 flex flex-col gap-4 text-center md:flex-row">
                 <PrimaryButton text="Let's connect" href="/contact" />
                 <SecondaryButton text="About me" href="/about" />
             </div>
