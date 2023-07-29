@@ -25,7 +25,7 @@ const { title, image, description, isPost } = Astro.props;
             isPost={isPost || false}
         />
     </head>
-    <body class="flex h-screen w-full max-w-4xl flex-col px-6 md:mx-auto">
+    <body class="flex min-h-screen w-full max-w-4xl flex-col px-6 md:mx-auto">
         <Header title={SITE_TITLE} />
         <slot>No content.</slot>
         <Footer />

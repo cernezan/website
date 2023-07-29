@@ -1,16 +1,77 @@
 ---
+import { Picture } from "@astrojs/image/components";
+
 const today = new Date();
 ---
 
 <footer
-    aria-label="Footer, information about the website "
-    class="bottom-0 mt-auto flex w-full flex-col py-6 text-center opacity-60"
+    aria-label="Žan Černe Footer"
+    class="bottom-0 mt-auto flex w-auto flex-col space-y-8 px-6 py-12 md:flex-row md:space-y-0"
 >
-    <div class="mx-auto my-auto flex flex-col text-center">
-        Made with love for everyone 🌍
+    <div class="flex w-full flex-col space-y-2 md:w-1/2">
+        <div class="flex items-center space-x-2">
+            <Picture
+                src="/assets/logoZanCerne.png"
+                alt="Žan Černe Logo"
+                class="justify-center space-x-2 rounded-full object-cover"
+                sizes="400"
+                format={"jpeg"}
+                widths={[400, 400]}
+                width={18}
+                height={18}
+                aspectRatio={1}
+            /><a href="https://cernezan.com">Žan Černe</a>
+        </div>
+        <span class="opacity-60"
+            >Last updated: {today.toJSON().slice(0, 10)}</span
+        >
+        <span>
+            <a
+                class="opacity-60 hover:opacity-100"
+                href="https://fediring.net/previous?host=cernezan.com">←</a
+            >
+            <a
+                class="opacity-60 hover:opacity-100"
+                target="_blank"
+                href="https://fediring.net/">Fediring</a
+            >
+            <a
+                class="opacity-60 hover:opacity-100"
+                href="https://fediring.net/next?host=cernezan.com">→</a
+            >
+        </span>
+        <span class="opacity-60"
+            >&copy;2020 - {today.getFullYear()}. All rights reserved.</span
+        >
     </div>
-    <div>
-        &copy; 2020 - {today.getFullYear()} Žan Černe
+    <div
+        class="flex w-full flex-col space-y-8 md:w-1/2 md:flex-row md:space-y-0"
+    >
+        <div class="flex w-full flex-col space-y-2 md:w-1/2">
+            <span>Explore</span>
+            <a class="opacity-60 hover:opacity-100" href="/blog">Blog</a>
+            <a class="opacity-60 hover:opacity-100" href="/contact">Contact</a>
+            <a class="opacity-60 hover:opacity-100" href="/about">About</a>
+        </div>
+        <div class="flex w-full flex-col space-y-2 md:w-1/2">
+            <span>Social</span>
+            <a
+                class="opacity-60 hover:opacity-100"
+                target="_blank"
+                href="https://toot.io/@zan">Mastodon</a
+            >
+            <a
+                class="opacity-60 hover:opacity-100"
+                target="_blank"
+                href="https://github.com/cernezan">Github</a
+            >
+            <a
+                class="opacity-60 hover:opacity-100"
+                target="_blank"
+                href="https://linkedin.com/in/cernezan/">LinkedIn</a
+            >
+        </div>
     </div>
-    <a rel="me" title="Mastodon Verification" href="https://toot.io/@zan"></a>
 </footer>
+
+<a rel="me" title="Mastodon Verification" href="https://toot.io/@zan"></a>

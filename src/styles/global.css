@@ -24,6 +24,7 @@
 
 :root {
     --primary-color: #71C7FE;
+    --primary-color-text: #083D5B;
     --base-font-weight: 600;
     --base-margin: 0.75rem;
     --decoration-thickness: 2px;
@@ -35,7 +36,6 @@ html {
     text-rendering: optimizeLegibility;
     scrollbar-gutter: stable;
     overflow-y: scroll;
-
   }
 
 h1, h2, h3, h4 {
@@ -78,10 +78,10 @@ ul > li {
 }
 
 .full-view a, .link {
-    font-weight: var(--base-font-weight);
     text-decoration: underline;
     text-decoration-color: var(--primary-color);
     text-decoration-thickness: var(--decoration-thickness);
+    font-weight: 500;
 }
 
 article img {
@@ -91,14 +91,13 @@ article img {
 }
 
 blockquote {
-    padding: 1rem;
-    background-color: #fafafa;
-    border-color: rgb(212, 212, 216);
-    border-left-width: 4px;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom-right-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+    padding: .25rem;
+    border-left: 2px solid ;
+    padding-left: 10px;
+    margin-top: 1.75rem !important;
+    margin-bottom: 1.75rem !important;
+    border-color: var(--primary-color);
+    color: var(--primary-color-text);
 }
 
 .astro-code {
