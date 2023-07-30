@@ -21,6 +21,8 @@ Sometimes Reddit is just the best place to find certain information. A lot of pe
 
 We use infinite scroll apps when we want to numb ourselves from the realities of the world. Most of the time, it's because reality and living in the moment is just too painful.
 
+![](</media/DALL·E 2023-07-30 18.25.47 - in line art style (one-line drawing almost) - person using social media apps wanting to numb herself from the realities of the world. Most of the time.png>)
+
 This challenge allowed me to reset some of my endless consumption and showed me that life doesn't end if you stop yourself from always consuming content. I'm grateful that I took on this challenge.
 
 Next step is to figure out how to reintroduce some of these technologies to further improve my life.
