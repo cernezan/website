@@ -13,7 +13,7 @@ Then the issues began to surface. I started using the Arc browser at work and it
 
 I also didn't appreciate the idea of locking the browser behind an account. Even with v1.0, you still have to create an Arc account to use it. I think there are a few core principles of a free and open internet that The Browser Company just doesn't have. I understand that to be a market disruptor, trying new things is necessary and I completely agree with the statement that browsers haven't seen innovation in decades - in terms of UX.
 
-![](/media/oldComputer-min.png)![](/media/oldComputer-min.png "Older computer in line art")
+![](/media/oldComputer-min.png)
 
 The image above is a creation of my own. [Learn more about my approach to AI transparency](https://cernezan.com/blog/being-transparent-about-my-ai-use/).
 
