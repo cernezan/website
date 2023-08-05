@@ -1,5 +1,5 @@
 ---
-import SmallButton from "./buttons/SmallButton.astro";
+import MainButton from "./buttons/mainButton.astro";
 
 export interface Props {
     prevUrl: string;
@@ -12,7 +12,15 @@ const { prevUrl, nextUrl, currentPage = 0, lastPage } = Astro.props;
 ---
 
 <nav aria-label="Blog pages" class="my-4 flex justify-center gap-x-4">
-    {prevUrl && <SmallButton href={prevUrl} icon="tabler:chevron-left" />}
+    {
+        prevUrl && (
+            <MainButton
+                href={prevUrl}
+                isSecondary={true}
+                leftIcon="tabler:chevron-left"
+            />
+        )
+    }
 
     {
         currentPage > 1 && (
@@ -21,7 +29,11 @@ const { prevUrl, nextUrl, currentPage = 0, lastPage } = Astro.props;
     }
     {
         currentPage !== lastPage && nextUrl && (
-            <SmallButton href={nextUrl} icon="tabler:chevron-right" />
+            <MainButton
+                href={nextUrl}
+                isSecondary={true}
+                leftIcon="tabler:chevron-right"
+            />
         )
     }
 </nav>

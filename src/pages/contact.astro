@@ -1,5 +1,5 @@
 ---
-import PrimaryButton from "../components/buttons/PrimaryButton.astro";
+import MainButton from "../components/buttons/mainButton.astro";
 import SecondaryButton from "../components/buttons/SecondaryButton.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 ---
@@ -18,10 +18,14 @@ import PageLayout from "../layouts/PageLayout.astro";
     <p>I'm looking forward to hearing from you!</p>
 
     <div class="my-3 flex space-x-4">
-        <PrimaryButton
+        <MainButton
             text="Schedule a call"
             href="https://calendly.com/cernezan/connect"
         />
-        <SecondaryButton text="Email me" href="mailto:cv14ht16@duck.com" />
+        <MainButton
+            isSecondary={true}
+            text="Email me"
+            href="mailto:cv14ht16@duck.com"
+        />
     </div>
 </PageLayout>

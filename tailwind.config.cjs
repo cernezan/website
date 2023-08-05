@@ -6,9 +6,9 @@ module.exports = {
 	
 		extend: {
 			colors: {
-				specialIndigo: '#567EEF',
-				specialBlue: '#71C7FE',
-				specialGreen: '#D9E6D4',
+				specialIndigo: '#85C0FF',
+				specialBlue: '#9796F0',
+				specialGreen: '#85C0FF',
 	
 			  },
 			animation: {
@@ -30,6 +30,9 @@ module.exports = {
 				},
 			  },
 			},
+			transitionProperty: {
+				'border': 'border-color',
+			  },
 		  },
 	},
 	plugins: [],

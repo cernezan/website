@@ -5,8 +5,7 @@ import Header from "../components/Header.astro";
 import ChipCloud from "../components/ChipCloud.astro";
 import PostsPreview from "../components/PostsPreview.astro";
 import TitleSection from "../components/TitleSection.astro";
-import PrimaryButton from "../components/buttons/PrimaryButton.astro";
-import SecondaryButton from "../components/buttons/SecondaryButton.astro";
+import MainButton from "../components/buttons/mainButton.astro";
 import { Icon } from "astro-icon";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { CollectionEntry, getCollection } from "astro:content";
@@ -138,16 +137,16 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
 
             <ChipCloud
                 listOfItems={[
-                    "👨‍💻 Technology",
-                    "👨‍🎨 Design",
-                    "🥑 Health and fitness",
-                    "📖 Reading",
-                    "🧘‍♂️ Meditation",
-                    "🍿 Movies",
-                    "📚 Learning",
-                    "🎸 Playing guitar",
-                    "💻 Programming",
-                    "🌎 Traveling",
+                    "Technology",
+                    "Design",
+                    "Health and fitness",
+                    "Reading",
+                    "Meditation",
+                    "Movies",
+                    "Learning",
+                    "Playing guitar",
+                    "Programming",
+                    "Traveling",
                 ]}
             />
         </section>
@@ -161,8 +160,9 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
             <PostsPreview posts={latestPosts} />
 
             <div class="my-4 flex flex-col gap-4 text-center md:flex-row">
-                <PrimaryButton text="Visit Blog" href="/blog" />
-                <SecondaryButton
+                <MainButton text="Visit Blog" href="/blog" />
+                <MainButton
+                    isSecondary={true}
                     text="Subscribe to RSS"
                     leftIcon="tabler:rss"
                     href="/rss.xml"
@@ -203,8 +203,8 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
             </p>
 
             <div class="my-4 flex flex-col gap-4 text-center md:flex-row">
-                <PrimaryButton text="Let's connect" href="/contact" />
-                <SecondaryButton text="About me" href="/about" />
+                <MainButton text="Let's connect" href="/contact" />
+                <MainButton isSecondary={true} text="About me" href="/about" />
             </div>
 
             <p>With Gratitude,</p>

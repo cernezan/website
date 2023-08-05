@@ -1,12 +1,12 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import SmallButton from "../../components/buttons/SmallButton.astro";
 import PageTitle from "../../components/PageTitle.astro";
 import Pagination from "../../components/Pagination.astro";
 
 import { CollectionEntry, getCollection } from "astro:content";
 import { slugify } from "../../utils";
 import PostPreview from "../../components/PostPreview.astro";
+import MainButton from "../../components/buttons/mainButton.astro";
 
 // Getting all posts
 async function fetchPosts() {
@@ -52,7 +52,7 @@ const categoryPath = "/blog/category/";
         <PageTitle>Blog</PageTitle>
 
         <section
-            class="my-4 rounded-md border border-violet-200 bg-gradient-to-r from-violet-50 to-violet-100 p-4 backdrop-blur-md"
+            class="my-4 rounded-xl border border-violet-200 bg-gradient-to-r from-violet-50 to-violet-100 p-4 backdrop-blur-md"
             aria-label="100 Days of Blogging"
         >
             <a class="flex flex-col" href="/blog/100-days-of-blogging/">
@@ -73,7 +73,8 @@ const categoryPath = "/blog/category/";
                 {
                     categories.map((category) => {
                         return (
-                            <SmallButton
+                            <MainButton
+                                isSecondary={true}
                                 text={category}
                                 href={categoryPath + slugify(category)}
                             />

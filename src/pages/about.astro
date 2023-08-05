@@ -1,6 +1,5 @@
 ---
-import PrimaryButton from "../components/buttons/PrimaryButton.astro";
-import SecondaryButton from "../components/buttons/SecondaryButton.astro";
+import MainButton from "../components/buttons/mainButton.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
@@ -45,8 +44,12 @@ import MainLayout from "../layouts/MainLayout.astro";
 
         <p>I would love to hear from you.</p>
         <div class="my-6 flex space-x-4">
-            <PrimaryButton text="Contact page" href="/contact" />
-            <SecondaryButton text="Email me" href="mailto:cv14ht16@duck.com" />
+            <MainButton text="Contact page" href="/contact" />
+            <MainButton
+                isSecondary={true}
+                text="Email me"
+                href="mailto:cv14ht16@duck.com"
+            />
         </div>
     </section>
 </MainLayout>

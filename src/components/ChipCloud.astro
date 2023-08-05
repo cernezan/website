@@ -9,13 +9,11 @@ let { listOfItems } = Astro.props;
 listOfItems = shuffleArray(listOfItems);
 ---
 
-<div>
+<div class="flex flex-wrap gap-2">
     {
         listOfItems.map((item) => (
-            <div class="mb-3 mr-3 inline-flex rounded-full border border-zinc-300 px-3 py-2 text-sm font-semibold">
-                {item.split(" ")[0]}
-                <div class="mx-2 border-l" />
-                {item.split(/ (.*)/s)[1]}
+            <div class="inline-flex rounded-3xl border border-dashed border-zinc-200 px-4 py-2 text-center">
+                {item}
             </div>
         ))
     }

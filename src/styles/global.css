@@ -23,8 +23,8 @@
 }
 
 :root {
-    --primary-color: #71C7FE;
-    --primary-color-text: #083D5B;
+    --primary-color: #007BFF;
+    --primary-color-text: #003063;
     --base-font-weight: 600;
     --base-margin: 0.75rem;
     --decoration-thickness: 2px;
@@ -78,7 +78,7 @@ ul > li {
 }
 
 .full-view a, .link {
-    text-decoration: underline;
+    text-decoration-line: underline;
     text-decoration-color: var(--primary-color);
     text-decoration-thickness: var(--decoration-thickness);
     font-weight: 500;
