@@ -9,22 +9,22 @@ export interface Props {
 let { posts } = Astro.props;
 ---
 
-<article class="flex flex-col gap-4 md:grid md:grid-cols-2">
+<div class="flex flex-col gap-4 md:grid md:grid-cols-2">
     {
         posts.map((post) => (
-            <div class="w-full">
+            <article class="w-full">
                 <a href={`/blog/${post.slug}/`}>
-                    <div class="rounded-2xl border border-zinc-300 p-4 hover:bg-zinc-100">
-                        <h3 class="mb-1 mt-0 overflow-hidden overflow-ellipsis whitespace-nowrap">
-                            {post.data.title}
-                        </h3>
-                        <CategoryDate
-                            category={post.data.category}
-                            pubDate={post.data.pubDate}
-                        />
+                    <div class="flex h-full flex-col rounded-xl border border-zinc-200 bg-zinc-50 p-4 transition-colors delay-75 ease-out hover:cursor-pointer hover:border-zinc-400">
+                        <h3 class="mb-auto mt-0">{post.data.title}</h3>
+                        <div class="mt-1">
+                            <CategoryDate
+                                category={post.data.category}
+                                pubDate={post.data.pubDate}
+                            />
+                        </div>
                     </div>
                 </a>
-            </div>
+            </article>
         ))
     }
-</article>
+</div>

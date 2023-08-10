@@ -1,25 +1,23 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from 'astro:assets'
 
 const today = new Date();
 ---
 
 <footer
     aria-label="Žan Černe Footer"
-    class="bottom-0 mt-auto flex w-auto flex-col space-y-8 py-12 md:flex-row md:space-y-0"
+    class="bottom-0 mt-auto flex w-auto flex-col space-y-8 py-20 md:flex-row md:space-y-0"
 >
     <div class="flex w-full flex-col space-y-2 md:w-1/2">
         <div class="flex items-center space-x-2">
-            <Picture
+            <Image
                 src="/assets/logoZanCerne.png"
                 alt="Žan Černe Logo"
                 class="justify-center space-x-2 rounded-full object-cover"
                 sizes="400"
-                format={"jpeg"}
-                widths={[400, 400]}
+                width={[400, 400]}
                 width={18}
                 height={18}
-                aspectRatio={1}
             /><a href="https://cernezan.com">Žan Černe</a>
         </div>
         <span class="opacity-60"

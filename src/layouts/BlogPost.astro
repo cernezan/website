@@ -3,10 +3,13 @@ import MainLayout from "./MainLayout.astro";
 import PageImage from "../components/PageImage.astro";
 import PageTitle from "../components/PageTitle.astro";
 import CategoryDate from "../components/CategoryDate.astro";
-import BackToBlog from "../components/BackToBlog.astro";
-
+import BackToBlog from "../components/post-components/BackToBlog.astro";
 import { removeMarkdown } from "../utils";
 import { CollectionEntry, getCollection } from "astro:content";
+import ShareOnSocial from "../components/post-components/ShareOnSocial.astro";
+import TitleSection from "../components/TitleSection.astro";
+import ChipCloud from "../components/ChipCloud.astro";
+import MainButton from "../components/buttons/mainButton.astro";
 
 export interface Props {
     title: string;
@@ -22,6 +25,7 @@ const categoryPath = "/blog/category/";
 let posts: CollectionEntry<"blog">[] = await getCollection("blog");
 // postData is used for meta (social media) description
 const postData = posts.filter((post) => post.slug === Astro.params.slug)[0];
+const postURL = Astro.url.href;
 ---
 
 <MainLayout
@@ -45,6 +49,27 @@ const postData = posts.filter((post) => post.slug === Astro.params.slug)[0];
         <!-- CONTENT -->
         <slot />
     </section>
-
+    <ShareOnSocial postURL={postURL} />
     <BackToBlog />
+    <section
+        class="my-24 flex flex-col items-center text-center"
+        aria-label="Subscribe to RSS"
+    >
+        <TitleSection
+            title="Subscribe now to stay updated"
+            description="Join hundreds of readers with more articles like this"
+        />
+        <ChipCloud
+            listOfItems={["Technology", "Design", "Health", "Productivity"]}
+        />
+        <div
+            class="my-6 flex flex-col items-center gap-4 text-center md:flex-row md:justify-center"
+        >
+            <MainButton
+                text="Subscribe to RSS"
+                leftIcon="tabler:rss"
+                href="/rss.xml"
+            />
+        </div>
+    </section>
 </MainLayout>
