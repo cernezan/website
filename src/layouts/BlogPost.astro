@@ -10,6 +10,7 @@ import ShareOnSocial from "../components/post-components/ShareOnSocial.astro";
 import TitleSection from "../components/TitleSection.astro";
 import ChipCloud from "../components/ChipCloud.astro";
 import MainButton from "../components/buttons/mainButton.astro";
+import PostsPreview from "../components/PostsPreview.astro";
 
 export interface Props {
     title: string;
@@ -23,6 +24,16 @@ const { title, headerImage, pubDate, updatedDate, category } = Astro.props;
 const categoryPath = "/blog/category/";
 
 let posts: CollectionEntry<"blog">[] = await getCollection("blog");
+
+const filteredPosts = posts.filter(
+    (post) => !post.data.draft && post.data.title && post.data.title !== "",
+);
+let randomNums = Math.floor(Math.random() * filteredPosts.length);
+if (randomNums < 2 || randomNums === posts.length) {
+    randomNums = 2;
+}
+const twoRandomPosts = filteredPosts.slice(randomNums - 2, randomNums);
+
 // postData is used for meta (social media) description
 const postData = posts.filter((post) => post.slug === Astro.params.slug)[0];
 const postURL = Astro.url.href;
@@ -51,8 +62,17 @@ const postURL = Astro.url.href;
     </section>
     <ShareOnSocial postURL={postURL} />
     <BackToBlog />
+    <!-- POST SUGGESTION-->
+    <section class="my-12 flex flex-col items-center text-center">
+        <TitleSection
+            title="Continue reading"
+            description="Interested in more? Try these articles next"
+        />
+        <PostsPreview posts={twoRandomPosts} />
+    </section>
+    <!-- SUBSCRIBE RSS -->
     <section
-        class="my-24 flex flex-col items-center text-center"
+        class="my-12 flex flex-col items-center text-center"
         aria-label="Subscribe to RSS"
     >
         <TitleSection
