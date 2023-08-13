@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets'
-
+import { Image } from "astro:assets";
 
 const { title, link, profilePicture, websiteLogo, subText } = Astro.props;
 ---
@@ -19,7 +18,7 @@ const { title, link, profilePicture, websiteLogo, subText } = Astro.props;
         <Image
             src={websiteLogo}
             alt="Profile Picture"
-            class="absolute  top-0 rounded-full left-0 object-cover opacity-0 transition-opacity duration-500 ease-in-out hover:opacity-100"
+            class="absolute top-0 rounded-full left-0 object-cover opacity-0 transition-opacity duration-500 ease-in-out hover:opacity-100"
             sizes="400"
             format={"jpeg"}
             width={50}

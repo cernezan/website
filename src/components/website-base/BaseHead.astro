@@ -1,7 +1,8 @@
 ---
 import "../../styles/global.css";
 import { SEO } from "astro-seo";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { SITE_DESCRIPTION } from "../../consts";
+import { prepareTitle } from "../../utils";
 
 export interface Props {
     title: string;
@@ -18,17 +19,6 @@ const {
     isPost,
     image = "/assets/socialBannerCerneZan.jpg",
 } = Astro.props;
-function prepareTitle(title: string | undefined): string {
-    if (canonicalURL.pathname === "/") {
-        return SITE_TITLE + " - " + "Personal Website";
-    } else if (title === "" && isPost) {
-        return description.slice(0, 45) + "..." + " | " + SITE_TITLE;
-    } else if (title === undefined) {
-        return SITE_TITLE;
-    }
-
-    return `${title} | ${SITE_TITLE}`;
-}
 
 function prepareType(isPost: boolean | undefined) {
     if (isPost) {
@@ -38,7 +28,12 @@ function prepareType(isPost: boolean | undefined) {
     }
 }
 
-const finalizedTitle = prepareTitle(title);
+const finalizedTitle = prepareTitle(
+    title,
+    canonicalURL.pathname,
+    description,
+    isPost || false,
+);
 const finalizedDescription = description.slice(0, 140) + "...";
 const finalizedType = prepareType(isPost);
 ---

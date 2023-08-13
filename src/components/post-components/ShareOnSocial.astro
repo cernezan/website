@@ -1,5 +1,4 @@
 ---
-import { Icon } from "astro-icon";
 import MainButton from "../buttons/mainButton.astro";
 
 export interface Props {
@@ -17,21 +16,21 @@ const { postURL } = Astro.props;
     <div class="flex gap-x-3 gap-y-3 sm:flex-row">
         <!-- Twitter -->
         <MainButton
-            leftIcon="tabler:brand-twitter"
+            leftIcon="entypo-social:twitter"
             isSecondary={true}
             target="_blank"
             href={`https://twitter.com/intent/tweet?url=${postURL}`}
         />
         <!-- Facebook -->
         <MainButton
-            leftIcon="tabler:brand-facebook"
+            leftIcon="entypo-social:facebook"
             isSecondary={true}
             target="_blank"
             href={`https://www.facebook.com/sharer/sharer.php?u=${postURL}`}
         />
         <!-- LinkedIn -->
         <MainButton
-            leftIcon="tabler:brand-linkedin"
+            leftIcon="entypo-social:linkedin"
             isSecondary={true}
             target="_blank"
             href={`https://www.linkedin.com/shareArticle?mini=true&url=${postURL}`}

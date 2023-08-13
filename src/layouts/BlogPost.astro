@@ -34,7 +34,7 @@ if (randomNums < 2 || randomNums === posts.length) {
 }
 const twoRandomPosts = filteredPosts.slice(randomNums - 2, randomNums);
 
-// postData is used for meta (social media) description
+// postData is used for meta tags (social media descriptions)
 const postData = posts.filter((post) => post.slug === Astro.params.slug)[0];
 const postURL = Astro.url.href;
 ---
@@ -81,7 +81,9 @@ const postURL = Astro.url.href;
         />
         <ChipCloud
             listOfItems={["Technology", "Design", "Health", "Productivity"]}
+            centerItems={true}
         />
+
         <div
             class="my-6 flex flex-col items-center gap-4 text-center md:flex-row md:justify-center"
         >
