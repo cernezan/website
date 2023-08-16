@@ -1,7 +1,7 @@
 ---
 title: Being Transparent About My AI Use
 pubDate: 2023-08-01T22:00:00.000Z
-category: "\U0001F604 Personal"
+category: "Technology"
 draft: false
 ---
 
@@ -14,7 +14,7 @@ This disclaimer got me thinking about my AI use on my blog. I use AI daily since
 
 For the past few days, I've been experimenting with line art images for the blog posts using [DALL-E](https://openai.com/dall-e-2). I now realize that I should label AI-generated content (in my case, AI-generated images) and give some warnings about AI-modified content (when ChatGPT corrects my spelling mistakes). It's not that I'm ashamed of using AI, but I believe it's about being open and honest with you, my reader.
 
-One of the reasons why I should add such disclaimers is to make a distinction between my work and that of AI's, since [yesterday's picture](https://cernezan.com/blog/task-separation-a-powerful-tool-to-simplify-life/) was actually drawn by me. 
+One of the reasons why I should add such disclaimers is to make a distinction between my work and that of AI's, since [yesterday's picture](https://cernezan.com/blog/task-separation-a-powerful-tool-to-simplify-life/) was actually drawn by me.
 
 Yes, an AI inspired me to start creating art again, which is quite amazing. Yesterday's image was quite simple and nothing special, but the whole process of posting a blog post was way more fun - besides writing the post, I also engaged myself in a new activity that I find quite enjoyable.
 

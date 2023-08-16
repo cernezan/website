@@ -1,7 +1,7 @@
 ---
-title: 'Task Separation: A Powerful Tool to Simplify Life'
+title: "Task Separation: A Powerful Tool to Simplify Life"
 pubDate: 2023-07-31T22:00:00.000Z
-category: "\U0001F4DD Article"
+category: "Wellbeing & Growth"
 draft: false
 ---
 

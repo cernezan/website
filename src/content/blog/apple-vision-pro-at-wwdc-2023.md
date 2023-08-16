@@ -1,7 +1,7 @@
 ---
 title: Apple Vision Pro at WWDC 2023
 pubDate: 2023-06-05T22:00:00.000Z
-category: "\U0001F4BB Tech"
+category: "Technology"
 draft: false
 ---
 

@@ -55,11 +55,10 @@ var config_default = defineConfig({
             name: "category",
             label: "Category",
             options: [
-              "\u{1F4BB} Tech",
-              "\u{1F604} Personal",
-              "\u{1F4DD} Article",
-              "\u{1F517} Links",
-              "\u{1F951} Health"
+              "Bitesize",
+              "Wellbeing & Growth",
+              "Technology",
+              "Creativity"
             ],
             required: true
           },

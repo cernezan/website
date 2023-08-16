@@ -1,10 +1,10 @@
 ---
 title: Nabeel's Principles
-pubDate: '2023-06-03T22:00:00.000Z'
-category: "\U0001F604 Personal"
+pubDate: "2023-06-03T22:00:00.000Z"
+category: "Wellbeing & Growth"
 ---
 
-I have no idea how I stumbled upon [Nabeel's website](https://nabeelqu.co/), but I have had his [Principles page](https://nabeelqu.co/principles) bookmarked for a while now, and I've just decided to go through it again. 
+I have no idea how I stumbled upon [Nabeel's website](https://nabeelqu.co/), but I have had his [Principles page](https://nabeelqu.co/principles) bookmarked for a while now, and I've just decided to go through it again.
 
 Here are a few of Nabeel's principles that resonate with me:
 

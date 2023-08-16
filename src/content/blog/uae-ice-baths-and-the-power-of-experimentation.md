@@ -1,7 +1,7 @@
 ---
 title: UAE Ice Baths and the Power of Experimentation
 pubDate: 2023-07-15T22:00:00.000Z
-category: "\U0001F4DD Article"
+category: "Wellbeing & Growth"
 draft: false
 ---
 

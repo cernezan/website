@@ -1,7 +1,7 @@
 ---
 title: Governments Have a Monopoly on Capitalism
-pubDate: '2023-04-14T22:00:00.000Z'
-category: "\U0001F4DD Article"
+pubDate: "2023-04-14T22:00:00.000Z"
+category: "Technology"
 ---
 
 Today, I was browsing the Unsorted category in my notes app and stumbled upon an intriguing note dated 9th of September, 2022. I have no clue about its origin or source, but it presents a thought-provoking idea that I want to share.

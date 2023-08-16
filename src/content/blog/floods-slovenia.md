@@ -1,6 +1,6 @@
 ---
 pubDate: 2023-08-04T22:00:00.000Z
-category: "\U0001F604 Personal"
+category: "Bitesize"
 draft: false
 ---
 

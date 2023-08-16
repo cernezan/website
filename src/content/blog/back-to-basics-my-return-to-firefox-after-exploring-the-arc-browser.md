@@ -1,7 +1,7 @@
 ---
-title: 'Back to Basics: My Return to Firefox after Exploring the Arc Browser'
+title: "Back to Basics: My Return to Firefox after Exploring the Arc Browser"
 pubDate: 2023-08-03T22:00:00.000Z
-category: "\U0001F4BB Tech"
+category: "Technology"
 draft: false
 ---
 

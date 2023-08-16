@@ -1,7 +1,7 @@
 ---
 title: Why Convenience is Key to Solving the Climate Crisis
 pubDate: "2023-03-17T23:00:00.000Z"
-category: "📝 Article"
+category: "Technology"
 ---
 
 Change only happens when it is most convenient for the individual.
