@@ -1,7 +1,7 @@
 ---
 title: My 7 Day Running Challenge
 pubDate: 2023-08-13T22:00:00.000Z
-category: "\U0001F951 Health"
+category: "Wellbeing & Growth"
 draft: false
 ---
 
