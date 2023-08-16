@@ -1,7 +1,7 @@
 {
-    "endOfLine": "lf",
-    "insertFinalNewline": true,
-    "trimTrailingWhitespace": true,
-    "tabWidth": 4,
-  }
-  
+  "tabWidth": 4,
+  "useTabs": false,
+  "endOfLine": "lf",
+  "insertFinalNewline": true,
+  "trimTrailingWhitespace": true
+}

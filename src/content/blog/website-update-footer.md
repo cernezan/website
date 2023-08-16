@@ -1,7 +1,7 @@
 ---
-title: 'Website Update: Footer'
+title: "Website Update: Footer"
 pubDate: 2023-07-28T22:00:00.000Z
-category: "\U0001F604 Personal"
+category: "Bitesize"
 draft: false
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: 'Reconnecting in a Disconnected World: A Personal Reflection'
+title: "Reconnecting in a Disconnected World: A Personal Reflection"
 pubDate: 2023-08-08T22:00:00.000Z
-category: "\U0001F4DD Article"
+category: "Wellbeing & Growth"
 draft: false
 ---
 
@@ -15,8 +15,8 @@ I believe the majority of my current struggles stem from the lack of relationshi
 
 Today, I watched a TED talk titled ["How to Cope with Loneliness" by Olivia Remes](https://www.ted.com/talks/olivia_remes_how_to_cope_with_loneliness). Here are the main points from it:
 
-* Start talking to as many people as possible (like individuals with whom you might not seek a deep connection, like a cashier).
-* Share about yourself (to create more meaningful connections and continue the conversation).
+-   Start talking to as many people as possible (like individuals with whom you might not seek a deep connection, like a cashier).
+-   Share about yourself (to create more meaningful connections and continue the conversation).
 
 I believe both of these tips are quite common-sense. Sharing things about myself can be challenging due to my introverted nature, but if I can do it publicly on the internet with posts like this, I can surely do it in real-life interactions.
 

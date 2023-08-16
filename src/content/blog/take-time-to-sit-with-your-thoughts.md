@@ -1,7 +1,7 @@
 ---
 title: Take Time to Sit with Your Thoughts
 pubDate: 2023-07-27T22:00:00.000Z
-category: "\U0001F604 Personal"
+category: "Wellbeing & Growth"
 draft: false
 ---
 

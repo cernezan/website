@@ -1,6 +1,6 @@
 ---
 pubDate: "2023-05-10T22:00:00.000Z"
-category: "\U0001F604 Personal"
+category: "Bitesize"
 ---
 
 I'm currently working on my homepage. It's really hard to create something simple and clean, yet fun and playful. I believe that the homepage needs to be a bit special and have some fun elements for the first-time visitors. For the past two days, I've been playing around with animated blobs.

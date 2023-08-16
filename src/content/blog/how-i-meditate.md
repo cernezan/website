@@ -1,7 +1,7 @@
 ---
 title: How I Meditate
 pubDate: 2023-06-27T22:00:00.000Z
-category: "\U0001F951 Health"
+category: "Wellbeing & Growth"
 draft: false
 ---
 
@@ -15,23 +15,23 @@ I've been practicing meditation on and off since 2019. I've started using a medi
 
 Here's my usual step-by-step process:
 
-1\.	Put down a yoga mat.
+1\. Put down a yoga mat.
 
-2\.	Stretch for 5-15 minutes.
+2\. Stretch for 5-15 minutes.
 
 This helps me relax my body, and I just stacked those two habits together. It helps me quite a lot with the consistency aspect.
 
-3\.	Pick a guided meditation session lasting from 5-10 minutes.
+3\. Pick a guided meditation session lasting from 5-10 minutes.
 
 Enjoy the moment.
 
 Here are a few things I've learned since I started meditating:
 
-* Meditation won't solve all of your problems.
-* Sometimes meditation won't calm you down.
-* It's okay if you skip a day and lose your streak.
-* Meditation is so simple yet so hard at the same time. Just lying there, noticing your breathing, and letting go.
-* Meditation can be annoying.
-* Meditation can help you be more present even outside of the practice.
+-   Meditation won't solve all of your problems.
+-   Sometimes meditation won't calm you down.
+-   It's okay if you skip a day and lose your streak.
+-   Meditation is so simple yet so hard at the same time. Just lying there, noticing your breathing, and letting go.
+-   Meditation can be annoying.
+-   Meditation can help you be more present even outside of the practice.
 
 The whole point of the practice is to spread that awareness and sense of self outside of it. I see meditation as an anchor that will help you pull back to the present moment even when the waves of life push your boat far away from it.

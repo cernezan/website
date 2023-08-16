@@ -1,7 +1,7 @@
 ---
 title: 100 Days of Blogging
 pubDate: 2023-07-10T22:00:00.000Z
-category: "\U0001F604 Personal"
+category: "Wellbeing & Growth"
 draft: false
 ---
 
@@ -11,9 +11,9 @@ I've been thinking about the idea of 100 days of blogging - where I would write 
 
 Ah, let's do it. It sounds intriguing enough that I want to give it a go. Here are a few reasons why I want to do the 100 days of blogging:
 
-* I want to improve my writing.
-* I want to write more and share more of my thoughts, ideas, and learnings.
-* I want to grow - and I think daily posts will force me to learn or experience something new or interesting that I can write about.
-* I have a lot of personal challenges and in-progress projects that I want to write about.
+-   I want to improve my writing.
+-   I want to write more and share more of my thoughts, ideas, and learnings.
+-   I want to grow - and I think daily posts will force me to learn or experience something new or interesting that I can write about.
+-   I have a lot of personal challenges and in-progress projects that I want to write about.
 
 To follow the rules of the original 100 days to offload, I will toot my blog posts on [my Mastodon account](https://toot.io/@zan). See you tomorrow.

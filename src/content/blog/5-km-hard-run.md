@@ -1,6 +1,6 @@
 ---
 pubDate: 2023-08-10T22:00:00.000Z
-category: "\U0001F951 Health"
+category: "Wellbeing & Growth"
 draft: false
 ---
 

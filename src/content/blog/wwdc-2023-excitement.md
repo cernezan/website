@@ -1,7 +1,7 @@
 ---
 title: WWDC 2023 Excitement
 pubDate: "2023-05-31T22:00:00.000Z"
-category: "\U0001F4BB Tech"
+category: "Technology"
 ---
 
 I'm quite excited for WWDC 2023. Although I'm not a huge fan of VR/AR headsets, I'm still intrigued by the technology. I'm confident that Apple will create a beautiful product and eventually find the product-market fit for it, much like how the Apple Watch played out.

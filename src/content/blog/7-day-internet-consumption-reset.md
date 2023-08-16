@@ -1,7 +1,7 @@
 ---
 title: 7 Day Internet Consumption Reset
 pubDate: 2023-07-22T22:00:00.000Z
-category: "\U0001F604 Personal"
+category: "Bitesize"
 draft: false
 ---
 

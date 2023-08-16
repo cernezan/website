@@ -17,7 +17,7 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
     .sort((a: { data: { pubDate: Date } }, b: { data: { pubDate: Date } }) => {
         return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
     })
-    .slice(0, 4);
+    .slice(0, 2);
 ---
 
 <!DOCTYPE html>
@@ -32,16 +32,18 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
     <body class="flex w-full max-w-4xl flex-col md:mx-auto">
         <section
             aria-label="Žan Černe - Personal website"
-            class="mb-6 overflow-hidden px-6 md:flex-row md:overflow-visible"
+            class="overflow-hidden px-6 pb-6 md:flex-row md:overflow-visible"
         >
             <Header title={SITE_TITLE} />
-            <div class="flex h-full flex-col-reverse md:flex-row">
+            <div
+                class="flex h-auto flex-col-reverse py-10 md:flex-row md:py-20"
+            >
                 <!-- HELLO WITH SOCIALS -->
                 <div class="md:my-auto">
-                    <h1 class="mb-0">Hej, my name is Žan</h1>
+                    <h1 class="mb-0">Hey, my name is Žan</h1>
 
                     <div class="mb-6 mt-0 text-lg font-semibold opacity-60">
-                        Welcome to my personal website
+                        Welcome to my little corner of the web
                     </div>
 
                     <div
@@ -51,7 +53,7 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
                     >
                         <a
                             href="mailto:cv14ht16@duck.com"
-                            class="text-current hover:opacity-60"
+                            class="text-current opacity-60 hover:opacity-100"
                             aria-label="Send me an email"
                         >
                             <Icon class="h-8 w-8" name="tabler:mail" />
@@ -60,17 +62,27 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
                             href="https://github.com/cernezan"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="text-current hover:opacity-60"
+                            class="text-current opacity-60 hover:opacity-100"
                             aria-label="Github profile"
                         >
                             <Icon class="h-8 w-8" name="tabler:brand-github" />
                         </a>
 
                         <a
+                            href="https://toot.io/@zan"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-current opacity-60 hover:opacity-100"
+                            aria-label="Github profile"
+                        >
+                            <Icon class="h-8 w-8" name="ri:mastodon-line" />
+                        </a>
+
+                        <a
                             href="https://linkedin.com/in/cernezan/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="text-current hover:opacity-60"
+                            class="text-current opacity-60 hover:opacity-100"
                             aria-label="Github profile"
                         >
                             <Icon
@@ -129,7 +141,7 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
         </section>
 
         <!-- MY INTERESTS -->
-        <section class="my-4 px-6" aria-label="My interests">
+        <section class="px-6 py-6" aria-label="My interests">
             <TitleSection
                 title="My Interests"
                 description="Diverse interests that spark my curiosity"
@@ -152,14 +164,14 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
         </section>
 
         <!-- BLOG POSTS -->
-        <section class="my-4 px-6" aria-label="Recent blog posts">
+        <section class="px-6 py-6" aria-label="Recent blog posts">
             <TitleSection
                 title="Recent Blog Posts"
                 description="Explore the latest posts from my blog"
             />
             <PostsPreview posts={latestPosts} />
 
-            <div class="my-4 flex flex-col gap-4 text-center md:flex-row">
+            <div class="mt-4 flex flex-col gap-4 text-center md:flex-row">
                 <MainButton text="Visit Blog" href="/blog" />
                 <MainButton
                     isSecondary={true}
@@ -172,7 +184,7 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
 
         <!-- MORE ABOUT ME AND CONTACT -->
         <section
-            class="my-4 px-6"
+            class="px-6 pt-6"
             aria-label="What is this website and contact."
         >
             <TitleSection
@@ -186,20 +198,16 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
             </p>
             <p>
                 I love learning about new things, so I've built this website and
-                its accompanying blog. Here, I write about my learnings,
-                day-to-day challenges and share articles I've found interesting
-                and insightful. I believe that everyone should have their own
-                space on the internet where they can express and share their
-                insights.
+                its accompanying blog. Here, I write about what I've learned,
+                discuss my day-to-day challenges, and share articles that I find
+                interesting and insightful. I believe that everyone should have
+                their own space on the internet where they can express and share
+                their insights.
             </p>
             <p>
                 If you've come this far, you might want to reach out to me
                 directly. I would be absolutely delighted to hear from you and
                 connect.
-            </p>
-            <p class="text-xs font-light opacity-60">
-                I would love to hop on a call, even if you're just looking for
-                an interesting conversation and nothing else.
             </p>
 
             <div class="my-4 flex flex-col gap-4 text-center md:flex-row">
@@ -207,16 +215,16 @@ const latestPosts: CollectionEntry<"blog">[] = blogEntries
                 <MainButton isSecondary={true} text="About me" href="/about" />
             </div>
 
-            <p>With Gratitude,</p>
+            <p>Stay curious,</p>
             <img
-                class="mb-10 h-20 w-24"
+                class="h-20 w-24"
                 src="/assets/icons/signature.svg"
                 alt="Personal signature"
                 aria-label="Personal signature"
             />
         </section>
 
-        <section class="px-6" aria-label="Footer of the website">
+        <section class="px-6 py-6" aria-label="Footer of the website">
             <Footer />
         </section>
     </body>

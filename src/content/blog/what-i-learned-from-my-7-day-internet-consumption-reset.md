@@ -1,7 +1,7 @@
 ---
 title: What I Learned from My 7 Day Internet Consumption Reset
 pubDate: 2023-07-29T22:00:00.000Z
-category: "\U0001F604 Personal"
+category: "Wellbeing & Growth"
 draft: false
 ---
 

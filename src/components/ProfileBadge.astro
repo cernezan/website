@@ -1,32 +1,28 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 const { title, link, profilePicture, websiteLogo, subText } = Astro.props;
 ---
 
 <a href={link} class="mr-auto flex">
     <div class="relative">
-        <Picture
+        <Image
             src={profilePicture}
             alt="Profile Picture"
             class="rounded-full object-cover transition-opacity duration-500 ease-in-out hover:opacity-0"
             sizes="400"
             format={"jpeg"}
-            widths={[400, 400]}
             width={50}
             height={50}
-            aspectRatio={1}
         />
-        <Picture
+        <Image
             src={websiteLogo}
             alt="Profile Picture"
-            class="absolute left-0 top-0 rounded-full object-cover opacity-0 transition-opacity duration-500 ease-in-out hover:opacity-100"
+            class="absolute top-0 rounded-full left-0 object-cover opacity-0 transition-opacity duration-500 ease-in-out hover:opacity-100"
             sizes="400"
             format={"jpeg"}
-            widths={[400, 400]}
             width={50}
             height={50}
-            aspectRatio={1}
         />
     </div>
 

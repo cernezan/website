@@ -1,7 +1,7 @@
 ---
 title: Exploring Health
-pubDate: '2023-05-01T22:00:00.000Z'
-category: "\U0001F951 Health"
+pubDate: "2023-05-01T22:00:00.000Z"
+category: "Wellbeing & Growth"
 ---
 
 I've been on my health journey for the past four years, and throughout that time, I've tried numerous programs and routines, learning valuable lessons along the way. Recently, I started reading [Outlive: The Science and Art of Longevity](https://www.goodreads.com/book/show/61153739-outlive) (GoodReads) by Peter Attia MD, which has inspired me to share my current routines, as well as the various health experiments I plan to undertake.
@@ -12,8 +12,8 @@ In the past, I've struggled with deciding what aspects of my life to share on th
 
 In the upcoming posts, I plan to write about the following topics:
 
-* Weight training splits
-* Circadian rhythm learnings and experiments
-* Reducing screen time usage
+-   Weight training splits
+-   Circadian rhythm learnings and experiments
+-   Reducing screen time usage
 
 I hope that my experiences and insights will inspire you to continue or begin your own health journey.

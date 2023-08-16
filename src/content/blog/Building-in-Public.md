@@ -1,7 +1,7 @@
 ---
 title: Building in Public
-pubDate: '2023-04-09T22:00:00.000Z'
-category: "\U0001F604 Personal"
+pubDate: "2023-04-09T22:00:00.000Z"
+category: "Creativity"
 ---
 
 I'm not sure when the trend of building in public started, but I've always liked the idea. When I began my first internet blog about 8 years ago, my goal was to learn about design. In a way, I wanted to design things I found interesting at the time and share them with others.
@@ -12,6 +12,6 @@ I've just added support for mobile menu navigation, and I'm quite happy with it.
 
 As I continue working on this blog, I also want to focus on:
 
-* Taking the first steps to build a small community of people interested in tech.
-* Creating small projects that solve niche problems (similar to [Lowlight](https://github.com/cernezan/lowlight) or [Matter](https://github.com/cernezan/matter-raycast)).
-* Learning about various topics and sharing my experiences on my blog.
+-   Taking the first steps to build a small community of people interested in tech.
+-   Creating small projects that solve niche problems (similar to [Lowlight](https://github.com/cernezan/lowlight) or [Matter](https://github.com/cernezan/matter-raycast)).
+-   Learning about various topics and sharing my experiences on my blog.

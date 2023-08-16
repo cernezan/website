@@ -14,7 +14,6 @@ const { category, categoryPath, pubDate, updatedDate } = Astro.props;
 ---
 
 <div class="text-sm opacity-60">
-    <!-- Category -->
     {
         category && (
             <>
@@ -27,7 +26,6 @@ const { category, categoryPath, pubDate, updatedDate } = Astro.props;
             </>
         )
     }
-    <!-- Date -->
     {pubDate && <FormattedDate date={pubDate} />}
     {
         updatedDate && (

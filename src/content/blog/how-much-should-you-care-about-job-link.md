@@ -1,6 +1,6 @@
 ---
-pubDate: '2023-04-29T22:00:00.000Z'
-category: "\U0001F517 Links"
+pubDate: "2023-04-29T22:00:00.000Z"
+category: "Bitesize"
 ---
 
 I recently read “[How Much Should You Care About Your Job?](https://www.businessinsider.com/work-life-balance-job-satisfaction-burnout-great-resignation-office-return-2023-4)” from Insider. I highlighted this one part about job relationships being a key predictor of overall happiness.

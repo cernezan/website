@@ -1,7 +1,7 @@
 ---
-title: 'DuckDuckGo Has a Lite Version, and It''s Good'
+title: "DuckDuckGo Has a Lite Version, and It's Good"
 pubDate: 2023-07-17T22:00:00.000Z
-category: "\U0001F4BB Tech"
+category: "Technology"
 draft: false
 ---
 

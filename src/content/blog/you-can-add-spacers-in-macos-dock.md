@@ -1,7 +1,7 @@
 ---
 title: You Can Add Spacers in macOS Dock
 pubDate: 2023-06-09T22:00:00.000Z
-category: "\U0001F4BB Tech"
+category: "Technology"
 image: ""
 draft: false
 ---

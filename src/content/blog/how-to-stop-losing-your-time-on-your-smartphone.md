@@ -1,9 +1,9 @@
 ---
 title: >-
-  How to Stop Losing Your Time on Your Smartphone: Breaking Free from Infinite
-  Scroll
+    How to Stop Losing Your Time on Your Smartphone: Breaking Free from Infinite
+    Scroll
 pubDate: 2023-08-11T22:00:00.000Z
-category: "\U0001F4BB Tech"
+category: "Technology"
 draft: false
 ---
 

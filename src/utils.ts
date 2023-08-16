@@ -9,7 +9,7 @@ export function slugify(text: string) {
         .replace(/-+$/, "")
         .replace(
             /([\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF])/g,
-            ""
+            "",
         );
 }
 
@@ -50,4 +50,27 @@ export function shuffleArray(array: any[]) {
     }
 
     return array;
+}
+
+import { SITE_TITLE } from "../src/consts";
+
+export function prepareTitle(
+    title: string | undefined,
+    url: string,
+    description: string,
+    isPost: boolean,
+    withoutSiteTitle: boolean = false,
+): string {
+    if (url === "/") {
+        return SITE_TITLE + " - " + "Personal Website";
+    } else if (title === "" || (undefined && isPost && withoutSiteTitle)) {
+        return description.slice(0, 45) + "..." + " | " + SITE_TITLE;
+    } else if (title === undefined && isPost && withoutSiteTitle) {
+        return description.slice(0, 45) + "...";
+    } else if (title === undefined) {
+        return SITE_TITLE;
+    } else if (title !== undefined && withoutSiteTitle) {
+        return title;
+    }
+    return `${title} | ${SITE_TITLE}`;
 }

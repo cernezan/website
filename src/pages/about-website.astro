@@ -1,0 +1,56 @@
+---
+import MainButton from "../components/buttons/mainButton.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout
+    title="About"
+    description="I'm a software tinkerer interested in design and building software."
+    isPost={false}
+>
+    <section aria-label="About section">
+        <h1 class="mb-0">About This Website</h1>
+        <h4 class="mb-6 mt-0 opacity-60">
+            Personal website made with Astro and Tailwind CSS.
+        </h4>
+
+        <p>
+            Welcome to my personal website, a space where my passion for
+            technology and design merge. Built using the <a
+                class="link"
+                href="https://astro.build/">Astro framework</a
+            >, with the help of <a
+                class="link"
+                target="_blank"
+                href="https://tailwindcss.com/">TailwindCSS</a
+            >
+             for easier design implementation.
+        </p>
+
+        <p>
+            Blog is published using <a
+                class="link"
+                target="_blank"
+                href="https://tina.io/">TinaCMS</a
+            >. Its functionality ensures that I can easily update and organize
+            the site's content. Embracing the open-source philosophy, I've made
+            the entire codebase <a
+                href="https://github.com/cernezan/website"
+                target="_blank"
+                class="link">available on GitHub</a
+            >.
+        </p>
+
+        <p>
+            If you have any questions about the technologies used or the build
+            itself, please feel free to contact me.
+        </p>
+
+        <div class="my-6 flex space-x-4">
+            <MainButton
+                text="View Code on Github"
+                href="https://github.com/cernezan/website"
+            />
+        </div>
+    </section>
+</MainLayout>

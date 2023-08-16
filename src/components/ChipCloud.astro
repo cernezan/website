@@ -3,16 +3,21 @@ import { shuffleArray } from "../utils";
 
 export interface Props {
     listOfItems: string[];
+    centerItems?: boolean;
 }
 
-let { listOfItems } = Astro.props;
+let { listOfItems, centerItems = false } = Astro.props;
 listOfItems = shuffleArray(listOfItems);
 ---
 
-<div class="flex flex-wrap gap-2">
+<div
+    class={centerItems
+        ? "flex flex-wrap gap-2 justify-center"
+        : "flex flex-wrap gap-2"}
+>
     {
         listOfItems.map((item) => (
-            <div class="inline-flex rounded-3xl border border-dashed border-zinc-200 px-4 py-2 text-center">
+            <div class="inline-flex text-sm rounded-3xl border border-dashed border-zinc-200 px-4 py-2 text-center">
                 {item}
             </div>
         ))
