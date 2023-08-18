@@ -19,7 +19,10 @@ export async function get(context) {
             pubDate: post.data.pubDate,
             description: post.body.slice(0, 140) + "...",
             customData: post.data.customData,
-            content: sanitizeHtml(parser.render(post.body)),
+            content:
+                sanitizeHtml(parser.render(post.body)) +
+                `<p><small>Images may be present in this article. View them by opening the article in a browser.</small></p>
+                <p><small><a href="${post.url}">Open in browser.</a></small></p>`,
             // Compute RSS link from post `slug`
             // This example assumes all posts are rendered as `/blog/[slug]` routes
             link: `/blog/${post.slug}/`,
