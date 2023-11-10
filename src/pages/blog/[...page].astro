@@ -30,15 +30,15 @@ export async function getStaticPaths({ paginate }) {
 
 const posts = await fetchPosts();
 // === 100 DAYS OF BLOGGING ===
-function getNumberOfUniquePostsFromDate(date: Date) {
-    return posts.filter((post) => {
-        return post.data.pubDate.getTime() > date.getTime();
-    }).length;
-}
+// function getNumberOfUniquePostsFromDate(date: Date) {
+//     return posts.filter((post) => {
+//         return post.data.pubDate.getTime() > date.getTime();
+//     }).length;
+// }
 
-const numberOfDaysCompletedChallenge = getNumberOfUniquePostsFromDate(
-    new Date("2023-07-10"),
-);
+// const numberOfDaysCompletedChallenge = getNumberOfUniquePostsFromDate(
+//     new Date("2023-07-10"),
+// );
 
 // === CATEGORIES ===
 const categories = [...new Set(posts.map((post) => post.data.category).flat())];
@@ -95,7 +95,7 @@ const categoryPath = "/blog/category/";
             currentPage={page.currentPage}
             lastPage={page.lastPage}
         />
-        <section
+        <!-- <section
             class="my-4 rounded-xl border border-violet-200 bg-gradient-to-r from-violet-50 to-violet-100 p-4 backdrop-blur-md"
             aria-label="100 Days of Blogging"
         >
@@ -108,6 +108,6 @@ const categoryPath = "/blog/category/";
                 >
                 <span class="mt-1 font-medium">Learn more</span>
             </a>
-        </section>
+        </section> -->
     </main>
 </MainLayout>
