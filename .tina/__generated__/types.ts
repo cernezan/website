@@ -299,14 +299,14 @@ export type PostMutation = {
   draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-export type PostPartsFragment = { __typename?: 'Post', title?: string | null, pubDate: string, category: string, image?: string | null, body?: any | null, draft?: boolean | null };
+export type PostPartsFragment = { __typename: 'Post', title?: string | null, pubDate: string, category: string, image?: string | null, body?: any | null, draft?: boolean | null };
 
 export type PostQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type PostQuery = { __typename?: 'Query', post: { __typename?: 'Post', id: string, title?: string | null, pubDate: string, category: string, image?: string | null, body?: any | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PostQuery = { __typename?: 'Query', post: { __typename: 'Post', id: string, title?: string | null, pubDate: string, category: string, image?: string | null, body?: any | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type PostConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -318,10 +318,11 @@ export type PostConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostConnectionEdges', cursor: string, node?: { __typename?: 'Post', id: string, title?: string | null, pubDate: string, category: string, image?: string | null, body?: any | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostConnectionEdges', cursor: string, node?: { __typename: 'Post', id: string, title?: string | null, pubDate: string, category: string, image?: string | null, body?: any | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export const PostPartsFragmentDoc = gql`
     fragment PostParts on Post {
+  __typename
   title
   pubDate
   category
@@ -388,11 +389,11 @@ export const PostConnectionDocument = gql`
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
-      post(variables: PostQueryVariables, options?: C): Promise<{data: PostQuery, variables: PostQueryVariables, query: string}> {
-        return requester<{data: PostQuery, variables: PostQueryVariables, query: string}, PostQueryVariables>(PostDocument, variables, options);
+      post(variables: PostQueryVariables, options?: C): Promise<{data: PostQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PostQueryVariables, query: string}> {
+        return requester<{data: PostQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PostQueryVariables, query: string}, PostQueryVariables>(PostDocument, variables, options);
       },
-    postConnection(variables?: PostConnectionQueryVariables, options?: C): Promise<{data: PostConnectionQuery, variables: PostConnectionQueryVariables, query: string}> {
-        return requester<{data: PostConnectionQuery, variables: PostConnectionQueryVariables, query: string}, PostConnectionQueryVariables>(PostConnectionDocument, variables, options);
+    postConnection(variables?: PostConnectionQueryVariables, options?: C): Promise<{data: PostConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PostConnectionQueryVariables, query: string}> {
+        return requester<{data: PostConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PostConnectionQueryVariables, query: string}, PostConnectionQueryVariables>(PostConnectionDocument, variables, options);
       }
     };
   }
@@ -401,35 +402,54 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
 // TinaSDK generated code
 import { createClient, TinaClient } from "tinacms/dist/client";
 
-const generateRequester = (client: TinaClient) => {
+const generateRequester = (
+  client: TinaClient,
+  options?: { branch?: string }
+) => {
   const requester: (
     doc: any,
     vars?: any,
-    options?: any,
+    options?: { branch?: string },
     client
-  ) => Promise<any> = async (doc, vars, _options) => {
+  ) => Promise<any> = async (doc, vars, options) => {
+    let url = client.apiUrl
+    if (options?.branch) {
+      const index = client.apiUrl.lastIndexOf('/')
+      url = client.apiUrl.substring(0, index + 1) + options.branch
+    }
     const data = await client.request({
       query: doc,
       variables: vars,
-    });
+      url,
+    })
 
-    return { data: data?.data, query: doc, variables: vars || {} };
-  };
+    return { data: data?.data, errors: data?.errors, query: doc, variables: vars || {} }
+  }
 
-  return requester;
-};
+  return requester
+}
 
 /**
  * @experimental this class can be used but may change in the future
  **/
 export const ExperimentalGetTinaClient = () =>
   getSdk(
-    generateRequester(createClient({ url: "http://localhost:4001/graphql", queries }))
-  );
+    generateRequester(
+      createClient({
+        url: "http://localhost:4001/graphql",
+        queries,
+      })
+    )
+  )
 
-export const queries = (client: TinaClient) => {
-  const requester = generateRequester(client);
-  return getSdk(requester);
-};
+export const queries = (
+  client: TinaClient,
+  options?: {
+    branch?: string
+  }
+) => {
+  const requester = generateRequester(client, options)
+  return getSdk(requester)
+}
 
   

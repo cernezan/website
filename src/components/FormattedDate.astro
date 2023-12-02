@@ -1,13 +1,12 @@
 ---
-export interface Props {
+interface Props {
     date: Date;
 }
-let { date } = Astro.props;
-let oneDay = 24 * 60 * 60 * 1000; // Number of milliseconds in a day
-date = new Date(date.getTime() + oneDay);
+
+const { date } = Astro.props;
 ---
 
-<time datetime={date.toString()}>
+<time datetime={date.toISOString()}>
     {
         date.toLocaleDateString("en-us", {
             year: "numeric",

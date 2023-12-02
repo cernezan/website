@@ -1,6 +1,6 @@
 ---
 title: What's Wrong with My eBook Reader
-pubDate: 2023-12-02T09:42:42.604Z
+pubDate: 2023-12-01T23:00:00.000Z
 category: Technology
 draft: false
 ---

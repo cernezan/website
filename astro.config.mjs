@@ -6,9 +6,6 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
-// import image from "@astrojs/image";
-
-// https://astro.build/config
 
 import AstroPWA from "@vite-pwa/astro";
 
@@ -19,9 +16,5 @@ export default defineConfig({
     markdown: {
         drafts: false,
     },
-    experimental: {
-        assets: true,
-    },
     hydrateURLs: true,
-    compressHTML: true,
 });

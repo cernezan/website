@@ -64,13 +64,23 @@ export function prepareTitle(
     if (url === "/") {
         return SITE_TITLE + " - " + "Personal Website";
     } else if (title === "" || (undefined && isPost && withoutSiteTitle)) {
-        return description.slice(0, 45) + "..." + " | " + SITE_TITLE;
+        return (
+            removeMarkdown(description).slice(0, 45) +
+            "..." +
+            "  ·  " +
+            SITE_TITLE
+        );
     } else if (title === undefined && isPost && withoutSiteTitle) {
-        return description.slice(0, 45) + "...";
+        return (
+            removeMarkdown(description).slice(0, 45) +
+            "..." +
+            "  ·  " +
+            SITE_TITLE
+        );
     } else if (title === undefined) {
         return SITE_TITLE;
     } else if (title !== undefined && withoutSiteTitle) {
-        return title;
+        return title + "  ·  " + SITE_TITLE;
     }
-    return `${title} | ${SITE_TITLE}`;
+    return `${title}  ·  ${SITE_TITLE}`;
 }
