@@ -29,13 +29,13 @@ var config_default = defineConfig({
             readonly: false,
             // Example of using a custom slugify function
             slugify: (values) => {
-              return `${values?.title?.toLowerCase().replace(/ /g, "-") || "NO TITLE DEFINED"}`;
+              return `${values?.title?.toLowerCase().replace(/'/g, "").replace(/ /g, "-") || "NO TITLE DEFINED"}`;
             }
           }
         },
         defaultItem: () => ({
           draft: true,
-          pubDate: /* @__PURE__ */ new Date()
+          pubDate: (/* @__PURE__ */ new Date()).toISOString()
         }),
         fields: [
           {

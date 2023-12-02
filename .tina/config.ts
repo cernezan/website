@@ -33,6 +33,7 @@ export default defineConfig({
                             return `${
                                 values?.title
                                     ?.toLowerCase()
+                                    .replace(/'/g, "")
                                     .replace(/ /g, "-") || "NO TITLE DEFINED"
                             }`;
                         },
@@ -40,7 +41,7 @@ export default defineConfig({
                 },
                 defaultItem: () => ({
                     draft: true,
-                    pubDate: new Date(),
+                    pubDate: new Date().toISOString(),
                 }),
                 fields: [
                     {

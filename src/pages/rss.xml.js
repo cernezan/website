@@ -6,7 +6,7 @@ import MarkdownIt from "markdown-it";
 import { prepareTitle } from "../utils";
 const parser = new MarkdownIt();
 
-export async function get(context) {
+export async function GET(context) {
     let blog = await getCollection("blog");
     blog = blog.filter((post) => !post.data.draft);
     return rss({

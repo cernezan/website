@@ -6,7 +6,6 @@ import CategoryDate from "../components/CategoryDate.astro";
 import BackToBlog from "../components/post-components/BackToBlog.astro";
 import { removeMarkdown } from "../utils";
 import { CollectionEntry, getCollection } from "astro:content";
-import ShareOnSocial from "../components/post-components/ShareOnSocial.astro";
 import TitleSection from "../components/TitleSection.astro";
 import ChipCloud from "../components/ChipCloud.astro";
 import MainButton from "../components/buttons/mainButton.astro";
@@ -60,13 +59,12 @@ const postURL = Astro.url.href;
         <!-- CONTENT -->
         <slot />
     </section>
-    <ShareOnSocial postURL={postURL} />
     <BackToBlog />
     <!-- POST SUGGESTION-->
     <section class="my-12 flex flex-col items-center text-center">
         <TitleSection
-            title="Continue reading"
-            description="Interested in more? Try these articles next"
+            title="Suggested Reads"
+            description="Continue exploring more posts"
         />
         <PostsPreview posts={twoRandomPosts} />
     </section>
@@ -76,7 +74,7 @@ const postURL = Astro.url.href;
         aria-label="Subscribe to RSS"
     >
         <TitleSection
-            title="Subscribe now to stay updated"
+            title="Subscribe Now to Stay Updated"
             description="Join hundreds of readers with more articles like this"
         />
         <ChipCloud
