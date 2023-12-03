@@ -3,6 +3,7 @@ import "../../styles/global.css";
 import { SEO } from "astro-seo";
 import { SITE_DESCRIPTION } from "../../consts";
 import { prepareTitle } from "../../utils";
+import { ViewTransitions } from "astro:transitions";
 
 export interface Props {
     title: string;
@@ -98,3 +99,5 @@ const finalizedType = prepareType(isPost);
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <link rel="sitemap" href="/sitemap-index.xml" />
+
+<ViewTransitions />

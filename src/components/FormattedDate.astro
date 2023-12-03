@@ -3,7 +3,8 @@ interface Props {
     date: Date;
 }
 
-const { date } = Astro.props;
+let { date } = Astro.props;
+date = new Date(date.getTime() + 2 * 60 * 60 * 1000);
 ---
 
 <time datetime={date.toISOString()}>

@@ -63,8 +63,13 @@ h4 {
 }
 
 p {
-    margin-bottom: 1.75rem !important;
-    margin-top: 1.75rem !important;
+    margin-bottom: 0.75rem !important;
+    margin-top: 0.75rem !important;
+}
+
+article > p {
+    margin-bottom: 1.5rem !important;
+    margin-top: 1.5rem !important;
 }
 
 article > ul {
@@ -85,6 +90,10 @@ ul > li {
     text-decoration-color: var(--primary-color);
     text-decoration-thickness: var(--decoration-thickness);
     font-weight: 500;
+}
+
+summary {
+    display: inherit;
 }
 
 article img {

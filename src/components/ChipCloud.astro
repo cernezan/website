@@ -16,7 +16,7 @@ listOfItems = shuffleArray(listOfItems);
         : "flex flex-wrap gap-2"}
 >
     {
-        listOfItems.map((item) => (
+        listOfItems.map((item: String) => (
             <div class="inline-flex text-sm rounded-3xl border border-dashed border-zinc-200 px-4 py-2 text-center">
                 {item}
             </div>

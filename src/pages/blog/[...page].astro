@@ -1,13 +1,11 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import PageTitle from "../../components/PageTitle.astro";
 import Pagination from "../../components/Pagination.astro";
 
 import { CollectionEntry, getCollection } from "astro:content";
 import { slugify } from "../../utils";
 import PostPreview from "../../components/PostPreview.astro";
 import MainButton from "../../components/buttons/mainButton.astro";
-import TitleSection from "../../components/TitleSection.astro";
 
 // Getting all posts
 async function fetchPosts() {
@@ -20,7 +18,7 @@ async function fetchPosts() {
 // === PAGINATION ===
 const { page } = Astro.props;
 
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths({ paginate }: { paginate: any }) {
     let posts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
         (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
     );
@@ -52,7 +50,7 @@ const categoryPath = "/blog/category/";
     <main class="flex flex-col">
         <h1 class="mb-0">Blog</h1>
 
-        <div class="mb-6 mt-0 text-lg font-semibold opacity-60">
+        <div class="mb-6 mt-0 text-lg font-semibold opacity-70">
             Personal blog with hopefully insigtful content
         </div>
 
