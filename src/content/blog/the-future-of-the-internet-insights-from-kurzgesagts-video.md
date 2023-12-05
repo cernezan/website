@@ -5,17 +5,17 @@ category: Technology
 draft: false
 ---
 
-Today, I came across a video from [Kurzgesagt – In a Nutshell](https://www.youtube.com/@kurzgesagt), one of my favorite YouTube channels, titled "The Internet is Worse Than Ever – Now What?". This video caught my eye because I care about the internet and I enjoy thinking about technological impact on our lives so naturally I wanted to learn what the author has to say on the topic.
+Today, I came across a video from [Kurzgesagt – In a Nutshell](https://www.youtube.com/@kurzgesagt), one of my favorite YouTube channels, titled "[The Internet is Worse Than Ever – Now What?](https://www.youtube.com/watch?v=fuFlMtZmvY0)". This video caught my eye because I care about the internet and I enjoy thinking about technological impact on our lives so naturally I wanted to learn what the author has to say on the topic.
 
 I've also read [The future of social media](https://timharek.no/blog/the-future-of-social-media), [Tim Hårek](https://timharek.no/) blog post about the video. Which made me even more excited for it. Today I finally had the time to watch it, so here's my opinion on it.
 
-Main Points
+### Main Points
 
 The video addresses a range of topics including online polarization, the structure of social interactions, the role of the human brain in societal division, and the significant impact of social media. It presents a critical view of the commonly held belief in the existence of 'filter bubbles' on the internet. Contrary to this popular notion, the video argues that real life, rather than the Internet, is where filter bubbles predominantly occur. It points out that online environments often expose individuals to a diverse array of opinions, challenging the idea that digital spaces merely reinforce existing views.
 
 Additionally, the video delves into the evolutionary aspect of the human brain, particularly its role in navigating and sustaining social structures. This is highlighted by the emphasis on the necessity of cooperation for survival in historical contexts. The video illustrates how physical closeness and shared cultural experiences traditionally served as bridges between differing worldviews. This perspective sheds light on the complex interplay between human psychology, social dynamics, and the modern digital landscape.
 
-Smaller Communities
+### Smaller Communities
 
 This is the main solution the author proposes - an internet built on smaller communities and not on the "Everyone you know or don't know is here" social media platform format we're so accustomed to.
 
