@@ -1,48 +1,30 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import ProfileBadge from "./ProfileBadge.astro";
-import { Icon } from "astro-icon";
+import {Icon} from "astro-icon";
 
-const { title } = Astro.props;
+import profilePictureBW from "../assets/profilePictures/profilePictureBW.jpeg";
+import logoZanCerne from "../assets/logoZanCerne.png";
+
+const {title} = Astro.props;
 ---
 
 <header class="py-10 md:flex" aria-label="Header navigation">
     <div class="flex">
         <!-- PROFILE - NAME - SUBTITLE -->
-        <ProfileBadge
-            title={title}
-            link="/"
-            profilePicture="/assets/profilePictures/profilePictureBW.jpeg"
-            websiteLogo="/assets/logoZanCerne.png"
-            subText="Hope you're doing ok."
-            aria-label="Profile badge"
-        />
+        <ProfileBadge title={title} link="/" profilePicture={profilePictureBW} websiteLogo={logoZanCerne} subText="Hope you're doing ok." aria-label="Profile badge" />
 
         <!-- MOBILE NAVIGATION -->
-        <button
-            id="nav-button"
-            onclick="triggerNavbar()"
-            type="button"
-            class="inline-flex items-center justify-center rounded-lg px-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 md:hidden"
-        >
+        <button id="nav-button" onclick="triggerNavbar()" type="button" class="inline-flex items-center justify-center rounded-lg px-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 md:hidden">
             <span class="sr-only">Open main menu</span>
             <!-- MENU ICONS -->
             <Icon name="tabler:menu-2" id="menu-icon" class="h-6 w-6" />
-            <Icon
-                name="tabler:chevrons-up"
-                id="close-icon"
-                class="hidden h-6 w-6"
-            />
+            <Icon name="tabler:chevrons-up" id="close-icon" class="hidden h-6 w-6" />
         </button>
     </div>
 
-    <nav
-        id="navbar"
-        aria-label="Main navigation"
-        class="my-auto mt-4 hidden flex-col flex-wrap justify-between gap-x-6 rounded-lg bg-zinc-100 py-2 text-center md:order-1 md:my-auto md:ml-auto md:flex md:w-auto md:flex-row md:bg-transparent md:py-0"
-    >
+    <nav id="navbar" aria-label="Main navigation" class="my-auto mt-4 hidden flex-col flex-wrap justify-between gap-x-6 rounded-lg bg-zinc-100 py-2 text-center md:order-1 md:my-auto md:ml-auto md:flex md:w-auto md:flex-row md:bg-transparent md:py-0">
         <HeaderLink class="justify-center" href="/">Home</HeaderLink>
-        <HeaderLink href="/blog">Blog</HeaderLink>
         <HeaderLink href="/about">About</HeaderLink>
     </nav>
 </header>

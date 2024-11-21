@@ -3,53 +3,21 @@ import MainButton from "../components/buttons/mainButton.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout
-    title="About"
-    description="I'm a software tinkerer interested in design and building software."
-    isPost={false}
->
+<MainLayout title="About" description="I'm a software tinkerer interested in design and building software." isPost={false}>
     <section aria-label="About section">
         <h1 class="mb-0">About</h1>
-        <h4 class="mb-6 mt-0 opacity-70">
-            Hey, my name is Žan! I'm a software tinkerer interested in design
-            and building software.
-        </h4>
+        <h4 class="mb-6 mt-0 opacity-70">Hey, my name is Žan! I'm a software tinkerer interested in design and building software.</h4>
 
+        <p>The best way to describe myself would be as a tech enthusiast with varying interests in other spheres. I've always been fascinated by everything at the intersection of technology, design and personal well-being. I enjoy learning about various topics, from computers to fitness and I feel fulfilled when I can use my knowledge to help the people around me.</p>
         <p>
-            The best way to describe myself would be as a tech enthusiast with
-            varying interests in other spheres. I've always been fascinated by
-            everything at the intersection of technology, design and personal
-            well-being. I enjoy learning about various topics, from computers to
-            fitness and I feel fulfilled when I can use my knowledge to help the
-            people around me.
+            I'm currently working at <a class="link" href="https://celtra.com/" target="_blank">Celtra</a> as a QA Engineer. Before joining Celtra, I worked as a Full-stack Engineer at a small Slovenian company during my college years.
         </p>
-        <p>
-            I'm currently working at <a
-                class="link"
-                href="https://celtra.com/"
-                target="_blank">Celtra</a
-            > as a QA Engineer. Before joining Celtra, I worked as a Full-stack
-            Engineer at a small Slovenian company during my college years.
-        </p>
-        <p>
-            I enjoy building applications, extensions, websites, and more. I'm
-            interested in design and in creating software that can improve and
-            enrich people's lives.
-        </p>
-        <p>
-            I write on <a href="/blog" class="link">my personal blog</a>, where
-            I share interesting links, design prototypes, project updates, and
-            various other things.
-        </p>
+        <p>I enjoy building applications, extensions, websites, and more. I'm interested in design and in creating software that can improve and enrich people's lives.</p>
 
         <p>I would love to hear from you.</p>
         <div class="my-6 flex space-x-4">
             <MainButton text="Contact Page" href="/contact" />
-            <MainButton
-                isSecondary={true}
-                text="Email Me"
-                href="mailto:cv14ht16@duck.com"
-            />
+            <MainButton isSecondary={true} text="Email Me" href="mailto:cv14ht16@duck.com" />
         </div>
     </section>
 </MainLayout>

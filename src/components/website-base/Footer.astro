@@ -1,25 +1,16 @@
 ---
-import { Image } from "astro:assets";
+import {Image} from "astro:assets";
+
+import logoZanCerne from "../../assets/logoZanCerne.png";
 
 const today = new Date();
 ---
 
-<footer
-    aria-label="Žan Černe Footer"
-    class="bottom-0 mt-auto flex w-auto flex-col space-y-8 py-12 md:flex-row md:space-y-0"
->
+<footer aria-label="Žan Černe Footer" class="bottom-0 mt-auto flex w-auto flex-col space-y-8 py-12 md:flex-row md:space-y-0">
     <div class="flex w-full flex-col space-y-2 md:w-1/2">
         <div class="flex space-x-2 items-center">
             <a href="https://cernezan.com">
-                <Image
-                    src="/assets/logoZanCerne.png"
-                    alt="Žan Černe Logo"
-                    class="justify-center space-x-2 rounded-full object-cover"
-                    sizes="400"
-                    width={[400, 400]}
-                    width={18}
-                    height={18}
-                />
+                <Image src={logoZanCerne} alt="Žan Černe Logo" class="justify-center space-x-2 rounded-full object-cover" sizes="400" format="avif" width={[400, 400]} width={18} height={18} />
             </a>
             <a href="https://cernezan.com">Žan Černe</a>
         </div>
@@ -28,50 +19,23 @@ const today = new Date();
             Last update: {today.toJSON().slice(0, 10)}
         </span>
 
-        <a
-            class="hover:opacity-100 opacity-70 font-normal decoration-zinc-300"
-            href="/about-website">About this website</a
-        >
+        <a class="hover:opacity-100 opacity-70 font-normal decoration-zinc-300" href="/about-website">About this website</a>
 
         <span class="opacity-70">&copy;2020 - {today.getFullYear()}</span>
     </div>
-    <div
-        class="flex w-full flex-col space-y-8 md:w-1/2 md:flex-row md:space-y-0"
-    >
+    <div class="flex w-full flex-col space-y-8 md:w-1/2 md:flex-row md:space-y-0">
         <div class="flex w-full flex-col space-y-2 md:w-1/2">
             <span>Explore</span>
-            <a
-                class="opacity-70 hover:opacity-100 font-normal decoration-zinc-300"
-                href="/blog">Blog</a
-            >
-            <a
-                class="opacity-70 hover:opacity-100 font-normal decoration-zinc-300"
-                href="/contact">Contact</a
-            >
-            <a
-                class="opacity-70 hover:opacity-100 font-normal decoration-zinc-300"
-                href="/about">About</a
-            >
+            <a class="opacity-70 hover:opacity-100 font-normal decoration-zinc-300" href="/contact">Contact</a>
+            <a class="opacity-70 hover:opacity-100 font-normal decoration-zinc-300" href="/about">About</a>
         </div>
         <div class="flex w-full flex-col space-y-2 md:w-1/2">
             <span>Social</span>
-            <a
-                class="opacity-70 hover:opacity-100 font-normal decoration-zinc-300"
-                target="_blank"
-                href="https://toot.io/@zan">Mastodon</a
-            >
-            <a
-                class="opacity-70 hover:opacity-100 font-normal decoration-zinc-300"
-                target="_blank"
-                href="https://github.com/cernezan">Github</a
-            >
-            <a
-                class="opacity-70 hover:opacity-100 font-normal decoration-zinc-300"
-                target="_blank"
-                href="https://linkedin.com/in/cernezan/">LinkedIn</a
-            >
+            <a class="opacity-70 hover:opacity-100 font-normal decoration-zinc-300" target="_blank" href="https://mastodon.social/@cernezan">Mastodon</a>
+            <a class="opacity-70 hover:opacity-100 font-normal decoration-zinc-300" target="_blank" href="https://github.com/cernezan">Github</a>
+            <a class="opacity-70 hover:opacity-100 font-normal decoration-zinc-300" target="_blank" href="https://linkedin.com/in/cernezan/">LinkedIn</a>
         </div>
     </div>
 </footer>
 
-<a rel="me" title="Mastodon Verification" href="https://toot.io/@zan"></a>
+<a rel="me" title="Mastodon Verification" href="https://mastodon.social/@cernezan"></a>

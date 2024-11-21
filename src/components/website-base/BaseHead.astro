@@ -5,6 +5,10 @@ import { SITE_DESCRIPTION } from "../../consts";
 import { prepareTitle } from "../../utils";
 import { ViewTransitions } from "astro:transitions";
 
+import socialMediaBannerCerneZan from "../../assets/socialBannerCerneZan.jpg";
+import favicon from "../../assets/favicon.svg";
+import logoZanCerne from "../../assets/logoZanCerne.png";
+
 export interface Props {
     title: string;
     description: string;
@@ -18,7 +22,7 @@ const {
     title,
     description = SITE_DESCRIPTION,
     isPost,
-    image = "/assets/socialBannerCerneZan.jpg",
+    image = socialMediaBannerCerneZan.src,
 } = Astro.props;
 
 function prepareType(isPost: boolean | undefined) {
@@ -51,7 +55,7 @@ const finalizedType = prepareType(isPost);
     }}
     extend={{
         // extending the default link tags
-        link: [{ rel: "icon", href: "/assets/favicon.svg" }],
+        link: [{ rel: "icon", href: favicon.src }],
         // extending the default meta tags
         meta: [
             {
@@ -67,9 +71,9 @@ const finalizedType = prepareType(isPost);
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-<link rel="apple-touch-icon" href="/assets/logoZanCerne.png" />
-<link rel="shortcut icon" type="image/png" href="/assets/logoZanCerne.png" />
+<link rel="icon" type="image/svg+xml" href={favicon.src} />
+<link rel="apple-touch-icon" href={logoZanCerne.src} />
+<link rel="shortcut icon" type="image/png" href={logoZanCerne.src} />
 
 <meta name="msapplication-TileColor" content="#FFFFFF" />
 <meta name="theme-color" content="#ffffff" />
