@@ -1,8 +1,9 @@
 name: SSH Server Deploy
-on: 
+on:
   push:
     branches:
-    - main
+      - main
+
 jobs:
   build:
     name: Build
@@ -10,20 +11,24 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+
       - name: Client Id Replacement
         uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: "'clientIdHIDDEN'"
           replace: ${{ secrets.CLIENT_ID }}
           regex: false
+
       - name: Token Tina Replacement
         uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: "'tokenTinaHIDDEN'"
           replace: ${{ secrets.TOKEN_TINA }}
           regex: false
+
       - name: Install, build, and upload your site output
         uses: withastro/action@v2
+
       - name: SSH Server Deploy
         uses: kostya-ten/ssh-server-deploy@v4
         with:
@@ -31,10 +36,13 @@ jobs:
           port: '65002'
           username: ${{ secrets.USERNAME }}
           private_key: ${{ secrets.PRIVATE_KEY }}
-          scp_source: ./dist
-          scp_target: ./public_html
+          # Copy the *contents* of dist (not the folder itself)
+          scp_source: ./dist/*
+          # Real target path on your server:
+          scp_target: ./domains/cernezan.com/public_html
           before_script: |
+            mkdir -p domains/cernezan.com/public_html
             df -h
           after_script: |
-            ls
-            cp -r public_html/dist/* public_html/
+            echo "Deployed files:"
+            ls -la domains/cernezan.com/public_html
