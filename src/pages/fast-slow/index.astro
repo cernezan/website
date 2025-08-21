@@ -13,6 +13,10 @@ import BoltIcon from 'astro-heroicons/outline/Bolt.astro';
 import HeartIcon from 'astro-heroicons/outline/Heart.astro';
 import ScaleIcon from 'astro-heroicons/outline/Scale.astro';
 
+// Image paths (using public folder)
+const downloadAppStore = '/assets/fastSlow/downloadAppStore.svg';
+const mockupImage = '/assets/fastSlow/mockup.png';
+
 const appName = "Fast Slow";
 const primaryColor = "#F08549";
 const secondaryColor = "#416FD3";
@@ -38,7 +42,7 @@ const description = "Fast Slow makes intermittent fasting easy, stress-free, and
                 <div class="mt-7 flex flex-col items-start gap-3 sm:flex-row">
                     <!-- App Store button with SVG -->
                     <a href="#" class="inline-block transition-transform hover:scale-105">
-                        <img src="/src/assets/fastSlow/downloadAppStore.svg" alt="Download on the App Store" class="h-12 w-auto">
+                        <img src={downloadAppStore} alt="Download on the App Store" class="h-12 w-auto">
                     </a>
                 </div>
 
@@ -61,7 +65,7 @@ const description = "Fast Slow makes intermittent fasting easy, stress-free, and
 
             <!-- Right: app mockup -->
             <div class="mx-auto w-full max-w-sm">
-                <img src="/src/assets/fastSlow/mockup.png" alt="Fast Slow app interface showing fasting timer and progress" class="w-full h-auto">
+                <img src={mockupImage} alt="Fast Slow app interface showing fasting timer and progress" class="w-full h-auto">
             </div>
         </div>
     </section>
@@ -175,7 +179,7 @@ const description = "Fast Slow makes intermittent fasting easy, stress-free, and
         
         <div class="mt-8">
             <a href="#" class="inline-block transition-transform hover:scale-105">
-                <img src="/src/assets/fastSlow/downloadAppStore.svg" alt="Download Fast Slow on the App Store" class="h-14 w-auto mx-auto">
+                <img src={downloadAppStore} alt="Download Fast Slow on the App Store" class="h-14 w-auto mx-auto">
             </a>
         </div>
         
