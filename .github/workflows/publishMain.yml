@@ -8,6 +8,15 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Derive pubkey + fingerprint from PRIVATE_KEY
+        run: |
+          printf "%s" "${{ secrets.PRIVATE_KEY }}" > key
+          chmod 600 key
+          ssh-keygen -y -f key > key.pub
+          echo "CI public key:"
+          cat key.pub
+          echo "Fingerprint:"
+          ssh-keygen -lf key.pub
       - name: Checkout your repository using git
         uses: actions/checkout@v4
       - name: Client Id Replacement
