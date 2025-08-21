@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Client Id Replacement
         uses: jacobtomlinson/gha-find-replace@v3
         with:
@@ -23,7 +23,7 @@ jobs:
           replace: ${{ secrets.TOKEN_TINA }}
           regex: false
       - name: Install, build, and upload your site output
-        uses: withastro/action@v0
+        uses: withastro/action@v2
       - name: SSH Server Deploy
         uses: kostya-ten/ssh-server-deploy@v4
         with:
