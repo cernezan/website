@@ -8,12 +8,12 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: Debug CI key fingerprint
-      run: |
-        mkdir -p ~/.ssh
-        printf '%s\n' "${{ secrets.PRIVATE_KEY }}" > ~/.ssh/id_ci
-        chmod 600 ~/.ssh/id_ci
-        ssh-keygen -lf ~/.ssh/id_ci
+      - name: Debug CI key fingerprint
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.PRIVATE_KEY }}" > ~/.ssh/id_ci
+          chmod 600 ~/.ssh/id_ci
+          ssh-keygen -lf ~/.ssh/id_ci
       - name: Checkout your repository using git
         uses: actions/checkout@v4
       - name: Client Id Replacement
