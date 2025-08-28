@@ -28,20 +28,20 @@ const description = "Fast Slow makes intermittent fasting easy, stress-free, and
     <!-- Apple iTunes App Smart Banner -->
     <meta name="apple-itunes-app" content="app-id=6749188352" slot="head" />
     <!-- Hero Section -->
-    <section aria-label="Fast Slow hero" class="relative mx-auto max-w-7xl px-6 py-16">
+    <section aria-label="Fast Slow hero" class="relative mx-auto max-w-7xl px-4 sm:px-6 py-16 overflow-hidden">
         <!-- Decorative gradient blob -->
-        <div class="pointer-events-none absolute inset-x-0 -top-24 -z-10 mx-auto h-[34rem] w-[48rem] rounded-full opacity-25 blur-3xl" style={`background: radial-gradient(60% 60% at 50% 40%, ${primaryColor} 0%, transparent 70%)`}></div>
+        <div class="pointer-events-none absolute inset-x-0 -top-24 -z-10 mx-auto h-[34rem] w-full max-w-[48rem] rounded-full opacity-25 blur-3xl" style={`background: radial-gradient(60% 60% at 50% 40%, ${primaryColor} 0%, transparent 70%)`}></div>
 
-        <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div class="grid items-center gap-8 lg:gap-12 lg:grid-cols-2">
             <!-- Left: copy -->
-            <div>
+            <div class="text-center lg:text-left">
                 <span class="inline-flex w-fit items-center gap-2 rounded-full border border-black/5 px-3 py-1 text-xs font-semibold" style={`background: rgba(240, 133, 73, 0.08); color: ${primaryColor}`}>
                     Intermittent Fasting Made Simple
                 </span>
-                <h1 class="mt-5 text-5xl font-extrabold leading-tight tracking-tight md:text-6xl">{appName}</h1>
-                <p class="mt-4 max-w-xl text-lg text-zinc-700">{description}</p>
+                <h1 class="mt-5 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl lg:text-6xl">{appName}</h1>
+                <p class="mt-4 max-w-xl mx-auto lg:mx-0 text-lg text-zinc-700">{description}</p>
 
-                <div class="mt-7 flex flex-col items-start gap-3 sm:flex-row">
+                <div class="mt-7 flex flex-col items-center lg:items-start gap-3 sm:flex-row">
                     <!-- App Store button with SVG -->
                     <a href="https://apps.apple.com/si/app/fast-intermittent-fasting-16-8/id6749188352" class="inline-block transition-transform hover:scale-105">
                         <img src={downloadAppStore} alt="Download on the App Store" class="h-12 w-auto">
@@ -50,33 +50,40 @@ const description = "Fast Slow makes intermittent fasting easy, stress-free, and
 
                 <!-- Key benefits -->
                 <div class="mt-8 space-y-2">
-                    <div class="flex items-center gap-3">
-                        <div class="h-2 w-2 rounded-full" style={`background: ${primaryColor}`}></div>
+                    <div class="flex items-center gap-3 justify-center lg:justify-start">
+                        <div class="h-2 w-2 rounded-full flex-shrink-0" style={`background: ${primaryColor}`}></div>
                         <span class="text-sm text-zinc-600">Track fasting periods with visual timeline</span>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <div class="h-2 w-2 rounded-full" style={`background: ${primaryColor}`}></div>
+                    <div class="flex items-center gap-3 justify-center lg:justify-start">
+                        <div class="h-2 w-2 rounded-full flex-shrink-0" style={`background: ${primaryColor}`}></div>
                         <span class="text-sm text-zinc-600">Smart reminders and notifications</span>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <div class="h-2 w-2 rounded-full" style={`background: ${primaryColor}`}></div>
+                    <div class="flex items-center gap-3 justify-center lg:justify-start">
+                        <div class="h-2 w-2 rounded-full flex-shrink-0" style={`background: ${primaryColor}`}></div>
                         <span class="text-sm text-zinc-600">Flexible schedules: 16:8, 18:6, 20:4, OMAD</span>
                     </div>
                 </div>
             </div>
 
             <!-- Right: app mockup -->
-            <div class="mx-auto w-full max-w-sm">
+            <div class="mx-auto w-full max-w-sm px-4 lg:px-0">
                 <img src={mockupImage} alt="Fast Slow app interface showing fasting timer and progress" class="w-full h-auto">
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="mx-auto max-w-7xl px-6 py-16">
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 py-16">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-extrabold md:text-4xl">Everything You Need for Successful Fasting</h2>
             <p class="mt-4 text-lg text-zinc-600">Whether you're new to fasting or experienced, Fast Slow adapts to your lifestyle</p>
+            
+            <!-- Product Hunt badge - placed after the heading -->
+            <div class="mt-6 flex justify-center">
+                <a href="https://www.producthunt.com/products/fast-slow-timeline-based-fasting?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-fast&#0045;slow" target="_blank" class="inline-block transition-transform hover:scale-105">
+                    <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1009748&theme=light&t=1756395716132" alt="Fast&#0032;Slow - Fast&#0032;Slow&#0032;makes&#0032;fasting&#0032;easy&#0032;with&#0032;a&#0032;visual&#0032;timeline | Product Hunt" style="width: 200px; height: 43px;" width="200" height="43" />
+                </a>
+            </div>
         </div>
 
         <!-- Free Features -->
@@ -133,7 +140,7 @@ const description = "Fast Slow makes intermittent fasting easy, stress-free, and
     </section>
 
     <!-- Benefits Section -->
-    <section class="mx-auto max-w-7xl px-6 py-16">
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 py-16">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-extrabold md:text-4xl">Why Choose Fast Slow?</h2>
             <p class="mt-4 text-lg text-zinc-600">A fasting app built for clarity, simplicity, and your success</p>
@@ -175,7 +182,7 @@ const description = "Fast Slow makes intermittent fasting easy, stress-free, and
     </section>
 
     <!-- CTA Section -->
-    <section class="mx-auto max-w-4xl px-6 py-16 text-center">
+    <section class="mx-auto max-w-4xl px-4 sm:px-6 py-16 text-center">
         <h2 class="text-3xl font-extrabold md:text-4xl">Start Your Intermittent Fasting Journey Today</h2>
         <p class="mt-4 text-lg text-zinc-600">Spend less time worrying about when to eat and more time enjoying the benefits of intermittent fasting</p>
         
@@ -189,8 +196,8 @@ const description = "Fast Slow makes intermittent fasting easy, stress-free, and
     </section>
 
     <!-- Footer -->
-    <footer class="mx-auto max-w-7xl px-6 py-8 border-t border-zinc-200">
-        <div class="text-center space-x-6">
+    <footer class="mx-auto max-w-7xl px-4 sm:px-6 py-8 border-t border-zinc-200">
+        <div class="text-center space-y-2 sm:space-y-0 sm:space-x-6">
             <a href="/" class="text-sm text-zinc-500 hover:text-zinc-700">Home</a>
             <a href="/fast-slow/privacy" class="text-sm text-zinc-500 hover:text-zinc-700">Privacy Policy</a>
         </div>
