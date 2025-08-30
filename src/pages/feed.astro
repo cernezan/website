@@ -5,20 +5,6 @@ if (Astro.site === undefined) {
     );
 }
 const articleUrl = `${Astro.site.origin}${"/rss.xml"}`;
-
-export async function getStaticPaths() {
-    return [
-        {
-            params: { rssRedirect: "rss" },
-        },
-        {
-            params: { rssRedirect: "feed" },
-        },
-    ];
-}
-
-// Only handle RSS-related routes, not API routes
-export const prerender = true;
 ---
 
 <head>
