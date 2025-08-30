@@ -12,6 +12,7 @@ import AstroPWA from "@vite-pwa/astro";
 // https://astro.build/config
 export default defineConfig({
     site: "https://cernezan.com",
+    output: "hybrid",
     integrations: [mdx(), sitemap(), tailwind(), sitemap(), AstroPWA()],
     markdown: {
         drafts: false,
